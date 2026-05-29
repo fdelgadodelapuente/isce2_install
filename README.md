@@ -1,5 +1,5 @@
-# isce2_install
-ISCE2 installation
+# ISCE2 installation
+
 
 
 For compiling the software in macOS. these are modified from [Instructions for MacPorts (Piyush Agram, formerly at JPL)](https://github.com/piyushrpt/mojaveSetup) I have used these instrucctions with the following macOS versions and compilers 
