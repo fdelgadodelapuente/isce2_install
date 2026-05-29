@@ -121,7 +121,7 @@ ENABLE_CUDA = FALSE
 
 Now install it in Applicatons/isce/isce2-2.6.4
 ```
-rm -rf config.log .sconfig.dblite .sconf_temp .sconsign.dblite; SCONS_CONFIG_DIR=/Applications/insar_software/isce scons install  
+rm -rf config.log .sconfig.dblite .sconf_temp .sconsign.dblite; SCONS_CONFIG_DIR=/Applications/isce scons install  
 ```
 
 Source it with shell script called insar.sh. Inp is the software version (2.2.0, 2.5.1, 2.6.4, etc)
@@ -131,12 +131,12 @@ Source it with shell script called insar.sh. Inp is the software version (2.2.0,
 inp="$1"
 echo "Loading ISCE $1"
  
-export PYTHONPATH=/Applications/insar_software/isce/isce-$1/install:$PYTHONPATH
-export PATH=/Applications/insar_software/isce/isce-$1/install/isce/bin:$PATH
-export PATH=/Applications/insar_software/isce/isce-$1/install/isce/applications:$PATH
-export ISCE_HOME=/Applications/insar_software/isce/isce-$1/install/isce
+export PYTHONPATH=/Applications/isce/isce-$1/install:$PYTHONPATH
+export PATH=/Applications/isce/isce-$1/install/isce/bin:$PATH
+export PATH=/Applications/isce/isce-$1/install/isce/applications:$PATH
+export ISCE_HOME=/Applications/isce/isce-$1/install/isce
  
-export PATH=/Applications/insar_software/isce/isce-$1/contrib/stack/stripmapStack:$PATH
+export PATH=/Applications/isce/isce-$1/contrib/stack/stripmapStack:$PATH
 #export PATH=/Applications/isce/isce$1/contrib/stack/topsStack:$PATH
   
 export GDAL_DATA=/opt/local/share/gdal
