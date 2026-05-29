@@ -6,9 +6,9 @@ For compiling the software in macOS. these are modified from [Instructions for M
 
 August 2018 MacMini2014/MacBookAir2015, High Sierra and Mojave, gcc7. ISCE 2.2.0
 
-Feb 22 2019 MacMini2014/MacBookAir2015, High Sierra and Mojave, gcc7. ISCE 2.3.1 to 2.5.2
+Feb 22 2019 MacMini2014/MacBookAir2015, High Sierra and Mojave, gcc7. ISCE 2.3.1-2.5.2
 
-Nov XY 2021 MacMini2014 Monterey, python37 and gcc11. ISCE 2.5.3 to 2.6.3
+Nov XY 2021 MacMini2014 Monterey, python37 and gcc11. ISCE 2.5.3-2.6.3
 
 Feb 06 2025 MacBookAir2015 Monterey, python312 and gcc13. ISCE 2.6.3
 
