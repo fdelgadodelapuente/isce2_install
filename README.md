@@ -14,9 +14,9 @@ ISCE 2.6.3. Feb 2025 MacBookAir2015, Monterey, python312 and gcc13.
 
 ISCE 2.6.3. Feb 2025 MacBookAir2015, Monterey, python39 and gcc11 after python312 failure in running stripmapApp. Default compiler in the mp system is gcc13, though.
 
-ISCE 2.6.4. Aug 2025 MacMini M4 Pro, Sequoia, python313 and gcc13. 
+ISCE 2.6.4. Aug 2025 MacMini2024, Sequoia, python313 and gcc13. 
 
-ISCE 2.6.4. May 2026 MacBook Neo, Tahoe, python313 and gcc13.
+ISCE 2.6.4. May 2026 MacBookNeo, Tahoe, python313 and gcc13.
 
 
 
