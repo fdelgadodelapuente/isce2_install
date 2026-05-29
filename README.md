@@ -2,7 +2,7 @@
 ISCE2 installation
 
 
-For compiling the software in macOS. these are modified from [Instructions for MacPorts (Piyush Agram, formerly at JPL)](https://github.com/piyushrpt/mojaveSetup) I have tested these instrucctions with the following macOS versions and compilers 
+For compiling the software in macOS. these are modified from [Instructions for MacPorts (Piyush Agram, formerly at JPL)](https://github.com/piyushrpt/mojaveSetup) I have used these instrucctions with the following macOS versions and compilers 
 
 Feb 22 2019 MacMini2014/MacBookAir2015, High Sierra and Mojave, gcc7
 
