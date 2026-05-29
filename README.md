@@ -2,7 +2,7 @@
 ISCE2 installation
 
 
-For compiling the software in macOS.  I tested these instrcctions on 
+For compiling the software in macOS.  I tested these instrucctions with the following macOS versions and compilers 
 
 Feb 22 2019 MacMini2014/MacBookAir2015, High Sierra and Mojave, gcc7
 
