@@ -4,17 +4,19 @@ ISCE2 installation
 
 For compiling the software in macOS. these are modified from [Instructions for MacPorts (Piyush Agram, formerly at JPL)](https://github.com/piyushrpt/mojaveSetup) I have used these instrucctions with the following macOS versions and compilers 
 
-Feb 22 2019 MacMini2014/MacBookAir2015, High Sierra and Mojave, gcc7
+August 2018 MacMini2014/MacBookAir2015, High Sierra and Mojave, gcc7. ISCE 2.2.0
 
-Nov XY 2021 MacMini2014 Monterey, python37 and gcc11 
+Feb 22 2019 MacMini2014/MacBookAir2015, High Sierra and Mojave, gcc7. ISCE 2.3.1 to 2.5.2
 
-Feb 06 2025 MacBookAir2015 Monterey, python312 and gcc13
+Nov XY 2021 MacMini2014 Monterey, python37 and gcc11. ISCE 2.5.3 to 2.6.3
 
-Feb 07 2025 MacBookAir2015 Monterey, python39 and gcc11 after python312 failure in running stripmapApp. Default compiler in the mp system is gcc13, though
+Feb 06 2025 MacBookAir2015 Monterey, python312 and gcc13. ISCE 2.6.3
 
-Aug 07 2025 MacMini M4 Pro Sequoia, python313 and gcc13
+Feb 07 2025 MacBookAir2015 Monterey, python39 and gcc11 after python312 failure in running stripmapApp. Default compiler in the mp system is gcc13, though. ISCE 2.6.3
 
-May 28 2026 MacBook Neo Tahoe, python313 and gcc13
+Aug 07 2025 MacMini M4 Pro Sequoia, python313 and gcc13. ISCE 2.6.4
+
+May 28 2026 MacBook Neo Tahoe, python313 and gcc13. ISCE 2.6.4
 
 
 
