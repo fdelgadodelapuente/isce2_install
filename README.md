@@ -16,7 +16,7 @@ Aug 07 2025 MacMini M4 Pro Sequoia, python313 and gcc13
 
 May 28 2026 MacBook Neo Tahoe, python313 and gcc13
 
-these are modified from [https://github.com/piyushrpt/mojaveSetup](Instructions for MacPorts (Piyush Agram, formerly at JPL)
+these are modified from [Instructions for MacPorts (Piyush Agram, formerly at JPL)](https://github.com/piyushrpt/mojaveSetup)
 
 
 ```
