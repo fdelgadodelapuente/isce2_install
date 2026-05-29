@@ -8,15 +8,15 @@ ISCE 2.2.0. Aug 2018 MacMini2014/MacBookAir2015, High Sierra and Mojave, gcc7.
 
 ISCE 2.3.1-2.5.2. Feb 2019 MacMini2014/MacBookAir2015, High Sierra and Mojave, gcc7.
 
-ISCE 2.5.3-2.6.3. Nov 2021 MacMini2014 Monterey, python37 and gcc11.
+ISCE 2.5.3-2.6.3. Nov 2021 MacMini2014, Monterey, python37 and gcc11.
 
-ISCE 2.6.3. Feb 2025 MacBookAir2015 Monterey, python312 and gcc13.
+ISCE 2.6.3. Feb 2025 MacBookAir2015, Monterey, python312 and gcc13.
 
-ISCE 2.6.3. Feb 2025 MacBookAir2015 Monterey, python39 and gcc11 after python312 failure in running stripmapApp. Default compiler in the mp system is gcc13, though.
+ISCE 2.6.3. Feb 2025 MacBookAir2015, Monterey, python39 and gcc11 after python312 failure in running stripmapApp. Default compiler in the mp system is gcc13, though.
 
-ISCE 2.6.4. Aug 2025 MacMini M4 Pro Sequoia, python313 and gcc13. 
+ISCE 2.6.4. Aug 2025 MacMini M4 Pro, Sequoia, python313 and gcc13. 
 
-ISCE 2.6.4. May 2026 MacBook Neo Tahoe, python313 and gcc13.
+ISCE 2.6.4. May 2026 MacBook Neo, Tahoe, python313 and gcc13.
 
 
 
