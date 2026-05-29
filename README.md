@@ -142,7 +142,7 @@ export PATH=/Applications/insar_software/isce/isce-$1/contrib/stack/stripmapStac
 export GDAL_DATA=/opt/local/share/gdal
 ```
 
-Patches for ISCE 2.6.4 that are required to run with the lastest computers and with the latest missions
+Patches for ISCE 2.6.4 that are required to run with the latest languages and for the latest missions
 
 [Fix type casting in chi squared print statement in stripmapApp misregistration step](https://github.com/isce-framework/isce2/pull/1021)
 
