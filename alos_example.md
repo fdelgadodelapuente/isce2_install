@@ -62,3 +62,9 @@ Run it with
 ```
 stripmapApp.py sm_alos.xml --steps
 ```
+
+Apply the split spectrum ionospheric correction with 
+```
+imageMath.py -e='a_0;a_1*(c>0)-b_0*(c>0)' -s BIL  --a=interferogram/filt_pophase.unw.geo  --b=Ionosphere/dispersive.bil.unwCor.filt.geo  -o  interferogram/filt_topophase_nondispersive.unw.geo  --c=interferogram/filt_topophase.conncomp.geo
+```
+For radar coordinates remove the .geo extension, and then geocode the resulting *interferogram/filt_topophase_nondispersive.unw* file
