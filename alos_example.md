@@ -31,10 +31,9 @@ sm_alos.xml
 	<property name="filter strength">0.5</property>
 	<property name="do unwrap">True</property>
 	<property name="unwrapper name">icu</property>
-	<property name="geocode list">["ionosphere/dispersive.bil.unwCor.filt","interferogram/filt_topophase.unw","interferogram/filt_topophase.unw.conncomp","geometry/los.rdr","interferogram/phsig.cor","interferogram/topophase.cor","interferogram/los.rdr"]</property>
-	<property name="geocode list">["geometry/los.rdr"]</property>
-<!--	<property name="geocode bounding box">[S,N,W,E]</property>-->
-<!--	<property name="regionOfInterest">[S,N,W,E]</property>-->
+	<property name="geocode list">["ionosphere/dispersive.bil.unwCor.filt","interferogram/filt_topophase.unw","interferogram/filt_topophase.unw.conncomp","geometry/los.rdr","interferogram/phsig.cor","interferogram/topophase.cor"]</property>
+	<!--<property name="geocode bounding box">[S,N,W,E]</property>-->
+	<!--<property name="regionOfInterest">[S,N,W,E]</property>-->
 
 	<!--for ionospheric correction only-->
     	<property name="do split spectrum">True</property>
