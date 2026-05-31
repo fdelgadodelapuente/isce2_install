@@ -1,4 +1,4 @@
-ALOS interfeorgram of the 2010 Mw 7.0 Pichilemu earthquake
+ALOS input file for an interferogram of the 2010 Mw 7.0 Pichilemu earthquake, Chile.
 
 '''
 <stripmapApp>
