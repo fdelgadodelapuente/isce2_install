@@ -1,5 +1,13 @@
 Input file (sm_alos.xml) for processing an ALOS interferogram of the 2010 Mw 7.0 Pichilemu earthquake, Chile.
 
+Download the data
+```
+wget https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP219546480-L1.0.zip
+wget https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP219546490-L1.0.zip
+wget https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP226256480-L1.0.zip
+wget https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP226256490-L1.0.zip
+```
+
 ```
 <stripmapApp>
 	<component name="insar">
