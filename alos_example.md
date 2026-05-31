@@ -41,15 +41,14 @@ sm_alos.xml
     	<property name="do dispersive">True</property>
     	<property name="do rubbersheetingRange">False</property>
     	<property name="do rubbersheetingAzimuth">False</property>
-<!--    	<property name="dispersive filter kernel x-size">800</property>
-   	<property name="dispersive filter kernel y-size">800</property>
-   	<property name="dispersive filter kernel sigma_x">100</property>
+		<!-- <property name="dispersive filter kernel x-size">800</property>
+   		<property name="dispersive filter kernel y-size">800</property>
+   		<property name="dispersive filter kernel sigma_x">100</property>
     	<property name="dispersive filter kernel sigma_y">100</property>
     	<property name="dispersive filter kernel rotation">0</property>
     	<property name="dispersive filter number of iterations">5</property>
     	<property name="dispersive filter mask type">connected_components</property>
-   	<property name="dispersive filter coherence threshold">0.6</property>
--->
+   		<property name="dispersive filter coherence threshold">0.6</property> -->
 
 </component>
 </stripmapApp>
