@@ -48,3 +48,15 @@ Run it with
 stripmapApp.py sm_alos.xml --steps
 ```
 
+Export to Google Earth
+```
+cd interferogram
+
+mdx.py filt_topophase.unw.geo -kml filt_topophase.unw.geo.kml
+
+mdx filt_topophase.unw.geo -s 5725 -CW -unwr4 -rhdr 22900 -cmap cmy -wrap 6.283185307179586 -P; convert out.ppm -transparent cyan filt_topophase.unw.geo.png
+```
+You should get the following file
+
+
+<img style="float: center;" src="filt_topophase.unw.geo.png" style="width:300px;">
