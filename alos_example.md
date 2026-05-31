@@ -33,8 +33,8 @@ sm_alos.xml
 	<property name="unwrapper name">icu</property>
 	<property name="geocode list">["ionosphere/dispersive.bil.unwCor.filt","interferogram/filt_topophase.unw","interferogram/filt_topophase.unw.conncomp","geometry/los.rdr","interferogram/phsig.cor","interferogram/topophase.cor","interferogram/los.rdr"]</property>
 	<property name="geocode list">["geometry/los.rdr"]</property>
-<!--	<property name="geocode bounding box">[-39.6,-39.13,-72.33,-71.74]</property>-->
-<!--	<property name="regionOfInterest">[-39.6,-39.13,-72.33,-71.74]</property>-->
+<!--	<property name="geocode bounding box">[S,N,W,E]</property>-->
+<!--	<property name="regionOfInterest">[S,N,W,E]</property>-->
 
 	<!--for ionospheric correction only-->
     	<property name="do split spectrum">True</property>
@@ -50,16 +50,6 @@ sm_alos.xml
     	<property name="dispersive filter mask type">connected_components</property>
    	<property name="dispersive filter coherence threshold">0.6</property>
 -->
-
-
-	<!--for pixel tracking-->
-	<property name="do denseoffsets">False</property>
-	<property name="dense window width">64</property> <!-- 64 default, 32 didn't recover well the laccolith -->
-	<property name="dense window height">64</property> <!-- 64 default, 32 didn't recover well the laccolith -->
-	<property name="dense skip width">16</property> <!-- 32 default, 16 is fine for the laccolith-->
-	<property name="dense skip height">16</property> <!-- 32 default, 16 is fine for the laccolith-->
-	<property name="dense search width">20</property> <!-- 20 default-->
-	<property name="dense search height">20</property> <!-- 20 default-->
 
 </component>
 </stripmapApp>
