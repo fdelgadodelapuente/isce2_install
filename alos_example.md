@@ -1,6 +1,4 @@
-ALOS input file for an interferogram of the 2010 Mw 7.0 Pichilemu earthquake, Chile.
-
-sm_alos.xml
+Input file (sm_alos.xml) for processing an ALOS interferogram of the 2010 Mw 7.0 Pichilemu earthquake, Chile.
 
 ```
 <stripmapApp>
@@ -50,4 +48,9 @@ sm_alos.xml
 
 </component>
 </stripmapApp>
+```
+
+Run it with
+```
+stripmapApp.py sm_alos.xml --steps
 ```
