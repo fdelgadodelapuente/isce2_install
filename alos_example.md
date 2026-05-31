@@ -36,7 +36,7 @@ Create the input file **sm_alos.xml** in the folder **20100309_20100424**
 	<property name="filter strength">0.5</property>
 	<property name="do unwrap">True</property>
 	<property name="unwrapper name">icu</property>
-	<property name="geocode list">["ionosphere/dispersive.bil.unwCor.filt","interferogram/filt_topophase.unw","interferogram/filt_topophase.unw.conncomp","geometry/los.rdr","interferogram/phsig.cor","interferogram/topophase.cor"]</property>
+	<property name="geocode list">["ionosphere/dispersive.bil.unwCor.filt","interferogram/filt_topophase.unw","interferogram/filt_topophase.conncomp","geometry/los.rdr","interferogram/phsig.cor","interferogram/topophase.cor"]</property>
 	<!--<property name="geocode bounding box">[S,N,W,E]</property>-->
 	<!--<property name="regionOfInterest">[S,N,W,E]</property>-->
 
