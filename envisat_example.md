@@ -43,6 +43,9 @@ Create the input file **sm_alos.xml** in the folder **20060823_20081031**
 </stripmapApp>
 ```
 
+Orbits and Instrument files are available at 
+http://topex.ucsd.edu/gmtsar/tar/ORBITS.tar
+
 Run it with
 ```
 stripmapApp.py sm_alos.xml --steps
