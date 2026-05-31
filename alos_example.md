@@ -1,6 +1,8 @@
 ALOS input file for an interferogram of the 2010 Mw 7.0 Pichilemu earthquake, Chile.
 
-'''
+sm_alos.xml
+
+```
 <stripmapApp>
 	<component name="insar">
 
@@ -61,4 +63,4 @@ ALOS input file for an interferogram of the 2010 Mw 7.0 Pichilemu earthquake, Ch
 
 </component>
 </stripmapApp>
-'''
+```
