@@ -14,8 +14,8 @@ Create the input file **sm_alos2.xml** in the folder **20220905_20230807**. You 
 	<property name="reference doppler method">useDEFAULT</property>
 	<property name="secondary doppler method">useDEFAULT</property>
 	<property name="demFilename"></property>
-	<property name="range looks">4</property>
-	<property name="azimuth looks">8</property>
+	<property name="range looks">5</property>
+	<property name="azimuth looks">28</property>
 
 	<component name="reference">
 		<property name="IMAGEFILE">../ALOS2447461150-220905/IMG-HH-ALOS2447461150-220905-WBSR1.1__A-F3</property>
@@ -34,7 +34,7 @@ Create the input file **sm_alos2.xml** in the folder **20220905_20230807**. You 
 	<property name="unwrapper name">icu</property>
 	<property name="geocode list">["ionosphere/dispersive.bil.unwCor.filt","interferogram/filt_topophase.unw","interferogram/filt_topophase.unw.conncomp","geometry/los.rdr","interferogram/phsig.cor","interferogram/topophase.cor"]</property>
 	<!--<property name="geocode bounding box">[S,N,W,E]</property>-->
-	<property name="regionOfInterest">[56.43, 58.04, -158.49, -157.06]</property>
+	<property name="regionOfInterest">[56.43, 58.2, -158.49, -157.06]</property>
 
 </component>
 </stripmapApp>
