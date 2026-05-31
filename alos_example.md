@@ -9,8 +9,7 @@ sm_alos.xml
 		<property name="Sensor Name">ALOS</property>
 		<property name="reference doppler method">useDOPIQ</property>
 		<property name="secondary doppler method">useDOPIQ</property>
-		<property name="demFilename"> /Users/francisco/insarproc/pichilemu/20100309_20100424/demLat_S36_S34_Lon_W073_W071.dem.wgs84</property>
-<!--		<property name="demFilename"> /Users/francisco/insarproc/pichilemu/20100309_20100424/demLat_S36_S34_Lon_W073_W071.dem.wgs84</property>-->
+		<property name="demFilename">demLat_S36_S34_Lon_W073_W071.dem.wgs84</property>
 		<property name="range looks">4</property>
 		<property name="azimuth looks">8</property>
 
