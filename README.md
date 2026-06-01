@@ -2,7 +2,7 @@
 
 
 
-For compiling the software in macOS. these are modified from [Instructions for MacPorts (Piyush Agram, formerly at JPL)](https://github.com/piyushrpt/mojaveSetup) I have used these instrucctions with the following macOS versions and compilers 
+Instructions for compiling the software in macOS. These are modified from [Instructions for MacPorts (Piyush Agram, formerly at JPL)](https://github.com/piyushrpt/mojaveSetup) I have used these instrucctions with the following macOS versions and compilers 
 
 ISCE 2.2.0. Aug 2018 MacMini2014/MacBookAir2015, High Sierra and Mojave, gcc7.
 
