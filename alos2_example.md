@@ -329,4 +329,12 @@ mdx filt_220905-230807_5rlks_28alks.unw.geo -s 1945 -CW -unw -r4 -rhdr 7780 -cma
 
 ```
 
-You should see the following interferogram.
+
+You should get the following file
+
+
+<img style="float: center;" src="filt_220905-230807_5rlks_28alks_msk.unw.geo.png" style="width:300px;">
+
+
+<img style="float: center;" src="filt_220905-230807_5rlks_28alks.unw.geo.png" style="width:300px;">
+
