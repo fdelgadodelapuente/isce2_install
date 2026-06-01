@@ -11,3 +11,10 @@ wget https://s1qc.asf.alaska.edu/aux_poeorb/S1A_OPER_AUX_POEORB_OPOD_20150517T12
 ```
 Create the input file **topsapp.xml** in the folder **20150414_20150426**
 ```
+
+
+
+You should get the following file
+
+
+<img style="float: center;" src="s1_cabuco.png" style="width:300px;">
