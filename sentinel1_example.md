@@ -54,7 +54,7 @@ topsApp.py topsapp.xml --steps
 
 Export to Google Earth
 ```
-cd interferogram
+cd merged
 
 mdx.py filt_topophase.unw.geo -kml filt_topophase.unw.geo.kml
 
