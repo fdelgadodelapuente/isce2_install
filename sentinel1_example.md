@@ -17,4 +17,4 @@ Create the input file **topsapp.xml** in the folder **20150414_20150426**
 You should get the following file
 
 
-<img style="float: center;" src="s1_calbuco.png" style="width:300px;">
+<img style="float: center;" src="s1_calbuco.png" style="width:100px;">
