@@ -1,4 +1,4 @@
-ISCE2 example for processing a single swath od an ALOS-2 interferogram of Aniakchak crater, Aleutians.
+ISCE2 example for processing a single swath of an ALOS-2 interferogram of Aniakchak crater, Aleutians. It does not include the ionospheric correction because in this case it fails for single swath processing.
 
 Download the data
 ```
