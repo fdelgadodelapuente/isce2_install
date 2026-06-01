@@ -43,8 +43,7 @@ Create the input file **sm_alos.xml** in the folder **20060823_20081031**
 </stripmapApp>
 ```
 
-Orbits and Instrument files are available at 
-http://topex.ucsd.edu/gmtsar/tar/ORBITS.tar
+ENVISAT data requires precise orbits and the instrument files. You can get these files from  http://topex.ucsd.edu/gmtsar/tar/ORBITS.tar
 
 Run it with
 ```
