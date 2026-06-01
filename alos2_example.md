@@ -214,7 +214,7 @@ IEEE Transactions on Geoscience and Remote Sensing, vol. 56, no. 8, pp. 4492-450
     <!--=========================================================================================
     This is a four-element list [s, n, w, e], e.g. [26.24, 30.04, 33.45, 37.79].
     ==========================================================================================-->
-    <property name="geocode bounding box">[56.2,57.6,-159.4,-157.1]</property>
+    <property name="geocode bounding box">[57.14,58.2,-159.4,-156.9]</property>
 
     <!--=========================================================================================
     geocode interpolation method: sinc, bilinear, bicubic, nearest
@@ -318,4 +318,11 @@ IEEE Transactions on Geoscience and Remote Sensing, vol. 56, no. 8, pp. 4492-450
 Run it with
 ```
 alos2App.py alos2App.xml --steps
+```
+
+Despite the lack of a split spectrum correction, the ionospheric ramp can be removed with the deramp.py script from https://github.com/fdelgadodelapuente/isce_utils. After removing the ramp, export the interferogram to Google Earth.
+
+```
+cd insar
+mdx.
 ```
