@@ -214,7 +214,7 @@ IEEE Transactions on Geoscience and Remote Sensing, vol. 56, no. 8, pp. 4492-450
     <!--=========================================================================================
     This is a four-element list [s, n, w, e], e.g. [26.24, 30.04, 33.45, 37.79].
     ==========================================================================================-->
-    <property name="geocode bounding box">[57.14,58.2,-159.4,-156.9]</property>
+    <property name="geocode bounding box">[56.2,58.2,-158.52,-156.9]</property>
 
     <!--=========================================================================================
     geocode interpolation method: sinc, bilinear, bicubic, nearest
@@ -324,5 +324,9 @@ Despite the lack of a split spectrum correction, the ionospheric ramp can be rem
 
 ```
 cd insar
-mdx.
+mdx.py filt_220905-230807_5rlks_28alks.unw.geo -kml filt_220905-230807_5rlks_28alks.unw.geo.kml
+mdx filt_220905-230807_5rlks_28alks.unw.geo -s 1945 -CW -unw -r4 -rhdr 7780 -cmap cmy -wrap 6.283185307179586 -P ; convert out.ppm -transparent cyan filt_220905-230807_5rlks_28alks.unw.geo.png 
+
 ```
+
+You should see the following interferogram.
