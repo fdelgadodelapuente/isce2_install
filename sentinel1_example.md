@@ -45,8 +45,31 @@ Create the input file **topsapp.xml** in the folder **20150414_20150426**
 
 ```
 
+Sentinel-1 data requires precise orbits. You can get these files from https://s1qc.asf.alaska.edu/aux_poeorb/
+
+Run it with
+```
+topsApp.py topsapp.xml --steps
+```
+
+Export to Google Earth
+```
+cd interferogram
+
+mdx.py filt_topophase.unw.geo -kml filt_topophase.unw.geo.kml
+
+```
+
 
 You should get the following file
 
 
 <img style="float: center;" src="s1_calbuco.png" style="width:100px;">
+
+
+
+
+
+
+
+
