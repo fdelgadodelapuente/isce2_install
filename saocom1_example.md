@@ -38,8 +38,16 @@ Create the input file **sm_saocom.xml** in the **20220201_20241129** folder
 
 Run it with
 ```
-stripmapApp.py sm_saocom.xml --steps
+stripmapApp.py sm_saocom.xml --steps --end=unwrap
 ```
+
+Remove ramp with deramp and then geocode 
+```
+python3  ~/insar_curso/scripts/deramp.py
+stripmapApp.py sm_saocom.xml --steps --start=geocode
+```
+
+
 
 Export to Google Earth
 ```
@@ -50,4 +58,4 @@ mdx.py filt_topophase.unw.geo -kml filt_topophase.unw.geo.kml
 ```
 You should get the following file
 
-<img style="float: center;" src="filt_topophase_kilauea.unw.geo.png" style="width:300px;">
+<img style="float: center;" src="filt_topophase_santiago.unw.geo.png" style="width:300px;">
