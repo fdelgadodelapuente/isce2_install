@@ -89,7 +89,7 @@ You should get the following file
 <img style="float: center;" src="filt_topophase_nondispersive.unw.geo.png" style="width:300px;">
 
 
-You can then load the interferogram to MATLAB and export it to a GMT grid.
+You can then load the interferogram to MATLAB, remove the remaining ramp after masking the coseismic signal with my utilities (https://github.com/fdelgadodelapuente/isce_utils) and export it to a GMT grid.
 
 
 <img style="float: center;" src="alos_20100309_20100424.png" style="width:300px;">
