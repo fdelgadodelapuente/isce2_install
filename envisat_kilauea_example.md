@@ -1,6 +1,6 @@
 ISCE2 example for processing an ENVISAT IM2 interferogram of Yellowstone caldera.
 
-Create the input file **sm_alos.xml** in the **20070514_20070618** folder 
+Create the input file **sm_envisat.xml** in the **20070514_20070618** folder 
 ```
 <stripmapApp>
         <component name="insar">
