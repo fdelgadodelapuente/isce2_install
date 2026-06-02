@@ -1,13 +1,7 @@
-# Sentinel-1 Time Series Processing using ISCE2 TOPS Stack and MintPy
+# Procesamiento InSAR Time Series con ISCE2 TOPS Stack y MintPy
+
 
 Workflow para generar interferogramas Sentinel-1 con ISCE2 y series de tiempo InSAR mediante MintPy.
-
-
-
-
-
-
-# Procesamiento InSAR Time Series con ISCE2 TOPS Stack y MintPy
 
 ## Entrar al directorio principal
 
