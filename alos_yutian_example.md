@@ -1,4 +1,4 @@
-ISCE2 example for processing an ALOS interferogram of the 2010 Mw 7.0 Pichilemu earthquake, Chile.
+ISCE2 example for processing an ALOS interferogram of the 2008 Mw 7.2 Yutian earthquake, China.
 
 Download the data
 ```
