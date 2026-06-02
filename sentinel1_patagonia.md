@@ -10,7 +10,7 @@ wget https://s1qc.asf.alaska.edu/aux_poeorb/S1A_OPER_AUX_POEORB_OPOD_20150505T12
 wget https://s1qc.asf.alaska.edu/aux_poeorb/S1A_OPER_AUX_POEORB_OPOD_20150517T123037_V20150425T225944_20150427T005944.EOF
 
 ```
-Sentinel-1D data are available at the [Copernicus Browser]{https://browser.dataspace.copernicus.eu} and do not have direct download links.
+Sentinel-1D data are available at the [Copernicus Browser](https://browser.dataspace.copernicus.eu) and do not have direct download links.
 
 Create the input file **topsapp.xml** in the **20260514_20260515_s2** folder
 ```
