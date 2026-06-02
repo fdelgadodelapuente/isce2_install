@@ -9,12 +9,13 @@ wget https://s1qc.asf.alaska.edu/aux_poeorb/S1A_OPER_AUX_POEORB_OPOD_20150505T12
 wget https://s1qc.asf.alaska.edu/aux_poeorb/S1A_OPER_AUX_POEORB_OPOD_20150517T123037_V20150425T225944_20150427T005944.EOF
 
 ```
-Create the input file **topsapp.xml** in the folder **20150414_20150426**
+Create the input file **topsapp.xml** in the **20150414_20150426** folder
 ```
 <topsApp>
 	<component name="topsinsar">
 
 	<property name="Sensor Name">SENTINEL1</property>
+	<property name="demFilename">demLat_S42_S40_Lon_W74_W71.dem.wgs84</property>
 
 	<component name="reference">
        	<property name="safe">../S1A_IW_SLC__1SDV_20150426T234151_20150426T234227_005661_007430_AFBE.zip</property>
@@ -45,6 +46,10 @@ Create the input file **topsapp.xml** in the folder **20150414_20150426**
 
 ```
 
+Download the SRTM DEM in the **20150414_20150426** folder
+```
+dem.py -a stitch -b -42 -40 -74 -71 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1 -f
+```
 
 
 Run it with
