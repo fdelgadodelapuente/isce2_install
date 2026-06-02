@@ -311,9 +311,19 @@ IEEE Transactions on Geoscience and Remote Sensing, vol. 56, no. 8, pp. 4492-450
 
   </component>
 </alos2App>
-
-
 ```
+
+
+Download the SRTM DEM in the **20220905_20230807/dem_1_arcsec** folder
+```
+dem.py -a stitch -b 56 60 -160 -156 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1 -f
+```
+
+Download the water body mask in the **20220905_20230807/wbd_1_arcsec** folder
+```
+wbd.py 56 60 -160 -156 1
+```
+
 
 Run it with
 ```
