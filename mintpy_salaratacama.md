@@ -116,8 +116,7 @@ cd ~/insar_curso/salar_ts/topsstack_salar/merged/interferograms
 
 csh ~/insar_curso/scripts/isce2png_no_filter.csh
 
-scp -P 4603 -r \
-    lgodoy@leftraru.nlhpc.cl:~/insar_curso/salar_ts/topsstack_salar/merged/interferograms/pngs .
+scp -P 4603 -r lgodoy@leftraru.nlhpc.cl:~/insar_curso/salar_ts/topsstack_salar/merged/interferograms/pngs .
 ```
 
 ---
