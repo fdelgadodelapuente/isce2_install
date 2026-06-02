@@ -183,6 +183,11 @@ cd geo
 save_kmz.py geo_velocity.h5 -v -1 1
 ```
 
+El mapa de velocidad deberia ser 
+
+<img style="float: center;" src="geo_velocity_data.png" style="width:300px;">
+
+
 Copiar KMZ al computador local:
 
 ```bash
