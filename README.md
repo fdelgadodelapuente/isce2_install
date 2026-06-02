@@ -153,7 +153,7 @@ Patches for ISCE 2.6.4 that are required to run with the latest languages and fo
 
 ## Interferogram Processing
 
-You can process the following data sets as tests
+You can test the software by processing the following C- and L-band interferograms.
 
 [ENVISAT Yellowstone caldera](https://github.com/fdelgadodelapuente/isce2_install/blob/main/envisat_example.md)
 
