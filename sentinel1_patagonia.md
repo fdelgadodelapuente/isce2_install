@@ -73,7 +73,7 @@ mdx.py filt_topophase.unw.geo -kml filt_topophase.unw.geo.kml
 You should get the following file
 
 
-<img style="float: center;" src="s1_calbuco.png" style="width:100px;">
+<img style="float: center;" src="filt_topophase_chn.flat.geo.png" style="width:100px;">
 
 
 
