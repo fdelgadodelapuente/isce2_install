@@ -186,6 +186,5 @@ save_kmz.py geo_velocity.h5 -v -1 1
 Copiar KMZ al computador local:
 
 ```bash
-scp -P 4603 -r \
-    lgodoy@leftraru.nlhpc.cl:~/insar_curso/salar_ts/topsstack_salar/ts/geo/*kmz .
+scp -P 4603 -r lgodoy@leftraru.nlhpc.cl:~/insar_curso/salar_ts/topsstack_salar/ts/geo/*kmz .
 ```
