@@ -47,7 +47,7 @@ ENVISAT data requires precise orbits and the instrument files. You can get these
 
 Run it with
 ```
-stripmapApp.py sm_alos.xml --steps
+stripmapApp.py sm_envisat.xml --steps
 ```
 
 Export to Google Earth
