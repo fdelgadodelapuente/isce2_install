@@ -18,22 +18,7 @@ Contenido de `cmd.sh`:
 ```bash
 #!/bin/bash
 
-stackSentinel.py \
-    -s ~/insar_curso/salar_ts/SLC/ \
-    -o ~/esa/s1orb \
-    -a ~/esa/s1orb \
-    -w ~/insar_curso/salar_ts/${1} \
-    -c 6 \
-    -O 6 \
-    -d /home/lgodoy/dem/atacama/cop_dem_glo30m_wgs84_salar.dem \
-    -n '2' \
-    -z 2 \
-    -r 8 \
-    -f 0.1 \
-    -W interferogram \
-    -b '-23.8 -23.4 -68.7 -68.06' \
-    -u snaphu \
-    -m 20230701
+stackSentinel.py -s ~/insar_curso/salar_ts/SLC/ -o ~/esa/s1orb -a ~/esa/s1orb -w ~/insar_curso/salar_ts/${1} -c 6 -O 6 -d /home/lgodoy/dem/atacama/cop_dem_glo30m_wgs84_salar.dem -n '2' -z 2 -r 8 -f 0.1 -W interferogram -b '-23.8 -23.4 -68.7 -68.06' -u snaphu -m 20230701
 ```
 
 ## Parámetros principales
