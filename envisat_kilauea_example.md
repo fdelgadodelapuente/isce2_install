@@ -1,4 +1,4 @@
-ISCE2 example for processing an ENVISAT IM2 interferogram of Yellowstone caldera.
+ISCE2 example for processing an ENVISAT interferogram of the 2007 Father's Day dike intrusion at Kilauea volcano.
 
 Create the input file **sm_envisat.xml** in the **20070514_20070618** folder 
 ```
