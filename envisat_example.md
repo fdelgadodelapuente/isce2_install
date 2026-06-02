@@ -8,7 +8,7 @@ wget https://imaging.unavco.org/data/sar/lts/export/ENV1/320/891/ASA_IM__0CNPDE2
 
 wget https://imaging.unavco.org/data/sar/lts/winsar/ENV2/320/873/ASA_IM__0CNPDE20081001_050242_000000212072_00320_34442_6892.N1?token=d6cae2212376f62cdaf42bad0635c44360747bc7b39bb362653e7eee06360b49&expires=1780252097
 ```
-Create the input file **sm_alos.xml** in the folder **20060823_20081031**
+Create the input file **sm_alos.xml** in the **20060823_20081031** folder 
 ```
 <stripmapApp>
 	<component name="insar">
@@ -44,6 +44,12 @@ Create the input file **sm_alos.xml** in the folder **20060823_20081031**
 </component>
 </stripmapApp>
 ```
+
+Download the SRTM DEM in the **20060823_20081031** folder
+```
+dem.py -a stitch -b 44 46 -112 -109 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1 -f
+```
+
 
 ENVISAT data requires precise orbits and the instrument files. You can get these files from  http://topex.ucsd.edu/gmtsar/tar/ORBITS.tar
 
