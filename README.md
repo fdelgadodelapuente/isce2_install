@@ -170,3 +170,5 @@ You can test the software by processing the following C- and L-band interferogra
 [ALOS-2 Aniakchak Crater](https://github.com/fdelgadodelapuente/isce2_install/blob/main/alos2_example.md)
 
 [SAOCOM-1 Santiago basin](https://github.com/fdelgadodelapuente/isce2_install/blob/main/saocom1_example.md)
+
+[PAZ Salar de Atacama basin](https://github.com/fdelgadodelapuente/isce2_install/blob/main/paz_example.md)
