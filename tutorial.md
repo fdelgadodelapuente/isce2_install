@@ -55,7 +55,11 @@
 
 <div class="center">
 
-> **Figure:** Examples of multi constellation InSAR and SAR data from the 2022 Mauna Loa dike intrusion and eruption. The volcano erupted more than 0.23 km$^3$ of basaltic lava during the 14 day-long eruption ([JPL, 2022](https://www.jpl.nasa.gov/images/pia25526-airborne-nasa-radar-maps-mauna-loa-lava-changes-in-hawaii)). A-B) Sentinel-1A unwrapped and wrapped descending interfeorgram. C-D) COSMO-SkyMed ascending range and azimuth offsets. E-F) COSMO-SkyMed unwrapped and wrapped ascending interferogram (). Interferograms and range offsets are sensitive to displacement in the across track direction while azimuth offsets are sensitive to displacement in the along track direction. Observations from range offsets and interferometry resolve the same displacement. Range offsets are one order of magnitude less sensitive to deformation than interferometry, but unlike phase they are not prone to aliasing due to large strain. InSAR and azimuth offsets can be decomposed to resolve for the three dimensional displacement field. Sentinel-1A data are open access provided by the European Space Agency while COSMO-SkyMed data were provided by the Hawaiian Volcanoes Supersite . 
+<figure>
+  <img src="figures/isce2gmt.jpg" alt="isce2gmt" width="900">
+  <figcaption><strong>Figure.</strong> Examples of multi constellation InSAR and SAR data from the 2022 Mauna Loa dike intrusion and eruption. The volcano erupted more than 0.23 km$^3$ of basaltic lava during the 14 day-long eruption (<a href="https://www.jpl.nasa.gov/images/pia25526-airborne-nasa-radar-maps-mauna-loa-lava-changes-in-hawaii">JPL, 2022</a>). A-B) Sentinel-1A unwrapped and wrapped descending interfeorgram. C-D) COSMO-SkyMed ascending range and azimuth offsets. E-F) COSMO-SkyMed unwrapped and wrapped ascending interferogram ((Delgado2024)). Interferograms and range offsets are sensitive to displacement in the across track direction while azimuth offsets are sensitive to displacement in the along track direction. Observations from range offsets and interferometry resolve the same displacement. Range offsets are one order of magnitude less sensitive to deformation than interferometry, but unlike phase they are not prone to aliasing due to large strain. InSAR and azimuth offsets can be decomposed to resolve for the three dimensional displacement field. Sentinel-1A data are open access provided by the European Space Agency while COSMO-SkyMed data were provided by the Hawaiian Volcanoes Supersite .%hosted by the EarthScope Consortium <a href="https://web-services.unavco.org/brokered/ssara/gui ">Seamless SAR Archive (SSARA)</a>.</figcaption>
+</figure>
+
 
 </div>
 
@@ -122,7 +126,7 @@ Here $R_e$ and h are the Earth’s radius and satellite elevation.
 
 We use these formulas to calculate the pixel size of several data sets (`tab:slcres`-`tab:slcres_dem`).
 
-These formulas do not apply for the TOPS mode. Here, $\Delta R_{a}$ is shrunk 4 times with respect to the stripmap mode (), and $\Delta R_{g}$ is fixed to 2.32 m regardless of the swath, even though the range bandwidth is different for every swath. The Sentinel-1 TOPS pixel size in `tab:slcres_dem` are from the [ESA Sentinel-1 User Guide](https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-1-sar/resolutions/level-1-single-look-complex), [ESA Sentinel-1 User Guide 2](https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1/single-look-complex/interferometric-wide-swath) and the [Sentinel-1 Product Definition, section 7.8](https://sentinels.copernicus.eu/documents/247904/1877131/Sentinel-1-Product-Definition.pdf/6049ee42-6dc7-4e76-9886-f7a72f5631f3?t=1461673251000). The exact pixel ratio changes depending upon the S1 swath because the slant range and the look angle increase from near to far range. If you want to process swath 1, it is better to use a pixel ratio of 3, while for swaths 2 and 3 it is better to use 4. If you want to process the whole SLC, then use 4. For Sentinel-1 it is better to use [odd looks](http://earthdef.caltech.edu/boards/4/topics/2063?r=2423#message-2423). For example, instead of using 20 looks in range and 5 in azimuth to retrieve a square pixel with a posting similar to that of the 1 arcsec SRTM it is better to set them to 19 looks in range and 5 looks in azimuth. If you want to process the S1 data with a resolution of 30 m/pixel, the ISCE default range and azimuth looks are 7 (28 m) and 3 (42 m) respectively. The pixel size is clearly not square but it conserves the energy at the center of the pixel.
+These formulas do not apply for the TOPS mode. Here, $\Delta R_{a}$ is shrunk 4 times with respect to the stripmap mode , and $\Delta R_{g}$ is fixed to 2.32 m regardless of the swath, even though the range bandwidth is different for every swath. The Sentinel-1 TOPS pixel size in `tab:slcres_dem` are from the [ESA Sentinel-1 User Guide](https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-1-sar/resolutions/level-1-single-look-complex), [ESA Sentinel-1 User Guide 2](https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1/single-look-complex/interferometric-wide-swath) and the [Sentinel-1 Product Definition, section 7.8](https://sentinels.copernicus.eu/documents/247904/1877131/Sentinel-1-Product-Definition.pdf/6049ee42-6dc7-4e76-9886-f7a72f5631f3?t=1461673251000). The exact pixel ratio changes depending upon the S1 swath because the slant range and the look angle increase from near to far range. If you want to process swath 1, it is better to use a pixel ratio of 3, while for swaths 2 and 3 it is better to use 4. If you want to process the whole SLC, then use 4. For Sentinel-1 it is better to use [odd looks](http://earthdef.caltech.edu/boards/4/topics/2063?r=2423#message-2423). For example, instead of using 20 looks in range and 5 in azimuth to retrieve a square pixel with a posting similar to that of the 1 arcsec SRTM it is better to set them to 19 looks in range and 5 looks in azimuth. If you want to process the S1 data with a resolution of 30 m/pixel, the ISCE default range and azimuth looks are 7 (28 m) and 3 (42 m) respectively. The pixel size is clearly not square but it conserves the energy at the center of the pixel.
 
 <div id="tab:slcres">
 
@@ -139,9 +143,17 @@ Sampling frequencies of different SAR satellites. Here B$_{p}$ and PRF are the r
 
 </div>
 
-> **Figure:** B and PRF for several SAR data sets. There is an proportionality relation between the PRF and B except for the Wide Swath modes like S1 TOPS and RADARSAT-2 F0W2.
+<figure id="fig:az_res">
+  <img src="figures/SARaz.pdf" alt="SARaz" width="900">
+  <figcaption><strong>Figure.</strong> B and PRF for several SAR data sets. There is an proportionality relation between the PRF and B except for the Wide Swath modes like S1 TOPS and RADARSAT-2 F0W2.</figcaption>
+</figure>
 
-> **Figure:** B several L-band SAR data sets, in addition to Sentinel-1 TOPS ().
+
+<figure id="fig:rang_res_Lband">
+  <img src="figures/range_res_Lband.pdf" alt="range res Lband" width="900">
+  <figcaption><strong>Figure.</strong> B several L-band SAR data sets, in addition to Sentinel-1 TOPS ((Delgado2024)).</figcaption>
+</figure>
+
 
 <div id="tab:slcres_dem">
 
@@ -612,7 +624,7 @@ cmake .. \
 -DCMAKE_PREFIX_PATH=$CONDA_PREFIX  \
 -DCMAKE_CUDA_FLAGS="-arch=sm_61" \
 -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX \
--DPYTHON_INCLUDE_DIR=$(python -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())")  \
+-DPYTHON_INCLUDE_DIR=$(python -c "from distutils.sysconfig import get_python_inc; print(get_python_inc)")  \
 -DPYTHON_LIBRARY=$(python -c "import distutils.sysconfig as sysconfig; print(sysconfig.get_config_var('LIBDIR'))")
 
 # warnings are fine, but is something looks bad you can repair the code above, delete everything in the build folder (rm -fr *) and run cmake again
@@ -849,18 +861,18 @@ Open `isce2-2.6.2/install/isce/components/isceobj/Sensor/Radarsat2.py`, or `isce
 ```
 planet = self.frame.instrument.platform.planet
         orbExt = OrbitExtender(planet=planet)
-        orbExt.configure()
+        orbExt.configure
         newOrb = orbExt.extendOrbit(tempOrbit)
 
         for sv in newOrb:
-            self.frame.getOrbit().addStateVector(sv)
+            self.frame.getOrbit.addStateVector(sv)
 ```
 
 and replace with
 
 ```
 for sv in tempOrbit:
-            self.frame.getOrbit().addStateVector(sv)
+            self.frame.getOrbit.addStateVector(sv)
 ```
 
 This skips the orbit extension calculation and works for data in the Wide Ultra Fine beams.
@@ -924,7 +936,7 @@ SAOCOM-1 lacks a controlled orbital tube, so there is no guarantee that an 8- or
 
 **Doppler centroid**
 
-For ENVISAT raw and ALOS raw data `stripmapApp.py` uses ROI$\_$PAC’s clutterlock algorithm to automatically estimate the Doppler centroid (DOPIQ) (). This algorithm estimates the Doppler centroid as a quadratic polynomial function of range multiplied by the PRF. For CSK raw data and zero Doppler data `stripmapApp.py` will read the Doppler centroid in the image metadata. DOPIQ can also calculate the Doppler centroid of CSK raw data, but the centroid provided by ASI is more accurate because the latter is a sixth order polynomial.
+For ENVISAT raw and ALOS raw data `stripmapApp.py` uses ROI$\_$PAC’s clutterlock algorithm to automatically estimate the Doppler centroid (DOPIQ) . This algorithm estimates the Doppler centroid as a quadratic polynomial function of range multiplied by the PRF. For CSK raw data and zero Doppler data `stripmapApp.py` will read the Doppler centroid in the image metadata. DOPIQ can also calculate the Doppler centroid of CSK raw data, but the centroid provided by ASI is more accurate because the latter is a sixth order polynomial.
 
 ### Steps
 
@@ -1064,7 +1076,7 @@ You can use the following set of parameters in the input file of `stripmapApp.py
 
 These parameters work very well for running offsets on CSK stripmap and ALOS-2 SM1 data (2 m/pixel). The parameters to change are the dense window width/height that controls the quality of the offset field and the dense skip width/height that controls the pixel size. A smaller dense skip implies a smaller pixel size but reducing the skip will increase the processing time. The window size is set by trial and error. If you want to run offsets on data sets with non square pixels like ALOS-2 SM3 and Sentinel-1 TOPS (pixel ratios of 2 and 1/4 respectively) you need to take into account the pixel ratio in both the window and skip size. This is an analog to take looks.
 
-Pixel offsets are not very useful for volcanic applications unless the displacement field is larger than 1 m resulting in a coherence loss because the strain field exceeds the maximum strain threshold of the data set (). Therefore, if your interferogram is decorrelated due to large deformation, you can still extract useful deformation using pixel tracking. Events of these kind are usually dike intrusions at basaltic calderas like Dabbahu 2005 (), Sierra Negra 2005 and 2018 (, Shreve and Delgado, under review), Kilauea 2007 (), Nabro 2011 (), Hohluraun 2014 (), Kilauea 2018, Ambrym 2015 and 2018 (), Taal 2020 (), and Mauna Loa 2022. On the other hand, if your deformation signal is smaller, like 0.05-0.5 m as found in almost all of the deforming volcanoes on Earth, then the deformation is too small to be accurately measured by pixel tracking, so you’re better off working with InSAR data only. For these data sets it is better to use a data set with a small pixel size like that of ALOS-2 SM1 or X-band stripmap (2 m/pixel). In my experience, there is no need to use pixel offsets for volcanic applications unless you study one of these huge deformation events.
+Pixel offsets are not very useful for volcanic applications unless the displacement field is larger than 1 m resulting in a coherence loss because the strain field exceeds the maximum strain threshold of the data set . Therefore, if your interferogram is decorrelated due to large deformation, you can still extract useful deformation using pixel tracking. Events of these kind are usually dike intrusions at basaltic calderas like Dabbahu 2005 , Sierra Negra 2005 and 2018 (, Shreve and Delgado, under review), Kilauea 2007 , Nabro 2011 , Hohluraun 2014 , Kilauea 2018, Ambrym 2015 and 2018 , Taal 2020 , and Mauna Loa 2022. On the other hand, if your deformation signal is smaller, like 0.05-0.5 m as found in almost all of the deforming volcanoes on Earth, then the deformation is too small to be accurately measured by pixel tracking, so you’re better off working with InSAR data only. For these data sets it is better to use a data set with a small pixel size like that of ALOS-2 SM1 or X-band stripmap (2 m/pixel). In my experience, there is no need to use pixel offsets for volcanic applications unless you study one of these huge deformation events.
 
 ### Directories
 
@@ -1165,7 +1177,7 @@ S1B_IW_SLC__1SDV_20190406T095704_20190406T095731_015684_01D6D3_D1F7.zip</propert
 
 ### Ionosphere correction
 
-You should use this correction for TOPS data in regiones of low geomagnetic latitudes (). To correct the long wavelength dispersive phase and burst overlap jumps in `topsApp.py`, add the following to the input file.
+You should use this correction for TOPS data in regiones of low geomagnetic latitudes . To correct the long wavelength dispersive phase and burst overlap jumps in `topsApp.py`, add the following to the input file.
 
 ```
 <property name="do ionosphere correction">True</property>
@@ -1237,7 +1249,11 @@ Example for southern Patagonia Icefield (Chile/Argentina)
 
 Then multiply the range and azimuth offsets by their pixel sizes of 2.3 and 14.1 m, respectively. The offset tracking uncertainty is 1/5 to 1/10 of the pixel size, so this results in theoretical uncertainties of 0.23-0.45 m for range offsets, and 1.41-2.82 m for azimuth offsets.
 
-> **Figure:** Range and azimuth offsets for 12 day Sentinel-1 pair.
+<figure>
+  <img src="figures/ampcor_tops.pdf" alt="ampcor tops" width="900">
+  <figcaption><strong>Figure.</strong> Range and azimuth offsets for 12 day Sentinel-1 pair.</figcaption>
+</figure>
+
 
 ### Steps
 
@@ -1325,7 +1341,7 @@ Output files of `topsApp.py`. All the products are extracted into subfolders cal
 
 ## alos2App.py
 
-The ALOS-2 processor was released in October 2019 as an additional toolbox to ISCE 2.3.2 and was properly integrated with the rest of the ISCE modules in version 2.3.3 in March 2020. It can process both stripmap and ScanSAR data with split spectrum corrections (). ScanSAR images suitable for InSAR are focused with a full aperture processing chain, and not with a SPECAN algorithm whoch is ideal for these burst by burst acquisition modes. Although `stripmapApp.py` can process ALOS-2 SM3 and SM1 data, it cannot correct the ionospheric phase. The module tutorial and examples are at
+The ALOS-2 processor was released in October 2019 as an additional toolbox to ISCE 2.3.2 and was properly integrated with the rest of the ISCE modules in version 2.3.3 in March 2020. It can process both stripmap and ScanSAR data with split spectrum corrections . ScanSAR images suitable for InSAR are focused with a full aperture processing chain, and not with a SPECAN algorithm whoch is ideal for these burst by burst acquisition modes. Although `stripmapApp.py` can process ALOS-2 SM3 and SM1 data, it cannot correct the ionospheric phase. The module tutorial and examples are at
 
 ```
 isce2-2.6.3/examples/input_files/alos2/example_input_files
@@ -1337,7 +1353,7 @@ To process an interferogram
 alos2App.py alos2app.xml --steps
 ```
 
-The ScanSAR processing is time consuming and requires $\sim$60 Gb of storage for every frame. Every ALOS-2 ScanSAR swath is $\sim$6 Gb and every interferograms must be calculated three times for the range spectral filtering to separate the dispersive and non-dispersive components of the phase. In my experience ScanSAR data for volcanic applications is only useful for large scale surveys of volcanic deformation. For example, a single ScanSAR swath in two frames can cover a almost all of the most active volcanoes of the Southern Andes. And obviously when there is no other coherent data that span the event of interest. The advantages of ScanSAR for large earthquakes are obvious like during the 2015 Gorkha () and the 2016 Kaikoura () earthquakes.
+The ScanSAR processing is time consuming and requires $\sim$60 Gb of storage for every frame. Every ALOS-2 ScanSAR swath is $\sim$6 Gb and every interferograms must be calculated three times for the range spectral filtering to separate the dispersive and non-dispersive components of the phase. In my experience ScanSAR data for volcanic applications is only useful for large scale surveys of volcanic deformation. For example, a single ScanSAR swath in two frames can cover a almost all of the most active volcanoes of the Southern Andes. And obviously when there is no other coherent data that span the event of interest. The advantages of ScanSAR for large earthquakes are obvious like during the 2015 Gorkha  and the 2016 Kaikoura  earthquakes.
 
 For processing ScanSAR data the tutorial recommends using 5 looks in range and 2 looks in azimuth. The pixel sizes are 25 m in range – similar to the SM3 pixel size, and 60 m in azimuth. This results in a pixel size of $\sim$100 m, so the interferograms are geocoded with the 90 m DEM. You can stitch ScanSAR frames and process as many swaths and frames as you want.
 
@@ -1481,11 +1497,11 @@ The resolution of the DEM and the SLCs never agree with each other, but the inte
 
 ### Filtering
 
-The default filtering in ISCE is a power spectrum filtering coefficient of 0.5 (). The result is a strong filter, and as a rule of thumb, I use between 0.3 and 0.7. Higher strengths are only recommended if the data is strongly decorrelated because a strong filtering can distort significantly the interferogram, especially when you have many fringes that are very close to each other. You should always check whether the filtering introduces artifacts or distorts the shape of the fringes or not.
+The default filtering in ISCE is a power spectrum filtering coefficient of 0.5 . The result is a strong filter, and as a rule of thumb, I use between 0.3 and 0.7. Higher strengths are only recommended if the data is strongly decorrelated because a strong filtering can distort significantly the interferogram, especially when you have many fringes that are very close to each other. You should always check whether the filtering introduces artifacts or distorts the shape of the fringes or not.
 
 ### Phase Unwrapping
 
-ISCE includes four unwrapping algorithms: `grass`, `icu` (Integrated Correlation and Unwrapping), `snaphu` and `snaphu_mcf`. The first three are variations of the residue-cut method of and are based on two ideas. First unwrapping is carried out integrating the phase differences in a residue (noise) free trajectory in order to avoid phase jumps due to noise. Second, under the assumption that the phase varies less than one half phase cycle ($\pi$ rads), which means that the deformation is smooth. This way the unwrapping result is independent of the integration trajectory. `snaphu` (Statistical Network Approach to Phase Unwrapping) is an improved branch and cut algorithm. `snaphu_mcf` (Statistical Network Approach to Phase Unwrapping - Minimum Cost Flow) works very differently because it is a combination of a probability density function and an optimization network flow algorithm and will unwrap the whole image (). `icu` works well with interferograms with few fringes and smooth signals (such as the ALOS-1 Kilauea and Pichilemu interferograms), while `snaphu_mcf` deals much better with decorrelated interferograms, decorrelated areas and many fringes. If you use `snaphu_mcf` to unwrap, the file can be masked with the `maskunw.py` Python script which uses both the coherence and the connected components file. Remember that no unwrapping algorithm is perfect and you should always manually check the quality of the unwrapping and the filtering.
+ISCE includes four unwrapping algorithms: `grass`, `icu` (Integrated Correlation and Unwrapping), `snaphu` and `snaphu_mcf`. The first three are variations of the residue-cut method of and are based on two ideas. First unwrapping is carried out integrating the phase differences in a residue (noise) free trajectory in order to avoid phase jumps due to noise. Second, under the assumption that the phase varies less than one half phase cycle ($\pi$ rads), which means that the deformation is smooth. This way the unwrapping result is independent of the integration trajectory. `snaphu` (Statistical Network Approach to Phase Unwrapping) is an improved branch and cut algorithm. `snaphu_mcf` (Statistical Network Approach to Phase Unwrapping - Minimum Cost Flow) works very differently because it is a combination of a probability density function and an optimization network flow algorithm and will unwrap the whole image . `icu` works well with interferograms with few fringes and smooth signals (such as the ALOS-1 Kilauea and Pichilemu interferograms), while `snaphu_mcf` deals much better with decorrelated interferograms, decorrelated areas and many fringes. If you use `snaphu_mcf` to unwrap, the file can be masked with the `maskunw.py` Python script which uses both the coherence and the connected components file. Remember that no unwrapping algorithm is perfect and you should always manually check the quality of the unwrapping and the filtering.
 
 ### Color scale
 
@@ -1681,7 +1697,7 @@ unpackFrame_ALOS_raw.py -i
 -o /home/fdelgado/insarproc/hudson/SLC/20110315 -f  fbs2fbd  -m
 ```
 
-To properly apply the split spectrum correction you need to process the data in the common spectral band, which means that all the FBS (28 MHz) images must be downsampled to the FBD (14 MHz) mode (), so the pixel ratio is 4. If you process the data with `-f fbd2fbs` then the ionospheric correction might not work properly. In this example I process the data with 8 looks in range for the `FBD` pixel size, resulting in a pixel size of $\sim$ 160 m.
+To properly apply the split spectrum correction you need to process the data in the common spectral band, which means that all the FBS (28 MHz) images must be downsampled to the FBD (14 MHz) mode , so the pixel ratio is 4. If you process the data with `-f fbd2fbs` then the ionospheric correction might not work properly. In this example I process the data with 8 looks in range for the `FBD` pixel size, resulting in a pixel size of $\sim$ 160 m.
 
 Run `stackStripmap.py`.
 
@@ -1695,9 +1711,17 @@ Here `-W` is the workflow, `-s` is the folder with the raw images extracted by t
 
 `stackStripmap.py` will generate many configuration files that need to be manually executed. It also generates a perpendicular baseline plot `pairs.pdf` (`fig:bp`).
 
-> **Figure:** Perpendicular baseline plot for ALOS data. The reference image is not the earliest image.
+<figure id="fig:bp">
+  <img src="figures/pairs.pdf" alt="pairs" width="900">
+  <figcaption><strong>Figure.</strong> Perpendicular baseline plot for ALOS data. The reference image is not the earliest image.</figcaption>
+</figure>
 
-> **Figure:** Perpendicular baseline plot for ALOS path 114. The reference image is not the earliest image. Note the systematic drift in the satellite orbit from 2007 to mid 2008 and then from late 2008 until the end of the mission in April 2011.
+
+<figure id="fig:bp_alos114">
+  <img src="figures/pairs_alos_p114.pdf" alt="pairs alos p114" width="900">
+  <figcaption><strong>Figure.</strong> Perpendicular baseline plot for ALOS path 114. The reference image is not the earliest image. Note the systematic drift in the satellite orbit from 2007 to mid 2008 and then from late 2008 until the end of the mission in April 2011.</figcaption>
+</figure>
+
 
 The specific DEM files depend on the data set. Usually it is SRTM but if you have a better DEM like TanDEM-X 12 m you need to change it with the `-d` flag. Now run the following files
 
@@ -1801,11 +1825,15 @@ ls Igrams/2*/*snaphu.unw | awk '{print "imageMath.py
 --c="substr($0,1,47)"_snaphu.unw.conncomp"}'
 ```
 
-> **Figure:**  \[a\] ALOS interferogram of the Mw 7.0 Pichilemu earthquake with ionospheric streaks `(Igrams/20100309_20100424/filt_20100309_20100424_snaphu.unw)`. \[b\] Ionospheric dispersive phase predicted by the split spectrum correction that uses sub-band interferograms `(Ionosphere/20100309_20100424/iono.bil.unwCor.filt)`. \[c\] Corrected interferogram after removal of the dispersive ionospheric phase `(Igrams/20100309_20100424/filt_20100309_20100424_snaphu_nondispersive.unw)`.
+<figure id="fig:alos_pichilemu">
+  <img src="figures/dispersive.png" alt="dispersive" width="900">
+  <img src="figures/ion.png" alt="ion" width="900">
+  <img src="figures/nondispersive.png" alt="nondispersive" width="900">
+  <figcaption><strong>Figure.</strong> [a] ALOS interferogram of the Mw 7.0 Pichilemu earthquake with ionospheric streaks \texttt{(Igrams/20100309_20100424/filt_20100309_20100424_snaphu.unw)}. [b] Ionospheric dispersive phase predicted by the split spectrum correction that uses sub-band interferograms \texttt{(Ionosphere/20100309_20100424/iono.bil.unwCor.filt)}. [c] Corrected interferogram after removal of the dispersive ionospheric phase \texttt{(Igrams/20100309_20100424/filt_20100309_20100424_snaphu_nondispersive.unw)}.</figcaption>
+</figure>
 
-> **Figure:**  \[a\] ALOS interferogram of the Mw 7.0 Pichilemu earthquake with ionospheric streaks `(Igrams/20100309_20100424/filt_20100309_20100424_snaphu.unw)`. \[b\] Ionospheric dispersive phase predicted by the split spectrum correction that uses sub-band interferograms `(Ionosphere/20100309_20100424/iono.bil.unwCor.filt)`. \[c\] Corrected interferogram after removal of the dispersive ionospheric phase `(Igrams/20100309_20100424/filt_20100309_20100424_snaphu_nondispersive.unw)`.
 
-> **Figure:**  \[a\] ALOS interferogram of the Mw 7.0 Pichilemu earthquake with ionospheric streaks `(Igrams/20100309_20100424/filt_20100309_20100424_snaphu.unw)`. \[b\] Ionospheric dispersive phase predicted by the split spectrum correction that uses sub-band interferograms `(Ionosphere/20100309_20100424/iono.bil.unwCor.filt)`. \[c\] Corrected interferogram after removal of the dispersive ionospheric phase `(Igrams/20100309_20100424/filt_20100309_20100424_snaphu_nondispersive.unw)`.
+
 
 Take looks on the line-of-sight file
 
@@ -1910,9 +1938,17 @@ sh run_files/run_7_grid_baseline
 sh run_files/run_8_igram
 ```
 
-> **Figure:** Perpendicular baseline plot for ENVISAT IM2 ascending track 320 at Yellowstone caldera (). Note the satellite orbit spread from 2004 until early 2007. Afterwards the orbits were much better controlled. The figure does not include winter radar images.
+<figure id="fig:bp_envi">
+  <img src="figures/pairs_envi_asc_320.pdf" alt="pairs envi asc 320" width="900">
+  <figcaption><strong>Figure.</strong> Perpendicular baseline plot for ENVISAT IM2 ascending track 320 at Yellowstone caldera ((Delgado2021a)). Note the satellite orbit spread from 2004 until early 2007. Afterwards the orbits were much better controlled. The figure does not include winter radar images.</figcaption>
+</figure>
 
-> **Figure:** Perpendicular baseline plot for ENVISAT IM2 ascending track 320 at Yellowstone caldera () with selected interferograms and SLCs classified as either winter (blue circles) or non winter (red circles based on whether they result in low coherence interferograms or not.
+
+<figure id="fig:bp_envi_selected">
+  <img src="figures/is2_a320.pdf" alt="is2 a320" width="900">
+  <figcaption><strong>Figure.</strong> Perpendicular baseline plot for ENVISAT IM2 ascending track 320 at Yellowstone caldera ((Delgado2021a)) with selected interferograms and SLCs classified as either winter (blue circles) or non winter (red circles based on whether they result in low coherence interferograms or not.</figcaption>
+</figure>
+
 
 ### ERS, ENVISAT, TerraSAR-X, COSMO-SkyMED, RADARSAT-2 and ALOS-2 stripmap SLC data
 
@@ -1939,11 +1975,23 @@ stackStripMap.py -W interferogram -z --nofocus -s slcs -m 20180315 -d
 
 The specific number of range and azimuth looks depends upon the satellite. The rest of the workflow is the same as in the previous examples.
 
-> **Figure:** Perpendicular baseline plot for RADARSAT-2 data from beam U16W2 ().
+<figure id="fig:bp_rs2">
+  <img src="figures/pairs_rs2_u16w2.pdf" alt="pairs rs2 u16w2" width="900">
+  <figcaption><strong>Figure.</strong> Perpendicular baseline plot for RADARSAT-2 data from beam U16W2 ((Delgado2021)).</figcaption>
+</figure>
 
-> **Figure:** Perpendicular baseline plot for COSMO-SkyMed descending data for Villarrica volcano (). Note the large spread in baselines compared with either ENVISAT (`fig:bp_envi`) or RADARSAT-2 (`fig:bp_rs2`). A comparison with an ALOS track is not direct because the ALOS missions had a systematic orbit drift and reset (`fig:bp_alos114`) that was not enforced for other satellites.
 
-> **Figure:** Perpendicular baseline plot for ALOS-2 SM3 and SAOCOM-1 stripmap data (). SAOCOM-1 lacks a controlled orbital tube, so that results in large baselines compared with ALOS-2.
+<figure id="fig:bp_csk">
+  <img src="figures/pairs_csk_villarrica.pdf" alt="pairs csk villarrica" width="900">
+  <figcaption><strong>Figure.</strong> Perpendicular baseline plot for COSMO-SkyMed descending data for Villarrica volcano ((Delgado2017)). Note the large spread in baselines compared with either ENVISAT (fig:bp_envi) or RADARSAT-2 (fig:bp_rs2). A comparison with an ALOS track is not direct because the ALOS missions had a systematic orbit drift and reset (fig:bp_alos114) that was not enforced for other satellites.</figcaption>
+</figure>
+
+
+<figure id="fig:bp_csk">
+  <img src="figures/alos2_saocom_Bp.pdf" alt="alos2 saocom Bp" width="900">
+  <figcaption><strong>Figure.</strong> Perpendicular baseline plot for ALOS-2 SM3 and SAOCOM-1 stripmap data ((Delgado2024)). SAOCOM-1 lacks a controlled orbital tube, so that results in large baselines compared with ALOS-2.</figcaption>
+</figure>
+
 
 ## TOPS Stack Processor
 
@@ -2050,7 +2098,11 @@ if you want to remove swaths to save HD space
 ls *zip | awk '{print "zip -d",$1,substr($1,1,67)".SAFE/measurement/*iw1*tiff",substr($1,1,67)".SAFE/measurement/*vh*tiff",substr($1,1,67)".SAFE/measurement/*iw3*tiff"}'
 ```
 
-> **Figure:** Perpendicular baseline plot for Sentinel-1 descending track 83 for Cordon Caulle volcano (). I classified the images based upon the satellite that acquired them (either 1A or 1B), as winter images when acquired in the austral winter and resulting in decorrelated interferograms in the volcano, or images from non-winter seasons that were acquired under rainy conditions and also resulting in low quality interferograms. Note that this is not the output of the Sentinel-1 Stack Processor, but a MATLAB figure that uses the perpendicular baseline information from the stack processor and a manual inspection of thousands of interferograms (incredibly tedious but necessary in areas with seasonal low coherence).
+<figure id="fig:bp_s1">
+  <img src="figures/s1p83dsc_bp.pdf" alt="s1p83dsc bp" width="900">
+  <figcaption><strong>Figure.</strong> Perpendicular baseline plot for Sentinel-1 descending track 83 for Cordon Caulle volcano ((Delgado2021a)). I classified the images based upon the satellite that acquired them (either 1A or 1B), as winter images when acquired in the austral winter and resulting in decorrelated interferograms in the volcano, or images from non-winter seasons that were acquired under rainy conditions and also resulting in low quality interferograms. Note that this is not the output of the Sentinel-1 Stack Processor, but a MATLAB figure that uses the perpendicular baseline information from the stack processor and a manual inspection of thousands of interferograms (incredibly tedious but necessary in areas with seasonal low coherence).</figcaption>
+</figure>
+
 
 ### Example for the 2020 Nima M$_{W}$ 6.4 earthquake, path 121 descending 
 
@@ -2205,7 +2257,7 @@ rm -v coarse_interferograms/*/overlap/IW?/*int
 
 ## MintPy
 
-The Miami insar time series Python code is a software that will run time series. Unlike most of the time series software, it applies corrections (ramps, DEM errors, atmospheric phase delays) in the time series domain after the inversion (). In constrast, other workflows like GIAnT apply these corrections in the interferogram domain before the displacement inversion.
+The Miami insar time series Python code is a software that will run time series. Unlike most of the time series software, it applies corrections (ramps, DEM errors, atmospheric phase delays) in the time series domain after the inversion . In constrast, other workflows like GIAnT apply these corrections in the interferogram domain before the displacement inversion.
 
 If you use ALOS, you need to apply the ionospheric correction before importing the data into MintPy.
 
@@ -2224,7 +2276,11 @@ Create a new folder, dump the `smallbaselineApp.cfg` file here, edit it for the 
 
 ### Yellowstone caldera uplift ENVISAT
 
-> **Figure:** Yellowstone, ENVISAT 2006/08/23 - 2008/10/01.
+<figure>
+  <img src="figures/yellowstone.png" alt="yellowstone" width="900">
+  <figcaption><strong>Figure.</strong> Yellowstone, ENVISAT 2006/08/23 - 2008/10/01.</figcaption>
+</figure>
+
 
 <https://imaging.unavco.org/data/sar/lts/export/ENV1/320/891/ASA_IM__0CNPDE20060823_050258_000000182050_00320_23420_2023.N1>
 
@@ -2232,7 +2288,11 @@ Create a new folder, dump the `smallbaselineApp.cfg` file here, edit it for the 
 
 ### Okmok, July 2008 eruption, ENVISAT
 
-> **Figure:** 2008 Okmok eruption, ENVISAT 2008/07/16 - 2007/10/10.
+<figure>
+  <img src="figures/okmok_envisat_20080716_20071010.png" alt="okmok envisat 20080716 20071010" width="900">
+  <figcaption><strong>Figure.</strong> 2008 Okmok eruption, ENVISAT 2008/07/16 - 2007/10/10.</figcaption>
+</figure>
+
 
 ENVISAT C-band ascending interferogram
 
@@ -2296,7 +2356,11 @@ Sentinel-1 C-band descending interferograms
 
 [Processed interferograms](http://pgf.soest.hawaii.edu/Kilauea_insar/)
 
-> **Figure:** 2018 Kilauea caldera collapse and east rift zone deflation, Sentinel-1 descending 2018/05/11 - 2018/05/05.
+<figure>
+  <img src="figures/kilauea_s1_20180511_20180505.png" alt="kilauea s1 20180511 20180505" width="900">
+  <figcaption><strong>Figure.</strong> 2018 Kilauea caldera collapse and east rift zone deflation, Sentinel-1 descending 2018/05/11 - 2018/05/05.</figcaption>
+</figure>
+
 
 ### Calbuco, April 22 2015 eruption, Sentinel-1
 
@@ -2306,7 +2370,11 @@ Sentinel-1A C-band ascending interferogram
 
 <https://datapool.asf.alaska.edu/SLC/SA/S1A_IW_SLC__1SDV_20150426T234151_20150426T234227_005661_007430_AFBE.zip>
 
-> **Figure:** Calbuco eruption, Sentinel-1 ascending 2015/04/14 - 2015/04/26.
+<figure>
+  <img src="figures/s1_calbuco.png" alt="s1 calbuco" width="900">
+  <figcaption><strong>Figure.</strong> Calbuco eruption, Sentinel-1 ascending 2015/04/14 - 2015/04/26.</figcaption>
+</figure>
+
 
 Sentinel-1A C-band descending interferogram
 
@@ -2346,7 +2414,11 @@ ALOS-1 L-band ascending interferogram (2 frames)
 
 <https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP124520700-L1.0.zip>
 
-> **Figure:** 2008 Yutian earthquake, normal faulting, ALOS ascending 2008/02/24 - 2008/05/26.
+<figure>
+  <img src="figures/yutian_20080224_20080526_2frames.png" alt="yutian 20080224 20080526 2frames" width="900">
+  <figcaption><strong>Figure.</strong> 2008 Yutian earthquake, normal faulting, ALOS ascending 2008/02/24 - 2008/05/26.</figcaption>
+</figure>
+
 
 ### March 2010 M$_{W}$ 6.9 Pichilemu, normal faulting, ALOS
 
@@ -2372,7 +2444,11 @@ Sentinel-1 C-band ascending (2 frames)
 
 <https://datapool.asf.alaska.edu/SLC/SA/S1A_IW_SLC__1SSV_20150630T124055_20150630T124122_006603_008CD2_7965.zip>
 
-> **Figure:** 2015 Pishan earthquake, thrust faulting, Sentinel-1 ascending 2015/07/24 - 2015/06/30.
+<figure>
+  <img src="figures/s1_asc_20150724_20150630.png" alt="s1 asc 20150724 20150630" width="900">
+  <figcaption><strong>Figure.</strong> 2015 Pishan earthquake, thrust faulting, Sentinel-1 ascending 2015/07/24 - 2015/06/30.</figcaption>
+</figure>
+
 
 Sentinel-1 C-band descending (2 frames)
 
@@ -2398,7 +2474,11 @@ Sentinel-1 C-band descending (2 frames)
 
 ### Feb 2023 doublet M$_{W}$ 7.8, 7.5 Turkey, strike-slip faulting, ALOS-2
 
-> **Figure:** 2023 Turkey doublet, strike-slip faulting, ALOS-2 ScanSAR descending 2022/09/16 - 2023/02/17. The area is 350$\times$700 km$^2$ (2 frames, 5 swaths).
+<figure>
+  <img src="figures/filt_220916-230217_5rlks_28alks_msk.png" alt="filt 220916-230217 5rlks 28alks msk" width="900">
+  <figcaption><strong>Figure.</strong> 2023 Turkey doublet, strike-slip faulting, ALOS-2 ScanSAR descending 2022/09/16 - 2023/02/17. The area is 350$×$700 km$^2$ (2 frames, 5 swaths).</figcaption>
+</figure>
+
 
 <https://www.eorc.jaxa.jp/ALOS/en/dataset/alos_open_and_free_e.htm>
 
