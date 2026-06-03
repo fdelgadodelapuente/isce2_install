@@ -155,20 +155,20 @@ Patches for ISCE 2.6.4 that are required to run with the latest languages and fo
 
 You can test the software by processing the following C- and L-band interferograms.
 
-[ENVISAT Yellowstone caldera](https://github.com/fdelgadodelapuente/isce2_install/blob/main/envisat_example.md)
+[ENVISAT Yellowstone caldera (USA)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/envisat_example.md)
 
-[ENVISAT Kilauea caldera](https://github.com/fdelgadodelapuente/isce2_install/blob/main/envisat_kilauea_example.md)
+[ENVISAT Kilauea caldera (USA)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/envisat_kilauea_example.md)
 
-[ALOS Pichilemu earthquake ](https://github.com/fdelgadodelapuente/isce2_install/blob/main/alos_example.md)
+[ALOS Pichilemu earthquake (Chile) ](https://github.com/fdelgadodelapuente/isce2_install/blob/main/alos_example.md)
 
-[ALOS Yutian earthquake ](https://github.com/fdelgadodelapuente/isce2_install/blob/main/alos_yutian_example.md)
+[ALOS Yutian earthquake (China)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/alos_yutian_example.md)
 
-[Sentinel-1 Calbuco eruption](https://github.com/fdelgadodelapuente/isce2_install/blob/main/sentinel1_example.md)
+[Sentinel-1 Calbuco eruption (Chile) ](https://github.com/fdelgadodelapuente/isce2_install/blob/main/sentinel1_example.md)
 
-[Sentinel-1C/D tandem pair, Northern Patagonia Icefield](https://github.com/fdelgadodelapuente/isce2_install/blob/main/sentinel1_patagonia.md)
+[Sentinel-1C/D tandem pair, Northern Patagonia Icefield (Chile) ](https://github.com/fdelgadodelapuente/isce2_install/blob/main/sentinel1_patagonia.md)
 
-[ALOS-2 Aniakchak Crater](https://github.com/fdelgadodelapuente/isce2_install/blob/main/alos2_example.md)
+[ALOS-2 Aniakchak Crater (USA)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/alos2_example.md)
 
-[SAOCOM-1 Santiago basin](https://github.com/fdelgadodelapuente/isce2_install/blob/main/saocom1_example.md)
+[SAOCOM-1 Santiago basin (Chile)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/saocom1_example.md)
 
-[PAZ Salar de Atacama basin](https://github.com/fdelgadodelapuente/isce2_install/blob/main/paz_example.md)
+[PAZ Salar de Atacama basin (Chile)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/paz_example.md)
