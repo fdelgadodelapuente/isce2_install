@@ -51,7 +51,7 @@ dem.py -a stitch -b 44 46 -112 -109 -r -s 1 -c -u http://step.esa.int/auxdata/de
 ```
 
 
-ENVISAT data requires precise orbits and the instrument files. You can get these files from  http://topex.ucsd.edu/gmtsar/tar/ORBITS.tar
+ENVISAT data requires precise orbits and the instrument files. You need either DOR (DORIS) or VOR (verified final) orbits. VOR orbits are more accurate. You can get these files from  http://topex.ucsd.edu/gmtsar/tar/ORBITS.tar
 
 You can process ENVISAT SLC data 
 `<property name="Sensor Name">ENVISAT_SLC</property>`
