@@ -351,3 +351,63 @@ You should get the following file
 
 <img style="float: center;" src="filt_220905-230807_5rlks_28alks.unw.geo.png" style="width:300px;">
 
+
+
+
+## alos2App.py
+
+The ALOS-2 processor was released in October 2019 as an additional toolbox to ISCE 2.3.2 and was properly integrated with the rest of the ISCE modules in version 2.3.3 in March 2020. It can process both stripmap and ScanSAR data with split spectrum corrections . ScanSAR images suitable for InSAR are focused with a full aperture processing chain, and not with a SPECAN algorithm whoch is ideal for these burst by burst acquisition modes. Although `stripmapApp.py` can process ALOS-2 SM3 and SM1 data, it cannot correct the ionospheric phase. The module tutorial and examples are at
+
+```
+isce2-2.6.3/examples/input_files/alos2/example_input_files
+```
+
+To process an interferogram
+
+```
+alos2App.py alos2app.xml --steps
+```
+
+The ScanSAR processing is time consuming and requires $\sim$60 Gb of storage for every frame. Every ALOS-2 ScanSAR swath is $\sim$6 Gb and every interferograms must be calculated three times for the range spectral filtering to separate the dispersive and non-dispersive components of the phase. In my experience ScanSAR data for volcanic applications is only useful for large scale surveys of volcanic deformation. For example, a single ScanSAR swath in two frames can cover a almost all of the most active volcanoes of the Southern Andes. And obviously when there is no other coherent data that span the event of interest. The advantages of ScanSAR for large earthquakes are obvious like during the 2015 Gorkha  and the 2016 Kaikoura  earthquakes.
+
+For processing ScanSAR data the tutorial recommends using 5 looks in range and 2 looks in azimuth. The pixel sizes are 25 m in range – similar to the SM3 pixel size, and 60 m in azimuth. This results in a pixel size of $\sim$100 m, so the interferograms are geocoded with the 90 m DEM. You can stitch ScanSAR frames and process as many swaths and frames as you want.
+
+For the SM3 data the pixel ratio is 2, but alos2App.py applies by default the pixel ratio and 2 additional looks in range and azimuth. These data are usually processed with either 2 or 4 additional looks resulting in a total of 16 looks in azimuth and 8 looks in range.
+
+### Technical notes from JAXA
+
+The following links detail known issues with ALOS-2 data.
+
+[Effective data for interferometric analysis with PALSAR-2 ScanSAR mode](https://www.eorc.jaxa.jp/ALOS/en/alos-2/pdf/auig2/ScanSAR_Burst_Overlap_20151127_e.pdf). ScanSAR interferometry is not possible with data acquired before February 2015. More details in . But ScanSAR to stripmap interferometry before February 2015 is possible (e.g., ).
+
+[Change of the center frequency for the beam F2-6 in Stripmap Fine \[10 m\] mode](https://www.eorc.jaxa.jp/ALOS/en/alos-2/pdf/auig2/AUIG2_CenterFrequency_20151127_e.pdf). If your data is from the F2-6 stripmap beam, you cannot calculate stripmap interferograms with images acquired before and after June 01 2015. Several stripmap tracks have this issue. More details in .
+
+[Correction of the range offset error in Stripmap \[10 m\] and ScanSAR \[350 km / 490 km\] modes](https://www.eorc.jaxa.jp/ALOS/en/alos-2/pdf/auig2/Update_ALOS2_RangeOffset_20181122_En.pdf). Split spectrum corrections are not possible with data acquired before November 2018.
+
+### ALOS-2 files naming convention
+
+[ALOS-2/PALSAR-2 Level 1.1/1.5/2.1/3.1 CEOS SAR Product Format Description](https://www.eorc.jaxa.jp/ALOS-2/en/doc/fdata/PALSAR-2_xx_Format_CEOS_E.pdf)
+
+ALOS-2 has 15 observation modes (SBS, UBS, UBD, HBS, HBD, HBQ, FBS, **FBD**, FBQ, **WBS**, **WBD**, WWS, WWD, VBS, VBD) and the relevant modes are stripmap FBD fine mode (dual polarization), WBS and WBD ScanSAR nominal \[14MHz\] mode (single and dual polarization).
+
+    IMG-HH-ALOS2471852900-230217-WBSR1.1__D-F3
+
+`HH` polarization (reception - emission, here both Horizontal, can also be HV Horizontal and Vertical for double polarization mode)
+
+`ALOS2` sensor
+
+`47185` Orbit accumulation number of a scene center
+
+`2900` frame
+
+`230217` acquisition date, YYMMDD
+
+`WBS` acquisition mode. WBS is ScanSAR nominal \[14MHz\] mode Single polarization. 14 MHz is the range bandwith that results in a ground range pixel size of $\sim$20 m/pixel. It can also be `WBD` which is ScanSAR nominal \[14MHz\] mode Double polarization. This results in a HH and a HV file for every swath.
+
+`R` observation direction, right looking
+
+`1.1` processing level, range-azimuth single look complex.
+
+`D` descending
+
+`F3` swath 3
