@@ -182,6 +182,6 @@ You can test the software by processing the following X-, C- and L-band interfer
 
 [TOPS stack processor](https://github.com/fdelgadodelapuente/isce2_install/blob/main/stackproc_tops.md)
 
-[ALOS-2 stack processor](https://github.com/fdelgadodelapuente/isce2_install/blob/main/alos2_sm.md)
+[ALOS-2 stack processor](https://github.com/fdelgadodelapuente/isce2_install/blob/main/stackproc_alos2.md)
 
 [Stripmap stack processor](https://github.com/fdelgadodelapuente/isce2_install/blob/main/stackproc_sm.md)
