@@ -2185,18 +2185,6 @@ Create a new folder, dump the `smallbaselineApp.cfg` file here, edit it for the 
 
 ## Volcanoes
 
-### Yellowstone caldera uplift ENVISAT
-
-<figure>
-  <img src="figures/yellowstone.png" alt="yellowstone" width="900">
-  <figcaption><strong>Figure.</strong> Yellowstone, ENVISAT 2006/08/23 - 2008/10/01.</figcaption>
-</figure>
-
-
-<https://imaging.unavco.org/data/sar/lts/export/ENV1/320/891/ASA_IM__0CNPDE20060823_050258_000000182050_00320_23420_2023.N1>
-
-<https://imaging.unavco.org/data/sar/lts/winsar/ENV2/320/873/ASA_IM__0CNPDE20081001_050242_000000212072_00320_34442_6892.N1>
-
 ### Okmok, July 2008 eruption, ENVISAT
 
 <figure>
@@ -2215,19 +2203,7 @@ ENVISAT C-band ascending interferogram
 
 <https://imaging.unavco.org/data/sar/lts/winsar/ENV1/222/1071/ASA_IM__0CNPDK20080716_084642_000000172070_00222_33342_6798.N1>
 
-### Kilauea, June 2007 Father’s Day dike intrusion, ENVISAT/ALOS
-
-ENVISAT C-band track 136 ascending IM4
-
-<https://eo-virtual-archive4.esa.int/supersites/ASA_IM__0CNPDK20070412_082532_000000162057_00136_26743_2801.N1>
-
-<https://eo-virtual-archive4.esa.int/supersites/ASA_IM__0CNPDK20070621_082536_000000172059_00136_27745_3245.N1>
-
-ENVISAT C-band track 93 ascending IM2
-
-<https://eo-virtual-archive4.esa.int/supersites/ASA_IM__0CNPDK20070514_081953_000000172058_00093_27201_3022.N1>
-
-<https://eo-virtual-archive4.esa.int/supersites/ASA_IM__0CNPDK20070618_081954_000000162059_00093_27702_3230.N1>
+### Kilauea, June 2007 Father’s Day dike intrusion, ALOS
 
 ALOS-1 L-band ascending
 
@@ -2272,76 +2248,7 @@ Sentinel-1 C-band descending interferograms
   <figcaption><strong>Figure.</strong> 2018 Kilauea caldera collapse and east rift zone deflation, Sentinel-1 descending 2018/05/11 - 2018/05/05.</figcaption>
 </figure>
 
-
-### Calbuco, April 22 2015 eruption, Sentinel-1
-
-Sentinel-1A C-band ascending interferogram
-
-<https://datapool.asf.alaska.edu/SLC/SA/S1A_IW_SLC__1SSV_20150414T234157_20150414T234224_005486_007013_5C44.zip>
-
-<https://datapool.asf.alaska.edu/SLC/SA/S1A_IW_SLC__1SDV_20150426T234151_20150426T234227_005661_007430_AFBE.zip>
-
-<figure>
-  <img src="figures/s1_calbuco.png" alt="s1 calbuco" width="900">
-  <figcaption><strong>Figure.</strong> Calbuco eruption, Sentinel-1 ascending 2015/04/14 - 2015/04/26.</figcaption>
-</figure>
-
-
-Sentinel-1A C-band descending interferogram
-
-<https://datapool.asf.alaska.edu/SLC/SA/S1A_IW_SLC__1SSV_20150421T095746_20150421T095813_005580_00723B_814B.zip>
-
-<https://datapool.asf.alaska.edu/SLC/SA/S1A_IW_SLC__1SDV_20150503T095746_20150503T095822_005755_007640_67BE.zip>
-
-### Nyiragongo, May 2021 eruption, Sentinel-1
-
-Sentinel-1 C-band ascending interferogram
-
-<https://datapool.asf.alaska.edu/SLC/SB/S1B_IW_SLC__1SDV_20210519T162006_20210519T162034_026975_03390E_40B8.zip>
-
-<https://datapool.asf.alaska.edu/SLC/SB/S1B_IW_SLC__1SDV_20210519T162032_20210519T162103_026975_03390E_214E.zip>
-
-<https://datapool.asf.alaska.edu/SLC/SA/S1A_IW_SLC__1SDV_20210525T162044_20210525T162111_038046_047D88_B2CD.zip>
-
-<https://datapool.asf.alaska.edu/SLC/SA/S1A_IW_SLC__1SDV_20210525T162109_20210525T162135_038046_047D88_17E6.zip>
-
-Sentinel-1 C-band descending interferogram
-
-<https://datapool.asf.alaska.edu/SLC/SB/S1B_IW_SLC__1SDV_20210521T034430_20210521T034458_026997_0339AB_E9E4.zip>
-
-<https://datapool.asf.alaska.edu/SLC/SA/S1A_IW_SLC__1SDV_20210527T034526_20210527T034555_038068_047E2D_A805.zip>
-
 ## Earthquakes
-
-### March 2008 M$_{W}$ 7.2 Yutian, normal faulting, ALOS
-
-ALOS-1 L-band ascending interferogram (2 frames)
-
-<https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP111100690-L1.0.zip>
-
-<https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP111100700-L1.0.zip>
-
-<https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP124520690-L1.0.zip>
-
-<https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP124520700-L1.0.zip>
-
-<figure>
-  <img src="figures/yutian_20080224_20080526_2frames.png" alt="yutian 20080224 20080526 2frames" width="900">
-  <figcaption><strong>Figure.</strong> 2008 Yutian earthquake, normal faulting, ALOS ascending 2008/02/24 - 2008/05/26.</figcaption>
-</figure>
-
-
-### March 2010 M$_{W}$ 6.9 Pichilemu, normal faulting, ALOS
-
-ALOS-1 L-band ascending interferogram (2 frames, `fig:alos_pichilemu`)
-
-<https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP219546490-L1.0.zip>
-
-<https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP219546480-L1.0.zip>
-
-<https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP226256490-L1.0.zip>
-
-<https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP226256480-L1.0.zip>
 
 ### June 2015 M$_{W}$ 6.3 Pishan, thrust faulting, Sentinel-1
 
