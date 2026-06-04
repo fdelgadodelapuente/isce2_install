@@ -1545,10 +1545,6 @@ $$S_{1} = cos(h+90)sin(l); S_{2} = sin(h+90)sin(l); S_{3} = cos(l)$$ Here $l$ is
 
 $$U_{LOS} = \vec{S} \bullet \vec{U} = S_{1}U_{x} + S_{2}U_{y} + S_{3}U_{z}$$ with $U_{i}$ the displacement in the $_{i}$ direction. For pressure sources like those in volcanoes most the displacement projected into the LOS is vertical so it is standard practice to describe those signals as either "uplift" or "subsidence", even though it is incorrect from the line-of-sight point of view. For earthquakes both the east-west and vertical components can have equal magnitudes, so in the case it is more accurate to talk about line-of-sight displacement increase/decrease.
 
-## DEM generation from TanDEM-X CoSSC data
-
-The CoSSC processing is only partially implemented in the software. ISCE can process a bistatic interferogram up to the unwrapping step with scripts available only at JPL, but it does not have a module to accurately reconstruct the topography from the phase in slant range. Also, the bistatic geometry does not take into account in the range-Doppler equations for the geocoding. Neglecting these corrections is not very important if your topographic change is less than $\sim$50 m, but can produce very obvious errors in the elevation and the geocoding if you have large topographic changes ($>$ 150 m). You can find examples of bistatic processing with ISCE in . The only software that I am aware of that can process TanDEM-X CoSSC data are the DLR GENESIS processor, [GAMMA](https://www.gamma-rs.ch), and a modified version of DORIS by the Karlshruhe Institute of Technology.
-
 # Ancillary information required for InSAR processing
 
 ## DEMs
