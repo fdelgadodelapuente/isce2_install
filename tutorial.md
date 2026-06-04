@@ -766,8 +766,7 @@ For raw data you can skip the Doppler centroid method and the software will calc
 <property name="reference doppler method">useDOPIQ</property>
 <property name="secondary doppler method">useDOPIQ</property>
 
-<property name="IMAGEFILE">
-../ASA_IM__0CNPDE20110607_035110_000000163103_00176_48466_3255.N1</property>
+<property name="IMAGEFILE">../ASA_IM__0CNPDE20110607_035110_000000163103_00176_48466_3255.N1</property>
 <property name="INSTRUMENT_DIRECTORY">/envisat/ins</property>
 <property name="ORBIT_DIRECTORY">/envisat/dor_vor</property>
 <property name="OUTPUT">reference</property>
@@ -782,8 +781,7 @@ You need either DOR (DORIS) or VOR (verified final) orbits. VOR orbits are more 
 <property name="reference doppler method">useDEFAULT</property>
 <property name="secondary doppler method">useDEFAULT</property>
 
-<property name="IMAGEFILE">../
-ASA_IMS_1PNESA20080304_033012_000000182066_00304_31420_0000.N1</property>
+<property name="IMAGEFILE">../ASA_IMS_1PNESA20080304_033012_000000182066_00304_31420_0000.N1</property>
 <property name="INSTRUMENT_DIRECTORY">/envisat/ins</property>
 <property name="ORBIT_DIRECTORY">/envisat/dor_vor</property>
 ```
@@ -884,12 +882,8 @@ Input XML file.
 <property name="reference doppler method">useDEFAULT</property>
 <property name="secondary doppler method">useDEFAULT</property>
 
-<property name="xml">../
-RS2_OK117640_PK1032616_DK972095_U16W2_20200421_094740_HH_SLC/
-product.xml</property>
-<property name="tiff">../
-RS2_OK117640_PK1032616_DK972095_U16W2_20200421_094740_HH_SLC/
-imagery_HH.tif</property>
+<property name="xml">../RS2_OK117640_PK1032616_DK972095_U16W2_20200421_094740_HH_SLC/product.xml</property>
+<property name="tiff">../RS2_OK117640_PK1032616_DK972095_U16W2_20200421_094740_HH_SLC/imagery_HH.tif</property>
 ```
 
 **COSMO-SkyMED raw data**
@@ -1548,8 +1542,7 @@ mdx.py filt_topophase.unw.geo -kml filt_topophase.unw.geo.kml
 If you move the output kml and png files to another folder, you will have to manually update the file path with a text editor. To remove the amplitude do the following:
 
 ```
-mdx filt_topophase.unw.geo -s 5798 -unw -r4 -rhdr 23192 -cmap cmy 
--wrap 6.28318 -P
+mdx filt_topophase.unw.geo -s 5798 -unw -r4 -rhdr 23192 -cmap cmy -wrap 6.28318 -P
 ```
 
 Here `s` is the file width and `rhdr` is the size of the file header at the start of each line times 4. This outputs a ppm file with the phase only. Then, remove the cyan background with
@@ -1569,9 +1562,7 @@ ISCE does not output heading (azimuth) direction in a geographical convention. I
 [Math formula to generate the directional cosines from the LOS file directly with the software](http://earthdef.caltech.edu/boards/4/topics/327). This is equivalent to formulas implemented in the `load\_isce.m` scripts.
 
 ```
-imageMath.py --eval='sin(rad(a_0))*cos(rad(a_1+90)); 
-sin(rad(a_0)) * sin(rad(a_1+90)); cos(rad(a_0))' 
---a=los.rdr.geo -t FLOAT -s BIL -o enu.rdr.geo
+imageMath.py --eval='sin(rad(a_0))*cos(rad(a_1+90));  sin(rad(a_0)) * sin(rad(a_1+90)); cos(rad(a_0))'  --a=los.rdr.geo -t FLOAT -s BIL -o enu.rdr.geo
 ```
 
 $$S_{1} = cos(h+90)sin(l); S_{2} = sin(h+90)sin(l); S_{3} = cos(l)$$ Here $l$ is the look angle and $h$ is the satellite heading, $S_i$ are the directional cosines and the line-of-sight displacement $U_{LOS}$ is
@@ -1591,8 +1582,7 @@ If your area of interest does not require high resolution processing and accurat
 If the USGS server is down you can fetch SRTM from the ESA repository
 
 ```
-dem.py -a stitch -b 38 39 -112 -111 -r -s 1 -c -u
-http://step.esa.int/auxdata/dem/SRTMGL1/
+dem.py -a stitch -b 38 39 -112 -111 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1/
 ```
 
 The Copernicus DEM from ESA and AIRBUS is a masked and corrected version of the TanDEM-X 30/90 m DEMs. It is the most up to date, high resolution and high accuracy DEM to date. You can get it from [PANDA](http://panda.copernicus.eu) for free. Be sure to download the DTE product (elevation in integer numbers). After you download the tiles you need to merge them, change the vertical datum from the EGM2008 geoid to the WGS84 ellipsoid, and then convert it to an i2 integer file format that ISCE can read. This can be easily done with GDAL
@@ -1602,13 +1592,9 @@ ls *tar | awk '{print "tar -xf",$1}' > t.csh ; csh t.csh
 
 gdal_merge.py-3.7 Copernicus_DSM*/DEM/* -o cop_dem_glo30_svz.tif
 
-gdalwarp -s_srs "+proj=longlat +datum=WGS84 +no_defs 
-+geoidgrids=egm08_25.gtx" -t_srs "+proj=longlat 
-+ellps=WGS84 +datum=WGS84 +no_defs" 
-cop_dem_glo30_svz.tif cop_dem_glo30_svz_wgs84.tif
+gdalwarp -s_srs "+proj=longlat +datum=WGS84 +no_defs  +geoidgrids=egm08_25.gtx" -t_srs "+proj=longlat  +ellps=WGS84 +datum=WGS84 +no_defs"  cop_dem_glo30_svz.tif cop_dem_glo30_svz_wgs84.tif
 
-gdal_translate cop_dem_glo30_svz_wgs84.tif -Of ISCE
-cop_dem_glo30_svz_wgs84.dem
+gdal_translate cop_dem_glo30_svz_wgs84.tif -Of ISCE cop_dem_glo30_svz_wgs84.dem
 
 mdx.py cop_dem_glo30_svz_wgs84.dem -z -10
 ```
@@ -1651,50 +1637,23 @@ prepRawALOS.py -i download/ -o SLC --dual2single --fbd2fbs
 Run the commands in `run_unPackALOS file`.
 
 ```
-source ~/.bash_profile;
-unpackFrame_ALOS_raw.py -i 
-/home/fdelgado/insarproc/hudson/download/20070304 
--o /home/fdelgado/insarproc/hudson/SLC/20070304 -f  fbs2fbd  -m
+source ~/.bash_profile; unpackFrame_ALOS_raw.py -i  /home/fdelgado/insarproc/hudson/download/20070304  -o /home/fdelgado/insarproc/hudson/SLC/20070304 -f  fbs2fbd  -m
 
-source ~/.bash_profile;
-unpackFrame_ALOS_raw.py -i 
-/home/fdelgado/insarproc/hudson/download/20071020 
--o /home/fdelgado/insarproc/hudson/SLC/20071020 -m
+source ~/.bash_profile; unpackFrame_ALOS_raw.py -i  /home/fdelgado/insarproc/hudson/download/20071020  -o /home/fdelgado/insarproc/hudson/SLC/20071020 -m
 
-source ~/.bash_profile;
-unpackFrame_ALOS_raw.py -i 
-/home/fdelgado/insarproc/hudson/download/20071205 
--o /home/fdelgado/insarproc/hudson/SLC/20071205 -f  fbs2fbd  -m
+source ~/.bash_profile; unpackFrame_ALOS_raw.py -i  /home/fdelgado/insarproc/hudson/download/20071205  -o /home/fdelgado/insarproc/hudson/SLC/20071205 -f  fbs2fbd  -m
 
-source ~/.bash_profile;
-unpackFrame_ALOS_raw.py -i 
-/home/fdelgado/insarproc/hudson/download/20090309 
--o /home/fdelgado/insarproc/hudson/SLC/20090309 -f  fbs2fbd  -m
+source ~/.bash_profile; unpackFrame_ALOS_raw.py -i  /home/fdelgado/insarproc/hudson/download/20090309  -o /home/fdelgado/insarproc/hudson/SLC/20090309 -f  fbs2fbd  -m
 
-source ~/.bash_profile;
-unpackFrame_ALOS_raw.py -i 
-/home/fdelgado/insarproc/hudson/download/20100125 
--o /home/fdelgado/insarproc/hudson/SLC/20100125 -f  fbs2fbd  -m
+source ~/.bash_profile; unpackFrame_ALOS_raw.py -i  /home/fdelgado/insarproc/hudson/download/20100125  -o /home/fdelgado/insarproc/hudson/SLC/20100125 -f  fbs2fbd  -m
 
-source ~/.bash_profile;
-unpackFrame_ALOS_raw.py -i 
-/home/fdelgado/insarproc/hudson/download/20100612 
--o /home/fdelgado/insarproc/hudson/SLC/20100612 -m
+source ~/.bash_profile; unpackFrame_ALOS_raw.py -i  /home/fdelgado/insarproc/hudson/download/20100612  -o /home/fdelgado/insarproc/hudson/SLC/20100612 -m
 
-source ~/.bash_profile;
-unpackFrame_ALOS_raw.py -i 
-/home/fdelgado/insarproc/hudson/download/20100728 
--o /home/fdelgado/insarproc/hudson/SLC/20100728 -m
+source ~/.bash_profile; unpackFrame_ALOS_raw.py -i  /home/fdelgado/insarproc/hudson/download/20100728  -o /home/fdelgado/insarproc/hudson/SLC/20100728 -m
 
-source ~/.bash_profile;
-unpackFrame_ALOS_raw.py -i 
-/home/fdelgado/insarproc/hudson/download/20110128 
--o /home/fdelgado/insarproc/hudson/SLC/20110128 -f  fbs2fbd  -m
+source ~/.bash_profile; unpackFrame_ALOS_raw.py -i  /home/fdelgado/insarproc/hudson/download/20110128  -o /home/fdelgado/insarproc/hudson/SLC/20110128 -f  fbs2fbd  -m
 
-source ~/.bash_profile;
-unpackFrame_ALOS_raw.py -i 
-/home/fdelgado/insarproc/hudson/download/20110315 
--o /home/fdelgado/insarproc/hudson/SLC/20110315 -f  fbs2fbd  -m
+source ~/.bash_profile; unpackFrame_ALOS_raw.py -i  /home/fdelgado/insarproc/hudson/download/20110315  -o /home/fdelgado/insarproc/hudson/SLC/20110315 -f  fbs2fbd  -m
 ```
 
 To properly apply the split spectrum correction you need to process the data in the common spectral band, which means that all the FBS (28 MHz) images must be downsampled to the FBD (14 MHz) mode , so the pixel ratio is 4. If you process the data with `-f fbd2fbs` then the ionospheric correction might not work properly. In this example I process the data with 8 looks in range for the `FBD` pixel size, resulting in a pixel size of $\sim$ 160 m.
@@ -1702,9 +1661,7 @@ To properly apply the split spectrum correction you need to process the data in 
 Run `stackStripmap.py`.
 
 ```
-stackStripMap.py -W ionosphere -s SLC  -d
-/home/fdelgado/insarproc/dem/srtm_svz30m.dem  -m 20071205 -t 1500 
--b 2000 -a 32 -r 8 -u snaphu -f 0.5
+stackStripMap.py -W ionosphere -s SLC  -d /home/fdelgado/insarproc/dem/srtm_svz30m.dem  -m 20071205 -t 1500  -b 2000 -a 32 -r 8 -u snaphu -f 0.5
 ```
 
 Here `-W` is the workflow, `-s` is the folder with the raw images extracted by the ISCE parser, `-d` is the DEM file name, `-m` is the reference image with respect to which all the other images will be aligned to, `-t` is the temporal baseline, `-a` is the azimuth looks, `-r` are the range looks, `-u` is the unwrapping module – either icu or snaphu, and `-f` is the power spectrum filtering strength.
@@ -1789,18 +1746,13 @@ sh run_files/run_16_iono
 If you want to calculate the perpendicular baseline for all the processed interferograms, you can store them as text files in the `baselines` directoy
 
 ```
-ls Igrams/202* -d1 | awk '{print "baseline.py -m SSC/SLCS/"substr($0,8,8),
-"-s SSC/SLCS/"substr($0,17,8)" | grep Baseline > baselines/
-ifg_"substr($0,8,8)"_"substr($0,17,8)}' > t.csh; csh t.csh
+ls Igrams/202* -d1 | awk '{print "baseline.py -m SSC/SLCS/"substr($0,8,8),"-s SSC/SLCS/"substr($0,17,8)" | grep Baseline > baselines/ifg_"substr($0,8,8)"_"substr($0,17,8)}' > t.csh; csh t.csh
 ```
 
 After several hours or days depending upon the computer, the software will output a set of unwrapped interferograms. The ionospheric correction is not applied automatically, so you can apply it with `imageMath.py`.
 
 ```
-imageMath.py -e='a_0;a_1-b_0' -s BIL
---a=Igrams/20071205_20100612/filt_20071205_20100612_snaphu.unw
---b=Ionosphere/20071205_20100612/iono.bil.unwCor.filt 
--o Igrams/20071205_20100612/filt_20071205_20100612_snaphu_nondispersive.unw 
+imageMath.py -e='a_0;a_1-b_0' -s BIL --a=Igrams/20071205_20100612/filt_20071205_20100612_snaphu.unw --b=Ionosphere/20071205_20100612/iono.bil.unwCor.filt  -o Igrams/20071205_20100612/filt_20071205_20100612_snaphu_nondispersive.unw 
 ```
 
 You can also use awk to apply this command to all the interferograms
@@ -1808,29 +1760,14 @@ You can also use awk to apply this command to all the interferograms
 For ICU-unwrapped interferograms
 
 ```
-ls Igrams/2*/*icu.unw | awk '{print "imageMath.py 
--e=\47a_0;a_1*(c>0)-b_0*(c>0)\47 -s BIL 
---a="$1,"--b=Ionosphere/"substr($0,8,18)"iono.bil.unwCor.filt",
-"-o  "substr($0,1,51)"_nondispersive.unw 
---c="substr($0,1,47)".conncomp"}' 
+ls Igrams/2*/*icu.unw | awk '{print "imageMath.py  -e=\47a_0;a_1*(c>0)-b_0*(c>0)\47 -s BIL  --a="$1,"--b=Ionosphere/"substr($0,8,18)"iono.bil.unwCor.filt","-o  "substr($0,1,51)"_nondispersive.unw --c="substr($0,1,47)".conncomp"}' 
 ```
 
 For SNAPHU_MCF-unwrapped interferograms
 
 ```
-ls Igrams/2*/*snaphu.unw | awk '{print "imageMath.py 
--e=\47a_0;a_1*(c>0)-b_0*(c>0)\47 -s BIL 
---a="$1,"--b=Ionosphere/"substr($0,8,18)"iono.bil.unwCor.filt",
-"-o  "substr($0,1,54)"_nondispersive.unw 
---c="substr($0,1,47)"_snaphu.unw.conncomp"}'
+ls Igrams/2*/*snaphu.unw | awk '{print "imageMath.py  -e=\47a_0;a_1*(c>0)-b_0*(c>0)\47 -s BIL  --a="$1,"--b=Ionosphere/"substr($0,8,18)"iono.bil.unwCor.filt", "-o  "substr($0,1,54)"_nondispersive.unw  --c="substr($0,1,47)"_snaphu.unw.conncomp"}'
 ```
-
-<figure id="fig:alos_pichilemu">
-  <img src="figures/dispersive.png" alt="dispersive" width="32%">
-  <img src="figures/ion.png" alt="ion" width="32%">
-  <img src="figures/nondispersive.png" alt="nondispersive" width="32%">
-  <figcaption><strong>Figure.</strong> [a] ALOS interferogram of the Mw 7.0 Pichilemu earthquake with ionospheric streaks \texttt{(Igrams/20100309_20100424/filt_20100309_20100424_snaphu.unw)}. [b] Ionospheric dispersive phase predicted by the split spectrum correction that uses sub-band interferograms \texttt{(Ionosphere/20100309_20100424/iono.bil.unwCor.filt)}. [c] Corrected interferogram after removal of the dispersive ionospheric phase \texttt{(Igrams/20100309_20100424/filt_20100309_20100424_snaphu_nondispersive.unw)}.</figcaption>
-</figure>
 
 <table>
 <tr>
