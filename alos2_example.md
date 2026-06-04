@@ -5,7 +5,7 @@ Download the data
 wget https://cumulus.asf.earthdatacloud.nasa.gov/L1.1/ALOS2/ALOS2447461150-220905-WBSR1.1__A.zip
 wget https://cumulus.asf.earthdatacloud.nasa.gov/L1.1/ALOS2/ALOS2497141150-230807-WBDR1.1__A.zip
 ```
-Create the input file **alos2App.xml** in the folder **20220905_20230807**. You only need to specify a single swath
+Create the input file `alos2App.xml` in the folder `20220905_20230807`. You only need to specify a single swath
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <alos2App>
@@ -314,12 +314,12 @@ IEEE Transactions on Geoscience and Remote Sensing, vol. 56, no. 8, pp. 4492-450
 ```
 
 
-Download the SRTM DEM in the **20220905_20230807/dem_1_arcsec** folder
+Download the SRTM DEM in the `20220905_20230807/dem_1_arcsec` folder
 ```
 dem.py -a stitch -b 56 60 -160 -156 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1 -f
 ```
 
-Download the water body mask in the **20220905_20230807/wbd_1_arcsec** folder
+Download the water body mask in the `20220905_20230807/wbd_1_arcsec` folder
 ```
 wbd.py 56 60 -160 -156 1
 ```
