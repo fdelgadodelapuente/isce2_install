@@ -29,8 +29,10 @@ Create the input file `sm_csk.xml` in the `20180508_20180509` folder
 	<property name="geocode list">["interferogram/filt_topophase.unw","interferogram/phsig.cor"]</property>
 
 </component>
-
 </stripmapApp>
+
+You can also process CSK SLC data. Just change `<property name="Sensor Name">COSMO_SKYMED</property>` with `<property name="Sensor Name">COSMO_SKYMED_SLC</property>`. I reccommend that you request CSK SLC data to ASI instead of raw data.
+
 
 ```
 
