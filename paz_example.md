@@ -2,7 +2,7 @@ ISCE2 example for processing a PAZ interferogram of the Salar de Atacama basin.
 
 We process the data with the TanDEM-X 12 m DEM to take advantaege of the high resolution of the X-band stripmap data (2 m/pixel in ground range). You can get the DEM from DLR and then you need to convert to the ISCE2 file format with GDAL.
 
-Create the input file **sm_paz.xml** in the **20060823_20081031** folder 
+Create the input file `sm_paz.xml` in the `20060823_20081031` folder 
 ```
 <stripmapApp>
 	<component name="insar">
