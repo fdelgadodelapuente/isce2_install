@@ -1,5 +1,7 @@
 ISCE2 example for processing an ALOS interferogram of the 2010 Mw 7.0 Pichilemu earthquake, Chile.
 
+
+
 Download the data
 ```
 wget https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP219546480-L1.0.zip
@@ -63,6 +65,28 @@ Download the SRTM DEM in the `20100309_20100424`  folder
 ```
 dem.py -a stitch -b -36 -33 -73 -71 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1 -f
 ```
+
+The only difference for the input file is that ALOS stripmap data was acquired in two different beams, FBD (fine beam double, HH-HV double polarization, 14 MHz range bandwidth) and FBS (fine beam single, HH single polarization, 28 MHz range bandwidth), resulting in twice the range resolution of the FBS beam compared with FBD (`tab:slcres`; ). Every FBD image contains one IMG-HH and one IMG-HV files, whereas a FBS image contains a single IMG-HH file. To form a usable interferogram, the images must have the same resolution, so the FBD images are zero-padded in the range direction in the frequency domain to match the length and the resolution of the FBS image. To process an interferogram with FBS and FBD images (either as reference, secondary or both), you need to include the following flag in the control file under the respective FBD image (either secondary or reference) for the FBD2FBS conversion.
+
+FBD image to FBS
+
+```
+<property name="RESAMPLE_FLAG">dual2single</property>
+```
+
+FBS image to FBD
+
+```
+<!--<property name="RESAMPLE_FLAG">single2dual</property>-->
+```
+
+I have done test processing FBD2FBS (oversample 14 to 28 Mhz) and FBS2FBD (downsample 28 to 14 MHz). The interferograms that result are nearly equivalent and differ only by a phase constant. The split spectrum corrections are also equivalent between both products.
+
+Note that some ALOS-1 raw images have changes in the PRF in the middle of the scene. If this happens, the image can only be processed by ISCE 2.5.0 version or newer. Alternatively you can use the old ROI_PAC with the SIO ALOS parser in GMTSAR to process them. The split spectrum method implemented in `stripmapApp.py`, only works with ALOS-1 raw data, not with ALOS-1 SLC data.
+
+If the perpendicular baseline is longer than $\sim$0.5 km, you should process the ALOS data with a higher resolution DEM like that from Copernicus. Otherwise, if you use SRTM, the data will have several residual artifacts that result from the use of the low resolution DEM in the geometric coregistration.
+
+You can stitch several ENVISAT and ALOS raw images just by adding more images under `IMAGEFILE` and `LEADERFILE`. The latter is an ALOS-only specific parameter.
 
 Run it with
 ```
