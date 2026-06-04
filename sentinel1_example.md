@@ -9,7 +9,7 @@ wget https://s1qc.asf.alaska.edu/aux_poeorb/S1A_OPER_AUX_POEORB_OPOD_20150505T12
 wget https://s1qc.asf.alaska.edu/aux_poeorb/S1A_OPER_AUX_POEORB_OPOD_20150517T123037_V20150425T225944_20150427T005944.EOF
 
 ```
-Create the input file **topsapp.xml** in the **20150414_20150426** folder
+Create the input file `topsapp.xml` in the `20150414_20150426` folder
 ```
 <topsApp>
 	<component name="topsinsar">
@@ -46,7 +46,7 @@ Create the input file **topsapp.xml** in the **20150414_20150426** folder
 
 ```
 
-Download the SRTM DEM in the **20150414_20150426** folder
+Download the SRTM DEM in the `20150414_20150426` folder
 ```
 dem.py -a stitch -b -42 -40 -74 -71 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1 -f
 ```
