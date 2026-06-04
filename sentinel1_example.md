@@ -16,6 +16,7 @@ Create the input file `topsapp.xml` in the `20150414_20150426` folder
 
 	<property name="Sensor Name">SENTINEL1</property>
 	<property name="demFilename">demLat_S42_S40_Lon_W74_W71.dem.wgs84</property>
+	<property name="demFilename">geocode demLat_S42_S40_Lon_W74_W71.dem.wgs84</property>
 
 	<component name="reference">
        	<property name="safe">../S1A_IW_SLC__1SDV_20150426T234151_20150426T234227_005661_007430_AFBE.zip</property>
@@ -32,13 +33,19 @@ Create the input file `topsapp.xml` in the `20150414_20150426` folder
 	</component>
 
 	<property name="swaths">[1,2]</property>
-	<property name="region of interest">[-41.49,-41.32,-72.91,-72.46]</property>
+	<property name="ESD coherence threshold">0.85</property> <!-- above 0.7-->
+	<property name="do ESD">True</property>
+	<property name="extra ESD cycles">0</property> 
+	<property name="do ionosphere correction">False</property>
+	<property name="apply ionosphere correction">False</property>
+	<property name="consider burst properties in ionosphere computation">False</property>
 	<property name="azimuth looks">5</property>
 	<property name="range looks">19</property>
 	<property name="filter strength">0.5</property>
 	<property name="do unwrap">True</property>
-	<property name="unwrapper name">snaphu_mcf</property>
+	<property name="unwrapper name">snaphu_mcf</property> <!--icu/snaphu_mcf-->
 	<property name="geocode list">["merged/filt_topophase.unw","merged/filt_topophase.unw.conncomp","merged/los.rdr","merged/topophase.cor","merged/phsig.cor"]</property>
+	<property name="region of interest">[-41.49,-41.32,-72.91,-72.46]</property>
 	<!-- <property name="geocode bounding box">[-41.8,-40.84,-73.79,-72.00]</property>-->
 
 </component>
