@@ -1832,6 +1832,15 @@ ls Igrams/2*/*snaphu.unw | awk '{print "imageMath.py
   <figcaption><strong>Figure.</strong> [a] ALOS interferogram of the Mw 7.0 Pichilemu earthquake with ionospheric streaks \texttt{(Igrams/20100309_20100424/filt_20100309_20100424_snaphu.unw)}. [b] Ionospheric dispersive phase predicted by the split spectrum correction that uses sub-band interferograms \texttt{(Ionosphere/20100309_20100424/iono.bil.unwCor.filt)}. [c] Corrected interferogram after removal of the dispersive ionospheric phase \texttt{(Igrams/20100309_20100424/filt_20100309_20100424_snaphu_nondispersive.unw)}.</figcaption>
 </figure>
 
+<table>
+<tr>
+<td><img src="figures/dispersive.png" width="300"></td>
+<td><img src="figures/ion.png" width="300"></td>
+<td><img src="figures/nondispersive.png" width="300"></td>
+</tr>
+</table>
+
+**Figure.** [a] ALOS interferogram of the Mw 7.0 Pichilemu earthquake with ionospheric streaks (`Igrams/20100309_20100424/filt_20100309_20100424_snaphu.unw`). [b] Ionospheric dispersive phase predicted by the split-spectrum correction that uses sub-band interferograms (`Ionosphere/20100309_20100424/iono.bil.unwCor.filt`). [c] Corrected interferogram after removal of the dispersive ionospheric phase (`Igrams/20100309_20100424/filt_20100309_20100424_snaphu_nondispersive.unw`).
 
 
 
