@@ -1135,41 +1135,6 @@ mdx.py cop_dem_glo30_svz_wgs84.dem -z -10
 
 The Sentinel-1 interferograms can be processed with either the header, restituted and final orbit. The header orbit is very inaccurate (only one state vector at the beginning and the end of the acquisition). These preliminary orbits are fine for quick results, like a quick co-eruptive or co-seismic interferogram, but for accurate interferograms you should always use the precise orbit. External orbits are not required for other data sets. However, RADARSAT-2 orbits are of lower quality due to the smaller amount of state vectors provided by CSA. This implies that RSAT-2 data can often have large long wavelength ramps that look alike those in ENVISAT interferograms processed with the old ROI_PAC software. CSK intererograms tend to have long wavelength ramps compared with those from TSX. Precise orbits are available for ALOS-2 starting $\sim$3 days after image acquisition.
 
-# Clean-up directories
-
-These commands will only leave the multilooked interferograms and relevant files. They will remove the full resolution intermediate products.
-
-`stripmapApp.py`
-
-```
-rm -rfv */*.slc */*.raw offsets/*.off geometry/*.full interferogram/*.full
-```
-
-`topsApp.py`
-
-```
-rm -v fine_interferogram/IW?/burst_??.int fine_interferogram/IW?/burst_??.cor fine_offsets/IW?/azimuth*off fine_offsets/IW?/range*off fine_coreg/IW?/burst_??.slc geom_reference/IW?/???_??.rdr ESD/overlap_IW?_??.int coarse_coreg/overlaps/IW?/*slc coarse_offsets/overlaps/IW?/*.off coarse_interferogram/overlaps/IW?/burst_bot_??_??.int coarse_interferogram/overlaps/IW?/burst_top_??_??.int */*full
-```
-
-`alos2App.py` for ScanSAR
-
-```
-rm -v  f?_????/s?/*.slc f?_????/s?/*.int  f?_????/s?/*.amp  f?_????/mosaic/*.int  f?_????/mosaic/*.amp  ion/*/f?_????/s?/*.int  ion/*/f?_????/s?/*.amp  ion/*/insar/*.int  ion/*/insar/*.amp  ion/*/*/mosaic/*.amp ion/*/*/mosaic/*.int insar/*_1rlks_14alks.???  insar/*_1rlks_14alks_??.??? insar/*_1rlks_14alks_rg_rect.off  insar/rdr_dem_offset/*_1rlks_14alks.??? insar/rdr_dem_offset/???_3rlks_14alks.float
-```
-
-TOPS stack processor
-
-```
-rm -v interferograms/2*/IW?/fine_??.int coreg_secondarys/2*/IW?/*off coreg_secondarys/2*/IW?/*slc geom_reference/IW?/???_??.rdr  geom_reference/IW?/shadow*.rdr geom_reference/IW?/incLocal*.rdr coreg_secondarys/2*/overlap/IW?/*off coreg_secondarys/2*/overlap/IW?/*slc ESD/20*/IW?/overlap_*.int coarse_interferograms/20*/overlap/IW?/*int
-```
-
-Remove only the intermediate files (bottom and top burst overlap interferograms, and double difference interferogram for ESD). `topsApp.py`
-
-```
-rm -v ESD/*/IW?/freq_??.bin ESD/*/IW?/overlap_??.int
-rm -v coarse_interferograms/*/overlap/IW?/*int
-```
-
 # Example interferograms of volcanoes and earthquakes from ENVISAT, ALOS, Sentinel-1, and ALOS-2
 
 ## Volcanoes
