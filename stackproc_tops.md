@@ -161,3 +161,22 @@ ls merged/interferograms/????????_????????/fine_nondisp.int | awk '{print "mv "s
 ```
 
 And now filter, unwrap and geocode.
+
+
+# Clean-up directories
+
+These commands will only leave the multilooked interferograms and relevant files. They will remove the full resolution intermediate products.
+
+TOPS stack processor
+
+```
+rm -v interferograms/2*/IW?/fine_??.int coreg_secondarys/2*/IW?/*off coreg_secondarys/2*/IW?/*slc geom_reference/IW?/???_??.rdr  geom_reference/IW?/shadow*.rdr geom_reference/IW?/incLocal*.rdr coreg_secondarys/2*/overlap/IW?/*off coreg_secondarys/2*/overlap/IW?/*slc ESD/20*/IW?/overlap_*.int coarse_interferograms/20*/overlap/IW?/*int
+```
+
+Remove only the intermediate files (bottom and top burst overlap interferograms, and double difference interferogram for ESD). `topsApp.py`
+
+```
+rm -v ESD/*/IW?/freq_??.bin ESD/*/IW?/overlap_??.int
+rm -v coarse_interferograms/*/overlap/IW?/*int
+```
+
