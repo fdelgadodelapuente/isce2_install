@@ -1,6 +1,6 @@
 ISCE2 example for processing an ENVISAT interferogram of the Santiago basin.
 
-Create the input file **sm_saocom.xml** in the **20220201_20241129** folder 
+Create the input file `sm_saocom.xml` in the `20220201_20241129` folder 
 ```
 <stripmapApp>
         <component name="insar">
