@@ -1,6 +1,6 @@
 ISCE2 example for processing an ENVISAT interferogram of the 2007 Father's Day dike intrusion at Kilauea volcano.
 
-Create the input file **sm_envisat.xml** in the **20070514_20070618** folder 
+Create the input file `sm_envisat.xml` in the `20070514_20070618` folder 
 ```
 <stripmapApp>
         <component name="insar">
@@ -37,7 +37,7 @@ Create the input file **sm_envisat.xml** in the **20070514_20070618** folder
 
 ```
 
-Download the SRTM DEM in the **20060823_20081031** folder
+Download the SRTM DEM in the `20070514_20070618` folder
 ```
 dem.py -a stitch -b 18 21 -157 -154 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1 -f
 ```
