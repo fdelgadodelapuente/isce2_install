@@ -2175,8 +2175,7 @@ If you use ALOS, you need to apply the ionospheric correction before importing t
 
 For data sets processed with `stackStripMap.py`, pick an SLC and extract the metadata into a ROI_PAC .rsc file.
 
-    prep_isce.py -d ./Igrams -m merged/SLC/20070131/referenceShelve/data.dat 
-    -b ./baselines -g ./geom_reference
+    prep_isce.py -d ./Igrams -m merged/SLC/20070131/referenceShelve/data.dat -b ./baselines -g ./geom_reference
 
 Create a new folder, dump the `smallbaselineApp.cfg` file here, edit it for the relevant directories, and run the inversion.
 
