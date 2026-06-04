@@ -36,6 +36,8 @@ Create the input file `sm_saocom.xml` in the `20220201_20241129` folder
 
 ```
 
+SAOCOM-1 lacks a controlled orbital tube, so there is no guarantee that an 8- or 16-day long interferogram will have a small perpendicular baseline.
+
 Run it with
 ```
 stripmapApp.py sm_saocom.xml --steps --end=unwrap
