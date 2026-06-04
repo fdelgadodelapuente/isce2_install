@@ -120,7 +120,7 @@ These formulas do not apply for the TOPS mode. Here, $\Delta R_{a}$ is shrunk 4 
 | COSMO-SkyMed | HIMAGE | 1-16 | 3.1 | 28 - 45 | 158 - 98 | 3260 - 3000 |
 | ALOS-2 | SM3 | n/a | 24 | 40 | 28 | 2200 |
 
-Sampling frequencies of different SAR satellites. Here B$_{p}$ and PRF are the range bandwidth and the pulse repetition frequency that control the range and azimuth resolution respectively. IM6 was the default beam used to record data during the [ENVISAT extension phase](https://earth.esa.int/eogateway/missions/envisat/description). All data sets are stripmap mode except Sentinel-1 which is TOPS (Terrain Observations by Progressive Scans). The PRF can change between ALOS-1 images and even in the middle of a frame, and hence requires a modification of the coregistration methods to handle pixels of different azimuth resolutions. The look angles increases from the near to the far range slant range of the SLC. This effect is very noticeable in the Sentinel-1 TOPS data due to its wide swath acquisitions. The three numbers for TOPS data refers to swaths 1 to 3.
+Sampling frequencies of different SAR satellites. Here B$_p$ and PRF are the range bandwidth and the pulse repetition frequency that control the range and azimuth resolution respectively. IM6 was the default beam used to record data during the [ENVISAT extension phase](https://earth.esa.int/eogateway/missions/envisat/description). All data sets are stripmap mode except Sentinel-1 which is TOPS (Terrain Observations by Progressive Scans). The PRF can change between ALOS-1 images and even in the middle of a frame, and hence requires a modification of the coregistration methods to handle pixels of different azimuth resolutions. The look angles increases from the near to the far range slant range of the SLC. This effect is very noticeable in the Sentinel-1 TOPS data due to its wide swath acquisitions. The three numbers for TOPS data refers to swaths 1 to 3.
 
 </div>
 
@@ -138,7 +138,7 @@ Sampling frequencies of different SAR satellites. Here B$_{p}$ and PRF are the r
 
 <div id="tab:slcres_dem">
 
-| **Satellite** | **beam/mode** | **$\Delta R_{r}$ (m)** | **$\Delta R_{a}$ (m)** | **Pixel Ratio** | **Looks** |
+| **Satellite** | **beam/mode** | **$\Delta R_r$ (m)** | **$\Delta R_a$ (m)** | **Pixel Ratio** | **Looks** |
 | --- | --- | --- | --- | --- | --- |
 | ENVISAT | IM2 | 20 | 4 | 5 | 2-4 |
 | ENVISAT | IM6 | 12 | 4 | 3 | 2-4 |
@@ -157,7 +157,7 @@ Sampling frequencies of different SAR satellites. Here B$_{p}$ and PRF are the r
 | [TanDEM-X 0.4 arcsec](https://tandemx-science.dlr.de) |  | 12 | 12 |  |  |
 | Pléiades |  | 2-10 | 2-10 |  |  |
 
-SLC images resolution by platform compared with typical available DEMs. $\Delta R_{r}$ ground range pixel size. $\Delta R_{a}$ azimuth pixel size. $^*$Many papers from ESA show that Sentinel-1 SLC data have a pixel size of 20 m in azimuth and 4-5 in range, but those are approximates numbers only! Here COP is the Copernicus DEM.
+SLC images resolution by platform compared with typical available DEMs. $\Delta R_r$ ground range pixel size. $\Delta R_a$ azimuth pixel size. $^*$Many papers from ESA show that Sentinel-1 SLC data have a pixel size of 20 m in azimuth and 4-5 in range, but those are approximates numbers only! Here COP is the Copernicus DEM.
 
 </div>
 
@@ -1028,7 +1028,7 @@ Here `rps` is the range pixel size to convert the range offsets to meters and `w
 
 ### Dense offsets
 
-ISCE can calculate range and azimuth offsets on the coregistered SLCs. These are the same offset fields that are used to coregister the SLCs, but here they also represent the horizontal displacement field. Their accuracy is much lower compared to that of InSAR, usually 1/10 of the pixel size. Hence for SAR pixel sizes of 2-20 m, pixel offsets have accuracies of 0.2-2 m. Hence, they are only useful for very large events. Pixel offsets are particularly useful for large continental earthquakes with surface ruptures and $M_{W}$ 6.5 - 7.9. The large strain near the surface rupture results in coherence loss in most of the interferograms unless either the pixel size is very small or the radar operates with L-band. However, pixel offsets from SAR images can retrieve the deformation in those areas (e.g., ), and are not subject to either aliasing or phase unwrapping problems.
+ISCE can calculate range and azimuth offsets on the coregistered SLCs. These are the same offset fields that are used to coregister the SLCs, but here they also represent the horizontal displacement field. Their accuracy is much lower compared to that of InSAR, usually 1/10 of the pixel size. Hence for SAR pixel sizes of 2-20 m, pixel offsets have accuracies of 0.2-2 m. Hence, they are only useful for very large events. Pixel offsets are particularly useful for large continental earthquakes with surface ruptures and $M_W$ 6.5 - 7.9. The large strain near the surface rupture results in coherence loss in most of the interferograms unless either the pixel size is very small or the radar operates with L-band. However, pixel offsets from SAR images can retrieve the deformation in those areas (e.g., ), and are not subject to either aliasing or phase unwrapping problems.
 
 You can use the following set of parameters in the input file of `stripmapApp.py`.
 
@@ -1797,13 +1797,9 @@ unpackFrame_ALOS_raw_2.py  -i download/20100413 -o SLC/20100413 -f fbs2fbd
 unpackFrame_ALOS_raw_2.py  -i download/20100529 -o SLC/20100529 -f fbs2fbd
 unpackFrame_ALOS_raw_2.py  -i download/20100714 -o SLC/20100714 -f fbs2fbd
 
-stackStripMap.py -s SLC/ -d tdx90m.dem -t 1000 -b 1000 -a 16 -r 4 -u snaphu 
--W ionosphere -f 0.5 -m 20100413
+stackStripMap.py -s SLC/ -d tdx90m.dem -t 1000 -b 1000 -a 16 -r 4 -u snaphu -W ionosphere -f 0.5 -m 20100413
 
-geocode.py -a 16 -r 4 -d tdx90m.dem 
--m SLC/20100413 -i 
-Igrams/20100413_20100714/filt_20100413_20100714_snaphu.unw 
--b 63.35 64.38 -20.16 -18.25
+geocode.py -a 16 -r 4 -d tdx90m.dem -m SLC/20100413 -i Igrams/20100413_20100714/filt_20100413_20100714_snaphu.unw -b 63.35 64.38 -20.16 -18.25
 ```
 
 If you want to print the the metadata of a stripmap SLC with Python3
@@ -1830,9 +1826,7 @@ unpackFrame_CSK_raw.py  -i download/20070504 -o SLC/20070504
 The `-m` flag is optional and allows you to merge different ENVISAT frames (if you need to stitch them and only for raw data). Now run `stackStripMap.py`. Here I use an example of ENVISAT IM6 data that have a pixel ratio of 3.
 
 ```
-stackStripMap.py  -W interferogram  -s SLC 
--d /data/francisco/srtm_svz30m.dem -t 1500 -b 400 -a 20 -r 4  -u snaphu/icu 
--f 0.5 -m slcs/20050803
+stackStripMap.py  -W interferogram  -s SLC -d /data/francisco/srtm_svz30m.dem -t 1500 -b 400 -a 20 -r 4  -u snaphu/icu -f 0.5 -m slcs/20050803
 ```
 
 Then run the rest of the workflow as for ALOS raw data. As the X and C-band data are not really sensitive to the ionosphere, there is no need to run the split spectrum and rubber sheeting steps.
@@ -1875,9 +1869,7 @@ unpackFrame_SAOCOM.py -i EOL1A/20220201_EOL1ASARSAO1B10547757 -o ~/saocom/colina
 Run `stackStripmap.py`. The only difference is that here you will not focus the data, so you must set the software to read the data as zero-Doppler SLCs with the variable `-z`.
 
 ```
-stackStripMap.py -W interferogram -z --nofocus -s slcs -m 20180315 -d 
-/Users/francisco/Documents/dems/TanDEM-X/isce_dems/tandemx30m.dem 
--t 366 -b 200 -a 15 -r 15 -u snaphu 
+stackStripMap.py -W interferogram -z --nofocus -s slcs -m 20180315 -d /Users/francisco/Documents/dems/TanDEM-X/isce_dems/tandemx30m.dem -t 366 -b 200 -a 15 -r 15 -u snaphu 
 ```
 
 The specific number of range and azimuth looks depends upon the satellite. The rest of the workflow is the same as in the previous examples.
@@ -2011,7 +2003,7 @@ ls *zip | awk '{print "zip -d",$1,substr($1,1,67)".SAFE/measurement/*iw1*tiff",s
 </figure>
 
 
-### Example for the 2020 Nima M$_{W}$ 6.4 earthquake, path 121 descending 
+### Example for the 2020 Nima M$_W$ 6.4 earthquake, path 121 descending 
 
 ```
 stackSentinel.py -s slcs/ -o /home/fdelgado/isce/esa/s1orb  -a /home/fdelgado/isce/esa/s1orb  -w stackproc -c 4 -O 4 -d   demLat_N32_N35_Lon_E085_E088.dem.wgs84 -z 5 -r 19 -f 0.3 -u icu -W interferogram -b '32.7 33.7 86.3 87.3' -n '3'  
@@ -2238,7 +2230,7 @@ Sentinel-1 C-band descending interferograms
 
 ## Earthquakes
 
-### June 2015 M$_{W}$ 6.3 Pishan, thrust faulting, Sentinel-1
+### June 2015 M$_W$ 6.3 Pishan, thrust faulting, Sentinel-1
 
 Sentinel-1 C-band ascending (2 frames)
 
@@ -2266,19 +2258,19 @@ Sentinel-1 C-band descending (2 frames)
 
 <https://datapool.asf.alaska.edu/SLC/SA/S1A_IW_SLC__1SSV_20150624T004930_20150624T004957_006508_008A3D_BE38.zip>
 
-### April 2015 M$_{W}$ 7.8 Gorkha, thrust faulting
+### April 2015 M$_W$ 7.8 Gorkha, thrust faulting
 
 [ALOS-2 interferograms](https://topex.ucsd.edu/nepal/)
 
-### November 2016 M$_{W}$ 7.8 Kaikoura, strike-slip faulting
+### November 2016 M$_W$ 7.8 Kaikoura, strike-slip faulting
 
 [ALOS-2 interferograms](https://topex.ucsd.edu/NZ_EQ/)
 
-### July 2019 M$_{W}$ 7.1 Ridgecrest, strike-slip faulting
+### July 2019 M$_W$ 7.1 Ridgecrest, strike-slip faulting
 
 [ALOS-2 and Sentinel-1 interferograms](https://topex.ucsd.edu/SV_7.1/)
 
-### Feb 2023 doublet M$_{W}$ 7.8, 7.5 Turkey, strike-slip faulting, ALOS-2
+### Feb 2023 doublet M$_W$ 7.8, 7.5 Turkey, strike-slip faulting, ALOS-2
 
 <figure>
   <img src="figures/filt_220916-230217_5rlks_28alks_msk.png" alt="filt 220916-230217 5rlks 28alks msk" width="900">
