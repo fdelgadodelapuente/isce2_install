@@ -53,6 +53,12 @@ dem.py -a stitch -b 44 46 -112 -109 -r -s 1 -c -u http://step.esa.int/auxdata/de
 
 ENVISAT data requires precise orbits and the instrument files. You can get these files from  http://topex.ucsd.edu/gmtsar/tar/ORBITS.tar
 
+You can process ENVISAT SLC data 
+`<property name="Sensor Name">ENVISAT_SLC</property>`
+Note that the ENVISAT raw filename starts with `ASA_IM__0` (LEVEL0) while the filename of ENVISAT SLC data starts with `ASA_IMS_1` (LEVEL1).
+
+
+
 Run it with
 ```
 stripmapApp.py sm_alos.xml --steps
