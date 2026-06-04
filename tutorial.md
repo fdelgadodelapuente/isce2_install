@@ -697,139 +697,9 @@ stripmapApp.py stripmapapp_input.xml --steps --start=step1 --end=step2
 
 ### Input example file
 
-Note: Starting in version 2.4.0 (July 2020) all references to "reference" and "secondary" were changed to "reference" and "secondary" respectively.
-
-```
-<stripmapApp>
-<component name="insar">
-<property name="Sensor Name">COSMO_SKYMED</property>
-<property name="demFilename">/insar_data/tandemx12m.dem</property>
-<property name="reference doppler method">useDEFAULT</property>
-<property name="secondary doppler method">useDEFAULT</property>
-<property name="range looks">8</property> 
-<property name="azimuth looks">8</property> 
-
-<component name="reference">
-<property name="HDF5">
-CSKS3_RAW_B_HI_13_VV_RA_SF_20150227113114_20150227113122.h5</property>
-<property name="OUTPUT">reference</property>
-</component>
-
-<component name="secondary">
-<property name="HDF5">
-CSKS1_RAW_B_HI_13_VV_RA_SF_20140130113244_20140130113251.h5</property>
-<property name="OUTPUT">secondary</property>
-</component>
-
-<property name="filter strength">0.3</property>
-<property name="do unwrap">True</property>
-<property name="unwrapper name">icu</property>
-<property name="regionOfInterest">[-40.64,-40.36,-72.39,-72.05]</property>
-<property name="geocode bounding box">[-39.6,-39.1,-72.3,-71.6]</property>
-<property name="geocode list">["interferogram/filt_topophase.flat", 
-"interferogram/filt_topophase.unw","interferogram/filt_topophase.unw.conncomp", 
-"interferogram/topophase.cor", "interferogram/phsig.cor", 
-"geometry/los.rdr"]</property>
-
-</component>
-
-</stripmapApp>
-```
-
 For raw data you can skip the Doppler centroid method and the software will calculate automatically with DOPIQ (useDOPIQ), except for COSMO-SkyMed. the latter and for SLC data you have to set it to useDEFAULT.
 
 **ERS data** requires either PRC (DPAF) or ODR (Delft) orbits. PRC orbits are better .
-
-**ENVISAT data**
-
-```
-<property name="Sensor Name">ENVISAT</property>
-<property name="reference doppler method">useDOPIQ</property>
-<property name="secondary doppler method">useDOPIQ</property>
-
-<property name="IMAGEFILE">../ASA_IM__0CNPDE20110607_035110_000000163103_00176_48466_3255.N1</property>
-<property name="INSTRUMENT_DIRECTORY">/envisat/ins</property>
-<property name="ORBIT_DIRECTORY">/envisat/dor_vor</property>
-<property name="OUTPUT">reference</property>
-```
-
-You need either DOR (DORIS) or VOR (verified final) orbits. VOR orbits are more accurate
-
-**ENVISAT SLC data**
-
-```
-<property name="Sensor Name">ENVISAT_SLC</property>
-<property name="reference doppler method">useDEFAULT</property>
-<property name="secondary doppler method">useDEFAULT</property>
-
-<property name="IMAGEFILE">../ASA_IMS_1PNESA20080304_033012_000000182066_00304_31420_0000.N1</property>
-<property name="INSTRUMENT_DIRECTORY">/envisat/ins</property>
-<property name="ORBIT_DIRECTORY">/envisat/dor_vor</property>
-```
-
-Note that the ENVISAT raw filename starts with `ASA_IM__0` (LEVEL0) while the filename of ENVISAT SLC data starts with `ASA_IMS_1` (LEVEL1).
-
-**ALOS data**
-
-```
-<property name="Sensor Name">ALOS</property>
-<property name="reference doppler method">useDOPIQ</property>
-<property name="secondary doppler method">useDOPIQ</property>
-  
-<property name="IMAGEFILE">[IMG-HH-ALPSRP273183230-H1.0__D]</property>
-<property name="LEADERFILE">[LED-ALPSRP273183230-H1.0__D]</property>
-<property name="RESAMPLE_FLAG">dual2single</property>
-<property name="OUTPUT">reference</property>
-```
-
-The only difference for the input file is that ALOS-1 stripmap data was acquired in two different beams, FBD (fine beam double, HH-HV double polarization, 14 MHz range bandwidth) and FBS (fine beam single, HH single polarization, 28 MHz range bandwidth), resulting in twice the range resolution of the FBS beam compared with FBD (`tab:slcres`; ). Every FBD image contains one IMG-HH and one IMG-HV files, whereas a FBS image contains a single IMG-HH file. To form a usable interferogram, the images must have the same resolution, so the FBD images are zero-padded in the range direction in the frequency domain to match the length and the resolution of the FBS image. To process an interferogram with FBS and FBD images (either as reference, secondary or both), you need to include the following flag in the control file under the respective FBD image (either secondary or reference) for the FBD2FBS conversion.
-
-FBD image to FBS
-
-```
-<property name="RESAMPLE_FLAG">dual2single</property>
-```
-
-FBS image to FBD
-
-```
-<!--<property name="RESAMPLE_FLAG">single2dual</property>-->
-```
-
-I have done test processing FBD2FBS (oversample 14 to 28 Mhz) and FBS2FBD (downsample 28 to 14 MHz). The interferograms that result are nearly equivalent and differ only by a phase constant. The split spectrum corrections are also equivalent between both products.
-
-Note that some ALOS-1 raw images have changes in the PRF in the middle of the scene. If this happens, the image can only be processed by ISCE 2.5.0 version or newer. Alternatively you can use the old ROI_PAC with the SIO ALOS parser in GMTSAR to process them. The split spectrum method implemented in `stripmapApp.py`, only works with ALOS-1 raw data, not with ALOS-1 SLC data.
-
-If the perpendicular baseline is longer than $\sim$0.5 km, you should process the ALOS data with a higher resolution DEM like that from Copernicus. Otherwise, if you use SRTM, the data will have several residual artifacts that result from the use of the low resolution DEM in the geometric coregistration.
-
-You can stitch several ENVISAT and ALOS raw images just by adding more images under `IMAGEFILE` and `LEADERFILE`. The latter is an ALOS-only specific parameter.
-
-**ALOS-2 SM1-3 data**
-
-For ALOS-2 SM3 the data are provided as a double polarization IMG-HH and IMG-HV files with the same pixel size for each file – there is no need to run an FBD2FBS conversion. The SM1 data are provided as single polarization files with a single IMG-HH file. HH interferograms have a higher SNR than HV interferograms.
-
-```
-<property name="Sensor Name">ALOS2</property>
-<property name="reference doppler method">useDEFAULT</property>
-<property name="secondary doppler method">useDEFAULT</property>
-       
-<property name="IMAGEFILE">IMG-HH-ALOS2050286350-150429-FBDR1.1__A</property>
-<property name="LEADERFILE">LED-ALOS2050286350-150429-FBDR1.1__A</property>
-<property name="OUTPUT">reference</property>
-```
-
-**TerraSAR-X data**
-
-```
-<property name="Sensor Name">TERRASARX</property>
-<property name="reference doppler method">useDEFAULT</property>
-<property name="secondary doppler method">useDEFAULT</property>
-
-<property name="XML">../20130717/TSX-1.SAR.L1B/
-TDX1_SAR__SSC______SM_S_SRA_20130717T231121_20130717T231129/
-TDX1_SAR__SSC______SM_S_SRA_20130717T231121_20130717T231129.xml</property>
-<property name="OUTPUT">reference</property>
-```
 
 **RADARSAT-2 data**
 
@@ -866,48 +736,6 @@ Input XML file.
 <property name="xml">../RS2_OK117640_PK1032616_DK972095_U16W2_20200421_094740_HH_SLC/product.xml</property>
 <property name="tiff">../RS2_OK117640_PK1032616_DK972095_U16W2_20200421_094740_HH_SLC/imagery_HH.tif</property>
 ```
-
-**COSMO-SkyMED raw data**
-
-```
-<property name="Sensor Name">COSMO_SKYMED</property>
-<property name="reference doppler method">useDEFAULT</property>
-<property name="secondary doppler method">useDEFAULT</property>
-
-<property name="HDF5">../
-CSKS3_RAW_B_HI_13_VV_RA_SF_20150227113114_20150227113122.h5</property>
-<property name="OUTPUT">reference</property>
-```
-
-**COSMO-SkyMED SLC data**
-
-```
-<property name="Sensor Name">COSMO_SKYMED_SLC</property>
-<property name="reference doppler method">useDEFAULT</property>
-<property name="secondary doppler method">useDEFAULT</property>
-
-<property name="HDF5">../
-CSKS2_SCS_B_HI_09_HH_RA_SF_20090412050638_20090412050645.h5</property>
-<property name="OUTPUT">reference</property>
-```
-
-I reccommend that you request CSK SLC data to ASI instead of raw data.
-
-**SAOCOM-1 data**
-
-```
-<property name="Sensor Name">SAOCOM_SLC</property>
-<property name="reference doppler method">useDEFAULT</property>
-<property name="secondary doppler method">useDEFAULT</property>
-
-<property name="IMAGEFILE">EOL1ASARSAO1B8776822/S1B_OPER_SAR_EOSSP__CORE_L1A_OLF_20240125T174320/Data/slc-acqId0000055332-b-sm4-2401251827-s4dp-hh</property>
-<property name="XEMTFILE">EOL1ASARSAO1B8776822/S1B_OPER_SAR_EOSSP__CORE_L1A_OLF_20240125T174320.xemt</property>
-<property name="XMLFILE">EOL1ASARSAO1B8776822/S1B_OPER_SAR_EOSSP__CORE_L1A_OLF_20240125T174320/Data/slc-acqId0000055332-b-sm4-2401251827-s4dp-hh.xml</property>
-
-<property name="OUTPUT">reference</property>
-```
-
-SAOCOM-1 lacks a controlled orbital tube, so there is no guarantee that an 8- or 16-day long interferogram will have a small perpendicular baseline
 
 **Doppler centroid**
 
@@ -1506,28 +1334,6 @@ mdx.py topophase.flat topophase.unw
 ```
 
 If you need to change the wrapping rate, right click on Unw, then Scale Mode -$>$ PER -$>$ Wrap and change the number to an arbitrary number that is not a multiple of 2$\pi$. You will have to do the same for the wrapped interferogram, otherwise the displayed color scale is wrong. To change the amplitude color scale, click on amp, then on Scale Mode -$>$ PER and change it. The real numbers after the COL and ROW are the pixel values of the interferogram bands and are in the same order than the opened files. This is useful to verify that the phase was correctly unwrapped.
-
-### Google Earth KMZ
-
-To create a Google Earth kml file
-
-```
-mdx.py filt_topophase.unw.geo -kml filt_topophase.unw.geo.kml
-```
-
-If you move the output kml and png files to another folder, you will have to manually update the file path with a text editor. To remove the amplitude do the following:
-
-```
-mdx filt_topophase.unw.geo -s 5798 -unw -r4 -rhdr 23192 -cmap cmy -wrap 6.28318 -P
-```
-
-Here `s` is the file width and `rhdr` is the size of the file header at the start of each line times 4. This outputs a ppm file with the phase only. Then, remove the cyan background with
-
-```
-convert out.ppm -transparent cyan filt_topophase.unw.geo.png
-```
-
-Finally edit the .kml file in a text editor to remove the absolute path to the image file.
 
 ### Heading and look angle file
 
