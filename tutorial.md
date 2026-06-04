@@ -13,12 +13,11 @@
   - [Earthscope ISCE2 short courses](#earthscope-isce2-short-courses)
   - [Other software](#other-software)
 - [Interferometric processing workflows](#interferometric-processing-workflows)
+  - [DEMs](#dems)
+  - [ENVISAT and Sentinel-1A/B processing](#envisat-and-sentinel-1ab-processing)
   - [stripmapApp.py](#stripmapapppy)
   - [topsApp.py](#topsapppy)
   - [alos2App.py](#alos2apppy)
-- [Ancillary information required for InSAR processing](#ancillary-information-required-for-insar-processing)
-  - [DEMs](#dems)
-  - [ENVISAT and Sentinel-1A/B processing](#envisat-and-sentinel-1ab-processing)
 - [Miscellaneous issues](#miscellaneous-issues)
 - [Example interferograms of volcanoes and earthquakes from ENVISAT, ALOS, Sentinel-1, and ALOS-2](#example-interferograms-of-volcanoes-and-earthquakes-from-envisat-alos-sentinel-1-and-alos-2)
   - [Volcanoes](#volcanoes)
@@ -664,6 +663,50 @@ cp -R ~/apps/isce2/contrib/stack $ISCE_HOME/components/contrib/.
 
 # Interferometric processing workflows
 
+
+# Ancillary information required for InSAR processing
+
+## DEMs
+
+If your area of interest does not require high resolution processing and accurate DEM (better than 30 m/pixel and accuracies better than 10 m), then use SRTM. Do not use the ASTER GDEM because it is less accurate than SRTM ($\sim$20 vs $\sim$10 m respectively), unless you are outside of +/- 60º of latitude (e.g., Iceland). Ideally try to use DEMs with resolution similar to the images resolution. TanDEM-X DEM is better than SRTM but only free for 90 m/pixel. TanDEM-X 1 and 0.4 arcsec DEMs and the optical Pléiades data require a DEM proposal to be submitted to DLR and CNES respectively. The Pléiades DEMs have a native resolution of 0.5 m/pixel and are downsampled to 2 m/pixel to reduce the effect of noise. Rarely a SAR data set is processed to such high resolution for tectonic and volcanic applications. Therefore the Pléaides DEMs are usually downsampled down to 10 m/pixel (`tab:slcres_dem`).
+
+If the USGS server is down you can fetch SRTM from the ESA repository
+
+```
+dem.py -a stitch -b 38 39 -112 -111 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1/
+```
+
+The Copernicus DEM from ESA and AIRBUS is a masked and corrected version of the TanDEM-X 30/90 m DEMs. It is the most up to date, high resolution and high accuracy DEM to date. You can get it from [PANDA](http://panda.copernicus.eu) for free. Be sure to download the DTE product (elevation in integer numbers). After you download the tiles you need to merge them, change the vertical datum from the EGM2008 geoid to the WGS84 ellipsoid, and then convert it to an i2 integer file format that ISCE can read. This can be easily done with GDAL
+
+```
+ls *tar | awk '{print "tar -xf",$1}' > t.csh ; csh t.csh
+
+gdal_merge.py-3.7 Copernicus_DSM*/DEM/* -o cop_dem_glo30_svz.tif
+
+gdalwarp -s_srs "+proj=longlat +datum=WGS84 +no_defs  +geoidgrids=egm08_25.gtx" -t_srs "+proj=longlat  +ellps=WGS84 +datum=WGS84 +no_defs"  cop_dem_glo30_svz.tif cop_dem_glo30_svz_wgs84.tif
+
+gdal_translate cop_dem_glo30_svz_wgs84.tif -Of ISCE cop_dem_glo30_svz_wgs84.dem
+
+mdx.py cop_dem_glo30_svz_wgs84.dem -z -10
+```
+
+## ENVISAT and Sentinel-1A/B processing
+
+[ASAR overview](https://earth.esa.int/eogateway/instruments/asar/description)
+
+[ERS / ENVISAT orbits](http://topex.ucsd.edu/gmtsar/tar/ORBIts.tar)
+
+[ENVISAT instrument files](https://earth.esa.int/web/sppa/mission-performance/esa-missions/envisat/asar/products-and-algorithms/products-information/aux)
+
+[Sentinel-1A/B restituted orbits. ](https://s1qc.asf.alaska.edu/aux_resorb/)They are available hours after the SLC acquisition
+
+[Sentinel-1A/B final precise orbits.](https://s1qc.asf.alaska.edu/aux_poeorb/) They are available $\sim$3 weeks after the SAR image acquisition.
+
+[Sentinel-1A/B CAL instrument files, required for the elevation antenna pattern correction [use id=3 according to this](http://earthdef.caltech.edu/boards/4/topics/1955)](https://qc.sentinel1.eo.esa.int/aux_cal/?instrument_configuration_id=3)
+
+The Sentinel-1 interferograms can be processed with either the header, restituted and final orbit. The header orbit is very inaccurate (only one state vector at the beginning and the end of the acquisition). These preliminary orbits are fine for quick results, like a quick co-eruptive or co-seismic interferogram, but for accurate interferograms you should always use the precise orbit. External orbits are not required for other data sets. However, RADARSAT-2 orbits are of lower quality due to the smaller amount of state vectors provided by CSA. This implies that RSAT-2 data can often have large long wavelength ramps that look alike those in ENVISAT interferograms processed with the old ROI_PAC software. CSK intererograms tend to have long wavelength ramps compared with those from TSX. Precise orbits are available for ALOS-2 starting $\sim$3 days after image acquisition.
+
+
 ## `stripmapApp.py`
 
 Stripmap processor with geometric coregistration for zero doppler data (COSMO-SkyMED SLC stripmap and spotlight, RADARSAT-2 SLC, TerraSAR-X SKC stripmap and spotlight, ALOS-2 SLC stripmap). It can also process raw data (ENVISAT, ALOS-1, COSMO-SkyMED) in native Doopler geometry. This is the ISCE equivalent of ROI_PAC’s process_2pass.pl which relied on amplitude cross correlation for SLC and DEM alignment instead of the accurate geometric corregistration of this module.
@@ -1019,49 +1062,6 @@ The interferogram is calculated in three steps. First, subtract the phase. Secon
 29. `filt_offset`
 
 30. `geocode_offset`
-
-
-# Ancillary information required for InSAR processing
-
-## DEMs
-
-If your area of interest does not require high resolution processing and accurate DEM (better than 30 m/pixel and accuracies better than 10 m), then use SRTM. Do not use the ASTER GDEM because it is less accurate than SRTM ($\sim$20 vs $\sim$10 m respectively), unless you are outside of +/- 60º of latitude (e.g., Iceland). Ideally try to use DEMs with resolution similar to the images resolution. TanDEM-X DEM is better than SRTM but only free for 90 m/pixel. TanDEM-X 1 and 0.4 arcsec DEMs and the optical Pléiades data require a DEM proposal to be submitted to DLR and CNES respectively. The Pléiades DEMs have a native resolution of 0.5 m/pixel and are downsampled to 2 m/pixel to reduce the effect of noise. Rarely a SAR data set is processed to such high resolution for tectonic and volcanic applications. Therefore the Pléaides DEMs are usually downsampled down to 10 m/pixel (`tab:slcres_dem`).
-
-If the USGS server is down you can fetch SRTM from the ESA repository
-
-```
-dem.py -a stitch -b 38 39 -112 -111 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1/
-```
-
-The Copernicus DEM from ESA and AIRBUS is a masked and corrected version of the TanDEM-X 30/90 m DEMs. It is the most up to date, high resolution and high accuracy DEM to date. You can get it from [PANDA](http://panda.copernicus.eu) for free. Be sure to download the DTE product (elevation in integer numbers). After you download the tiles you need to merge them, change the vertical datum from the EGM2008 geoid to the WGS84 ellipsoid, and then convert it to an i2 integer file format that ISCE can read. This can be easily done with GDAL
-
-```
-ls *tar | awk '{print "tar -xf",$1}' > t.csh ; csh t.csh
-
-gdal_merge.py-3.7 Copernicus_DSM*/DEM/* -o cop_dem_glo30_svz.tif
-
-gdalwarp -s_srs "+proj=longlat +datum=WGS84 +no_defs  +geoidgrids=egm08_25.gtx" -t_srs "+proj=longlat  +ellps=WGS84 +datum=WGS84 +no_defs"  cop_dem_glo30_svz.tif cop_dem_glo30_svz_wgs84.tif
-
-gdal_translate cop_dem_glo30_svz_wgs84.tif -Of ISCE cop_dem_glo30_svz_wgs84.dem
-
-mdx.py cop_dem_glo30_svz_wgs84.dem -z -10
-```
-
-## ENVISAT and Sentinel-1A/B processing
-
-[ASAR overview](https://earth.esa.int/eogateway/instruments/asar/description)
-
-[ERS / ENVISAT orbits](http://topex.ucsd.edu/gmtsar/tar/ORBIts.tar)
-
-[ENVISAT instrument files](https://earth.esa.int/web/sppa/mission-performance/esa-missions/envisat/asar/products-and-algorithms/products-information/aux)
-
-[Sentinel-1A/B restituted orbits. ](https://s1qc.asf.alaska.edu/aux_resorb/)They are available hours after the SLC acquisition
-
-[Sentinel-1A/B final precise orbits.](https://s1qc.asf.alaska.edu/aux_poeorb/) They are available $\sim$3 weeks after the SAR image acquisition.
-
-[Sentinel-1A/B CAL instrument files, required for the elevation antenna pattern correction [use id=3 according to this](http://earthdef.caltech.edu/boards/4/topics/1955)](https://qc.sentinel1.eo.esa.int/aux_cal/?instrument_configuration_id=3)
-
-The Sentinel-1 interferograms can be processed with either the header, restituted and final orbit. The header orbit is very inaccurate (only one state vector at the beginning and the end of the acquisition). These preliminary orbits are fine for quick results, like a quick co-eruptive or co-seismic interferogram, but for accurate interferograms you should always use the precise orbit. External orbits are not required for other data sets. However, RADARSAT-2 orbits are of lower quality due to the smaller amount of state vectors provided by CSA. This implies that RSAT-2 data can often have large long wavelength ramps that look alike those in ENVISAT interferograms processed with the old ROI_PAC software. CSK intererograms tend to have long wavelength ramps compared with those from TSX. Precise orbits are available for ALOS-2 starting $\sim$3 days after image acquisition.
 
 
 # Miscellaneous issues
