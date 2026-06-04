@@ -1029,34 +1029,6 @@ The interferogram is calculated in three steps. First, subtract the phase. Secon
 
 30. `geocode_offset`
 
-### SM3 and SM1 processing in `alos2App.py` compared with `stripmapApp.py`
-
-Both `alos2App.py` and `stripmapApp.py` can process SM3 and SM1 data. The phase difference of a multilooked unfiltered interferogram processed with `alos2App.py` and the same interferorgam processed with `stripmapApp.py` is approximately a constant value smaller than $\pi$. This phase difference is accounted for when you remove a ramp as part of source modeling. Hence, both workflows produce equivalent interferograms for geological and geophysical applications. Of course the phase difference will be a ramp if you apply the split spectrum correction available in `alos2App.py`.
-
-### Ionospheric correction for SM3 data
-
-Ionospheric corrections only work with SM3 SLCs with the [range offset error](https://www.eorc.jaxa.jp/ALOS-2/en/calval/Update_ALOS2_RangeOffset_20181122_En.pdf) fixed. These are data provided by JAXA after November 2018. If your SLC was processed before this date, then the software cannot correct the dispersive phase.
-
-If the split spectrum correction for SM3 data fails, you can improve it with the following:
-
-```
-<property name="number of range looks ion">16</property>
-<property name="number of azimuth looks ion">16</property>
-
-<property name="maximum window size for filtering ionosphere phase">151</property>
-<property name="minimum window size for filtering ionosphere phase">51</property>
-```
-
-Increasing the number of looks, and window size for filtering the ionosphere phase, avoided anomalous short wavelength ionospheric fringes in the correction. However, if the window size is too large, then the polynomial contribution of the ionosphere correction will dominate.
-
-If the `ion/ion_cal/ion_80rlks_448alks.ion` file displays a jump between the swaths, then this isue will propagate into the final corrected interferogram. To fix it, open the `alos2App.py` input file, and add the following
-
-```
-<property name="swath phase difference snap to fixed values">[[True, True, True, False]]</property>
-```
-
-Here the False flag refers to the fourth and fifth swaths, which is the one that shows the phase discontinuity. Then, restart the processing from `ion_subband`.
-
 ## Miscellaneous issues
 
 ### Multilooking
