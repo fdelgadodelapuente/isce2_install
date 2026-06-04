@@ -701,42 +701,6 @@ For raw data you can skip the Doppler centroid method and the software will calc
 
 **ERS data** requires either PRC (DPAF) or ODR (Delft) orbits. PRC orbits are better .
 
-**RADARSAT-2 data**
-
-RADARSAT-2 SLCs are provided with only 5 state vectors, and they need to be interpolated to at least 9. Sometimes you can process your SLC with the original number of state vectors. RADARSAT-2 processing was fully operational in ISCE 2.2.0 (July 2018). Afterwards modules required to run the orbit extension module for innacurate state vectors were not included in newer versions of the software.
-
-Open `isce2-2.6.2/install/isce/components/isceobj/Sensor/Radarsat2.py`, or `isce2-2.6.2/components/isceobj/Sensor/Radarsat2.py` and recompile. Then comment
-
-```
-planet = self.frame.instrument.platform.planet
-        orbExt = OrbitExtender(planet=planet)
-        orbExt.configure
-        newOrb = orbExt.extendOrbit(tempOrbit)
-
-        for sv in newOrb:
-            self.frame.getOrbit.addStateVector(sv)
-```
-
-and replace with
-
-```
-for sv in tempOrbit:
-            self.frame.getOrbit.addStateVector(sv)
-```
-
-This skips the orbit extension calculation and works for data in the Wide Ultra Fine beams.
-
-Input XML file.
-
-```
-<property name="Sensor Name">RADARSAT2</property>
-<property name="reference doppler method">useDEFAULT</property>
-<property name="secondary doppler method">useDEFAULT</property>
-
-<property name="xml">../RS2_OK117640_PK1032616_DK972095_U16W2_20200421_094740_HH_SLC/product.xml</property>
-<property name="tiff">../RS2_OK117640_PK1032616_DK972095_U16W2_20200421_094740_HH_SLC/imagery_HH.tif</property>
-```
-
 **Doppler centroid**
 
 For ENVISAT raw and ALOS raw data `stripmapApp.py` uses ROI$\_$PAC’s clutterlock algorithm to automatically estimate the Doppler centroid (DOPIQ) . This algorithm estimates the Doppler centroid as a quadratic polynomial function of range multiplied by the PRF. For CSK raw data and zero Doppler data `stripmapApp.py` will read the Doppler centroid in the image metadata. DOPIQ can also calculate the Doppler centroid of CSK raw data, but the centroid provided by ASI is more accurate because the latter is a sixth order polynomial.
@@ -821,16 +785,6 @@ You can output the SAR sampling parameters of each image with the following
     grep -n incidence_angle stripmapProc.xml
     grep -n squint_angle stripmapProc.xml
     grep -n doppler_vs_pixel stripmapProc.xml
-
-### Ionospheric correction
-
-Only for ALOS raw data.
-
-```
-imageMath.py -e='a_0;a_1*(c>0)-b_0*(c>0)' -s BIL  --a=interferogram/filt_topophase.unw  --b=Ionosphere/dispersive.bil.unwCor.filt  -o  interferogram/filt_topophase_nondispersive.unw  --c=interferogram/filt_topophase.conncomp
-```
-
-Here `filt_topophase.conncomp` is for an ICU unwrapped interferogram and you can replace it with `filt_topophase.unw.conncomp` for a SNAPHU_MCF unwrapped interferogram.
 
 ### Process an unflattened interferogram
 
@@ -925,134 +879,6 @@ topsApp.py topspapp_input.xml --steps
 topsApp.py topspapp_input.xml --steps --start=step1 --end=step2    
 ```
 
-### Input example file
-
-```
-<topsApp> 
-<component name="topsinsar"> 
-<property name="Sensor Name">SENTINEL1</property>
-<property name="demFilename">/dems/tandemx30m.dem</property>
-<property name="geocode demFilename">/dems/tandemx30m.3alks_3rlks.dem</property>
- 
-<component name="reference"> 
-<property name="safe">../
-S1B_IW_SLC__1SDV_20191120T095727_20191120T095754_019009_023DF6_68CE.zip</property> 
-<property name="output directory">"reference"</property>                 
-<property name="orbit directory">/orbits/s1orb</property> 
-<property name="auxiliary data directory">/orbits/s1orb</property> 
-</component>
- 
-<component name="references"> 
-<property name="safe">../
-S1B_IW_SLC__1SDV_20190406T095704_20190406T095731_015684_01D6D3_D1F7.zip</property> 
-<property name="output directory">"references"</property> 
-<property name="orbit directory">/orbits/s1orb</property> 
-<property name="auxiliary data directory">/orbits/s1orb</property> 
-</component>
- 
-<property name="swaths">[1,2,3]</property>
-<property name="ESD coherence threshold">0.85</property> <!-- above 0.7-->
-<property name="do ESD">True</property>
-<property name="extra ESD cycles">0</property> 
-<property name="do ionosphere correction">False</property>
-<property name="apply ionosphere correction">False</property>
-<property name="consider burst properties in ionosphere computation">False</property>
-<property name="azimuth looks">5</property>
-<property name="range looks">19</property>
-<property name="filter strength">0.5</property>
-<property name="do unwrap">True</property>
-<property name="unwrapper name">snaphu_mcf</property> <!--icu/snaphu_mcf-->
-<property name="geocode bounding box">[37.48,37.97,14.76,15.02]</property>
-<property name="region of interest">[-40.6,-40.5,-72.1,-72.1]</property>
-<property name="geocode list">["merged/filt_topophase.unw",
-"merged/filt_topophase.unw.conncomp", "merged/los.rdr",
-"merged/filt_topophase.flat", "merged/topophase.cor",
-"merged/phsig.cor"]</property>
- 
-</component>
-</topsApp>
-```
-
-### Ionosphere correction
-
-You should use this correction for TOPS data in regiones of low geomagnetic latitudes . To correct the long wavelength dispersive phase and burst overlap jumps in `topsApp.py`, add the following to the input file.
-
-```
-<property name="do ionosphere correction">True</property>
-<property name="apply ionosphere correction">True</property>
-<property name="consider burst properties in ionosphere computation">True</property>
-```
-
-### Extract amplitude SLCs
-
-Must be run with the following options in the int.xml file
-
-```
-<property name="use virtual files">False</property>
-<property name="geocodelist">[merged/amplitudes.bil]</property>  
-```
-
-```
-#gdal_translate -of ENVI merged/reference.slc.full.vrt merged/reference.slc.full
-#gdal_translate -of ENVI merged/secondary.slc.full.vrt merged/secondary.slc.full
-imageMath.py -e='abs(a);abs(b)' --a=reference.slc.full --b=secondary.slc.full -t FLOAT -s BIL -o amplitudes.bil.full
-looks.py -i amplitudes.bil.full -a ${alks} -r ${rlks} -o amplitudes.bil
-#gdal_translate -of ENVI merged/amplitudes.bil.vrt merged/amplitudes.bil
-```
-
-### Dense offsets
-
-One particular advantage of the TOPS mode with respect to other stripmap modes is the small pixel size in the slant range direction. Therefore if your interferogram is decorrelated due to large strain, you can still retrieve deformation from range offsets instead of interferometry (e.g., ). Due to the small pixel size in range, you can also extract more accurate range than azimuth offsets, which are particularly useful for glaciology.
-
-[Box sizes for ampcor](https://raw.githubusercontent.com/parosen/Geo-SInC/7f89ccfa906e36c12726a663ee3d34c621797214/UNAVCO2021/4.4_Offset_stack_for_velocity_dynamics/support_files/offset_parameters.png).
-
-```
-<!-- Ssearch Window Size Height should be < 2 * Window Size Height-->
-<property name="do denseOffsets">True</property>
-<property name="Ampcor window width">40</property>
-<property name="Ampcor window height">8</property>
-<property name="Ampcor search window height">10</property>
-<property name="Ampcor search window width">10</property>
-<property name="Ampcor skip width">32</property>
-<property name="Ampcor skip height">8</property>
-```
-
-Example for Pine Island glacier (Antarctica) from the [2021 UNAVCO ISCE Workshop.](https://github.com/parosen/Geo-SInC/blob/main/UNAVCO2021/4.4_Offset_stack_for_velocity_dynamics/nb_topsApp_offsets.ipynb)
-
-Example for Pine Island glacier (Antarctica) from the [2023 EarthScope ISCE Workshop.](https://github.com/parosen/Geo-SInC/blob/main/EarthScope2023/4.3_Offset_stack_for_velocity_dynamics_with_autoRIFT/nb_dense_offsets.ipynb)
-
-```
-<property name="do denseoffsets">True</property>
-    <property name="Filter window size">3</property>
-    <property name="Ampcor window width">256</property>
-    <property name="Ampcor window height">64</property>
-    <property name="Ampcor search window width">40</property>
-    <property name="Ampcor search window height">10</property>
-    <property name="Ampcor skip width">128</property>
-    <property name="Ampcor skip height">32</property>
-```
-
-Example for southern Patagonia Icefield (Chile/Argentina)
-
-```
-<property name="do denseoffsets">True</property>
-    <property name="Filter window size">3</property>
-    <property name="Ampcor window width">128</property>
-    <property name="Ampcor window height">32</property>
-    <property name="Ampcor search window width">40</property>
-    <property name="Ampcor search window height">10</property>
-    <property name="Ampcor skip width">16</property>
-    <property name="Ampcor skip height">4</property>
-```
-
-Then multiply the range and azimuth offsets by their pixel sizes of 2.3 and 14.1 m, respectively. The offset tracking uncertainty is 1/5 to 1/10 of the pixel size, so this results in theoretical uncertainties of 0.23-0.45 m for range offsets, and 1.41-2.82 m for azimuth offsets.
-
-<figure>
-  <img src="figures/ampcor_tops.png" alt="ampcor tops" width="900">
-  <figcaption><strong>Figure.</strong> Range and azimuth offsets for 12 day Sentinel-1 pair.</figcaption>
-</figure>
-
-
 ### Steps
 
 Here I only describe the steps that are different than those in stripmapApp.py
@@ -1138,62 +964,6 @@ Output files of `topsApp.py`. All the products are extracted into subfolders cal
 </div>
 
 ## alos2App.py
-
-The ALOS-2 processor was released in October 2019 as an additional toolbox to ISCE 2.3.2 and was properly integrated with the rest of the ISCE modules in version 2.3.3 in March 2020. It can process both stripmap and ScanSAR data with split spectrum corrections . ScanSAR images suitable for InSAR are focused with a full aperture processing chain, and not with a SPECAN algorithm whoch is ideal for these burst by burst acquisition modes. Although `stripmapApp.py` can process ALOS-2 SM3 and SM1 data, it cannot correct the ionospheric phase. The module tutorial and examples are at
-
-```
-isce2-2.6.3/examples/input_files/alos2/example_input_files
-```
-
-To process an interferogram
-
-```
-alos2App.py alos2app.xml --steps
-```
-
-The ScanSAR processing is time consuming and requires $\sim$60 Gb of storage for every frame. Every ALOS-2 ScanSAR swath is $\sim$6 Gb and every interferograms must be calculated three times for the range spectral filtering to separate the dispersive and non-dispersive components of the phase. In my experience ScanSAR data for volcanic applications is only useful for large scale surveys of volcanic deformation. For example, a single ScanSAR swath in two frames can cover a almost all of the most active volcanoes of the Southern Andes. And obviously when there is no other coherent data that span the event of interest. The advantages of ScanSAR for large earthquakes are obvious like during the 2015 Gorkha  and the 2016 Kaikoura  earthquakes.
-
-For processing ScanSAR data the tutorial recommends using 5 looks in range and 2 looks in azimuth. The pixel sizes are 25 m in range – similar to the SM3 pixel size, and 60 m in azimuth. This results in a pixel size of $\sim$100 m, so the interferograms are geocoded with the 90 m DEM. You can stitch ScanSAR frames and process as many swaths and frames as you want.
-
-For the SM3 data the pixel ratio is 2, but alos2App.py applies by default the pixel ratio and 2 additional looks in range and azimuth. These data are usually processed with either 2 or 4 additional looks resulting in a total of 16 looks in azimuth and 8 looks in range.
-
-### Technical notes from JAXA
-
-The following links detail known issues with ALOS-2 data.
-
-[Effective data for interferometric analysis with PALSAR-2 ScanSAR mode](https://www.eorc.jaxa.jp/ALOS/en/alos-2/pdf/auig2/ScanSAR_Burst_Overlap_20151127_e.pdf). ScanSAR interferometry is not possible with data acquired before February 2015. More details in . But ScanSAR to stripmap interferometry before February 2015 is possible (e.g., ).
-
-[Change of the center frequency for the beam F2-6 in Stripmap Fine \[10 m\] mode](https://www.eorc.jaxa.jp/ALOS/en/alos-2/pdf/auig2/AUIG2_CenterFrequency_20151127_e.pdf). If your data is from the F2-6 stripmap beam, you cannot calculate stripmap interferograms with images acquired before and after June 01 2015. Several stripmap tracks have this issue. More details in .
-
-[Correction of the range offset error in Stripmap \[10 m\] and ScanSAR \[350 km / 490 km\] modes](https://www.eorc.jaxa.jp/ALOS/en/alos-2/pdf/auig2/Update_ALOS2_RangeOffset_20181122_En.pdf). Split spectrum corrections are not possible with data acquired before November 2018.
-
-### ALOS-2 files naming convention
-
-[ALOS-2/PALSAR-2 Level 1.1/1.5/2.1/3.1 CEOS SAR Product Format Description](https://www.eorc.jaxa.jp/ALOS-2/en/doc/fdata/PALSAR-2_xx_Format_CEOS_E.pdf)
-
-ALOS-2 has 15 observation modes (SBS, UBS, UBD, HBS, HBD, HBQ, FBS, **FBD**, FBQ, **WBS**, **WBD**, WWS, WWD, VBS, VBD) and the relevant modes are stripmap FBD fine mode (dual polarization), WBS and WBD ScanSAR nominal \[14MHz\] mode (single and dual polarization).
-
-    IMG-HH-ALOS2471852900-230217-WBSR1.1__D-F3
-
-`HH` polarization (reception - emission, here both Horizontal, can also be HV Horizontal and Vertical for double polarization mode)
-
-`ALOS2` sensor
-
-`47185` Orbit accumulation number of a scene center
-
-`2900` frame
-
-`230217` acquisition date, YYMMDD
-
-`WBS` acquisition mode. WBS is ScanSAR nominal \[14MHz\] mode Single polarization. 14 MHz is the range bandwith that results in a ground range pixel size of $\sim$20 m/pixel. It can also be `WBD` which is ScanSAR nominal \[14MHz\] mode Double polarization. This results in a HH and a HV file for every swath.
-
-`R` observation direction, right looking
-
-`1.1` processing level, range-azimuth single look complex.
-
-`D` descending
-
-`F3` swath 3
 
 ### Steps
 
