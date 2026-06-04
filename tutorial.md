@@ -1772,20 +1772,11 @@ gdal_translate los.rdr -Of ISCE los.r4
 Geocode the relevant files
 
 ```
-geocode.py -a 32 -r 8 -d /Users/francisco/insarproc/dem/srtm_svz90m.dem 
--m SLC/20071205 -i
-Igram/20161008_20161217/filt_20161008_20161217_snaphu.unw 
--b -46.44 -45.63 -73.69 -72.48
+geocode.py -a 32 -r 8 -d /Users/francisco/insarproc/dem/srtm_svz90m.dem -m SLC/20071205 -i Igram/20161008_20161217/filt_20161008_20161217_snaphu.unw  -b -46.44 -45.63 -73.69 -72.48
 
-geocode.py -a 32 -r 8 -d /Users/francisco/insarproc/dem/srtm_svz90m.dem 
--m SLC/20071205 -i 
-Igram/20161008_20161217/20161008_20161217.cor 
--b -46.44 -45.63 -73.69 -72.48
+geocode.py -a 32 -r 8 -d /Users/francisco/insarproc/dem/srtm_svz90m.dem -m SLC/20071205 -i Igram/20161008_20161217/20161008_20161217.cor  -b -46.44 -45.63 -73.69 -72.48
 
-geocode.py -a 32 -r 8 -d /Users/francisco/insarproc/dem/srtm_svz90m.dem 
--m SLC/20071205 -i 
-merged/geom_reference/los.32alks_8rlks.rdr 
--b -46.44 -45.63 -73.69 -72.48
+geocode.py -a 32 -r 8 -d /Users/francisco/insarproc/dem/srtm_svz90m.dem -m SLC/20071205 -i merged/geom_reference/los.32alks_8rlks.rdr -b -46.44 -45.63 -73.69 -72.48
 ```
 
 Here `-b` is the geocoding bounding box and the rest of the parameters as in `stackStripmap.py`
@@ -1793,10 +1784,7 @@ Here `-b` is the geocoding bounding box and the rest of the parameters as in `st
 You can also use `geocodeGdal.py`. Here the coordinates are for Kilauea, so you only have to change the bounding box for your area of interest. You can geocode to whatever posting you want. For example here I geocoded to a posting of 90 m/pixel or 3 arc seconds (1/1200 = 0.0008333333333333334).
 
 ```
-geocodeGdal.py -l ../merged/geom_reference/lat.rdr -L
-../merged/geom_reference/lon.rdr -f 
-20070620_20071221/filt_20070620_20071221_icu.unw  -b
-'19.2 19.6 -155.43 -154.93' -x 0.0008333333333333334 -y 0.0008333333333333334
+geocodeGdal.py -l ../merged/geom_reference/lat.rdr -L ../merged/geom_reference/lon.rdr -f  20070620_20071221/filt_20070620_20071221_icu.unw  -b '19.2 19.6 -155.43 -154.93' -x 0.0008333333333333334 -y 0.0008333333333333334
 ```
 
 A small set of the 6 ALOS images of the 2010 Eyjafjallajökull eruption without ionospheric corecction. Here I convert all the FBS to FBD images so they have a common range band for the split spectrum correction. I also use the open source [90 m TanDEM-X DEM](https://download.geoservice.dlr.de/TDM90/) because the default SRTM does not cover latitudes higher than 60 degrees, like those of Iceland. I stitched the DEM with GDAL and then I copied the relevant file dimensions to the .xml and .vrt files with the metadata.
