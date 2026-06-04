@@ -1865,15 +1865,12 @@ sh run_files/run_7_grid_baseline
 sh run_files/run_8_igram
 ```
 
-<figure id="fig:bp_envi">
-  <img src="figures/pairs_envi_asc_320.png" alt="pairs envi asc 320" width="900">
-  <figcaption><strong>Figure.</strong> Perpendicular baseline plot for ENVISAT IM2 ascending track 320 at Yellowstone caldera ((Delgado2021a)). Note the satellite orbit spread from 2004 until early 2007. Afterwards the orbits were much better controlled. The figure does not include winter radar images.</figcaption>
-</figure>
+
 
 
 <figure id="fig:bp_envi_selected">
   <img src="figures/is2_a320.png" alt="is2 a320" width="900">
-  <figcaption><strong>Figure.</strong> Perpendicular baseline plot for ENVISAT IM2 ascending track 320 at Yellowstone caldera ((Delgado2021a)) with selected interferograms and SLCs classified as either winter (blue circles) or non winter (red circles based on whether they result in low coherence interferograms or not.</figcaption>
+  <figcaption><strong>Figure.</strong> Perpendicular baseline plot for ENVISAT IM2 ascending track 320 at Yellowstone caldera ((Delgado2021a)) with selected interferograms and SLCs classified as either winter (blue circles) or non winter (red circles based on whether they result in low coherence interferograms or not. The figure does not include winter radar images. Note the satellite orbit spread from 2004 until early 2007. Afterwards the orbits were much better controlled.</figcaption>
 </figure>
 
 
