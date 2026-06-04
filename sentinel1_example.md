@@ -82,6 +82,18 @@ You should get the following file
 
 
 
+### Ionosphere correction
+
+You should use this correction for TOPS data in regiones of low geomagnetic latitudes . To correct the long wavelength dispersive phase and burst overlap jumps in `topsApp.py`, add the following to the input file.
+
+```
+<property name="do ionosphere correction">True</property>
+<property name="apply ionosphere correction">True</property>
+<property name="consider burst properties in ionosphere computation">True</property>
+```
+
+
+
 
 
 
