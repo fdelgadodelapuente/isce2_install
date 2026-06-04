@@ -1004,7 +1004,7 @@ imageMath.py -e='a_0;a_1*(c>0)-b_0*(c>0)' -s BIL  --a=interferogram/filt_topopha
 
 Here `filt_topophase.conncomp` is for an ICU unwrapped interferogram and you can replace it with `filt_topophase.unw.conncomp` for a SNAPHU_MCF unwrapped interferogram.
 
-### Calculate an unflattened interfeorgram
+### Process an unflattened interferogram
 
 stripmapApp uses the range offset file to automatically flatten the interferogram – unlike ROI_PAC that implemented the flattening and simulation removal in different runs of the old `diffnsim.f` routine. You can use the following csh script to calculate an interferogram before the flat earth and simulation phase corrections.
 
@@ -1013,18 +1013,13 @@ stripmapApp uses the range offset file to automatically flatten the interferogra
 ###calculate unflattened interferogram for ISCE stripmapApp.py
 
 #extract radar wavelength
-set wvl = `grep wavelength stripmapProc.xml | head -1 | sed 
-'s/<wavelength>//g' | sed 's/<\/wavelength>//g'`
+set wvl = `grep wavelength stripmapProc.xml | head -1 | sed 's/<wavelength>//g' | sed 's/<\/wavelength>//g'`
 
 #extract slant range pixel size
-set rps = `grep range_pixel_size stripmapProc.xml | head -1 | sed 
-'s/<range_pixel_size>//g' | sed 's/<\/range_pixel_size>//g'`
+set rps = `grep range_pixel_size stripmapProc.xml | head -1 | sed 's/<range_pixel_size>//g' | sed 's/<\/range_pixel_size>//g'`
 
 #calculate interferogram and add back topo+flat earth phase
-imageMath.py -e="a*conj(b)*exp(J*4*PI*${rps}*c/${wvl})"  
---a=reference_slc/reference.slc 
---b=coregisteredSlc/refined_coreg.slc 
---c=offsets/range.off -t CFLOAT -o unflat.int
+imageMath.py -e="a*conj(b)*exp(J*4*PI*${rps}*c/${wvl})"  --a=reference_slc/reference.slc  --b=coregisteredSlc/refined_coreg.slc --c=offsets/range.off -t CFLOAT -o unflat.int
 
 looks.py -i unflat.int -a ${alks} -r ${rlks}
 ```
