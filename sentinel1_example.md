@@ -79,8 +79,10 @@ You should get the following file
 <img style="float: center;" src="s1_calbuco.png" style="width:100px;">
 
 
-
-
+You can clean-up intermediate files with
+```
+rm -v fine_interferogram/IW?/burst_??.int fine_interferogram/IW?/burst_??.cor fine_offsets/IW?/azimuth*off fine_offsets/IW?/range*off fine_coreg/IW?/burst_??.slc geom_reference/IW?/???_??.rdr ESD/overlap_IW?_??.int coarse_coreg/overlaps/IW?/*slc coarse_offsets/overlaps/IW?/*.off coarse_interferogram/overlaps/IW?/burst_bot_??_??.int coarse_interferogram/overlaps/IW?/burst_top_??_??.int */*full
+```
 
 ### Ionosphere correction
 
