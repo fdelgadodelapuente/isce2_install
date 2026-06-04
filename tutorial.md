@@ -123,7 +123,7 @@ Sampling frequencies of different SAR satellites. Here B$_p$ and PRF are the ran
 
 <figure id="fig:rang_res_Lband">
   <img src="figures/range_res_Lband.png" alt="range res Lband" width="900">
-  <figcaption><strong>Figure.</strong> B several L-band SAR data sets, in addition to Sentinel-1 TOPS ((Delgado2024)).</figcaption>
+  <figcaption><strong>Figure.</strong> B several L-band SAR data sets, in addition to Sentinel-1 TOPS (Modified from [Delgado et al.,2024](https://ieeexplore.ieee.org/document/10586971)).</figcaption>
 </figure>
 
 
