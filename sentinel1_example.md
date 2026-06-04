@@ -94,6 +94,76 @@ You should use this correction for TOPS data in regiones of low geomagnetic lati
 
 
 
+### Extract amplitude SLCs
+
+Must be run with the following options in the int.xml file
+
+```
+<property name="use virtual files">False</property>
+<property name="geocodelist">[merged/amplitudes.bil]</property>  
+```
+
+```
+#gdal_translate -of ENVI merged/reference.slc.full.vrt merged/reference.slc.full
+#gdal_translate -of ENVI merged/secondary.slc.full.vrt merged/secondary.slc.full
+imageMath.py -e='abs(a);abs(b)' --a=reference.slc.full --b=secondary.slc.full -t FLOAT -s BIL -o amplitudes.bil.full
+looks.py -i amplitudes.bil.full -a ${alks} -r ${rlks} -o amplitudes.bil
+#gdal_translate -of ENVI merged/amplitudes.bil.vrt merged/amplitudes.bil
+```
+
+### Dense offsets
+
+One particular advantage of the TOPS mode with respect to other stripmap modes is the small pixel size in the slant range direction. Therefore if your interferogram is decorrelated due to large strain, you can still retrieve deformation from range offsets instead of interferometry (e.g., ). Due to the small pixel size in range, you can also extract more accurate range than azimuth offsets, which are particularly useful for glaciology.
+
+[Box sizes for ampcor](https://raw.githubusercontent.com/parosen/Geo-SInC/7f89ccfa906e36c12726a663ee3d34c621797214/UNAVCO2021/4.4_Offset_stack_for_velocity_dynamics/support_files/offset_parameters.png).
+
+```
+<!-- Ssearch Window Size Height should be < 2 * Window Size Height-->
+<property name="do denseOffsets">True</property>
+<property name="Ampcor window width">40</property>
+<property name="Ampcor window height">8</property>
+<property name="Ampcor search window height">10</property>
+<property name="Ampcor search window width">10</property>
+<property name="Ampcor skip width">32</property>
+<property name="Ampcor skip height">8</property>
+```
+
+Example for Pine Island glacier (Antarctica) from the [2021 UNAVCO ISCE Workshop.](https://github.com/parosen/Geo-SInC/blob/main/UNAVCO2021/4.4_Offset_stack_for_velocity_dynamics/nb_topsApp_offsets.ipynb)
+
+Example for Pine Island glacier (Antarctica) from the [2023 EarthScope ISCE Workshop.](https://github.com/parosen/Geo-SInC/blob/main/EarthScope2023/4.3_Offset_stack_for_velocity_dynamics_with_autoRIFT/nb_dense_offsets.ipynb)
+
+```
+<property name="do denseoffsets">True</property>
+    <property name="Filter window size">3</property>
+    <property name="Ampcor window width">256</property>
+    <property name="Ampcor window height">64</property>
+    <property name="Ampcor search window width">40</property>
+    <property name="Ampcor search window height">10</property>
+    <property name="Ampcor skip width">128</property>
+    <property name="Ampcor skip height">32</property>
+```
+
+Example for southern Patagonia Icefield (Chile/Argentina)
+
+```
+<property name="do denseoffsets">True</property>
+    <property name="Filter window size">3</property>
+    <property name="Ampcor window width">128</property>
+    <property name="Ampcor window height">32</property>
+    <property name="Ampcor search window width">40</property>
+    <property name="Ampcor search window height">10</property>
+    <property name="Ampcor skip width">16</property>
+    <property name="Ampcor skip height">4</property>
+```
+
+Then multiply the range and azimuth offsets by their pixel sizes of 2.3 and 14.1 m, respectively. The offset tracking uncertainty is 1/5 to 1/10 of the pixel size, so this results in theoretical uncertainties of 0.23-0.45 m for range offsets, and 1.41-2.82 m for azimuth offsets.
+
+<figure>
+  <img src="figures/ampcor_tops.png" alt="ampcor tops" width="900">
+  <figcaption><strong>Figure.</strong> Range and azimuth offsets for 12 day Sentinel-1 pair.</figcaption>
+</figure>
+
+
 
 
 
