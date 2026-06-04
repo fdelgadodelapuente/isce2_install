@@ -2100,14 +2100,10 @@ You need to manually check the quality of the ionospheric correction before runn
 ./cmd_3.sh
 ```
 
-If the correction was successful, you need to uncomment these two steps and run them in a separate script.
+If the correction was successful, you need to uncomment the lines that run `ion_ls.py` and `ion_correct.py` and run them in a separate script.
 
 ```
-/home/fdelgado/isce/isce2-2.5.3/contrib/stack/alosStack/ion_ls.py 
--idir pairs_ion -odir dates_ion -ref_date_stack 171201 
--nrlks1 2 -nalks1 4 -nrlks2 4 -nalks2 4 -nrlks_ion 16 
--nalks_ion 16 -interp
-
+/home/fdelgado/isce/isce2-2.5.3/contrib/stack/alosStack/ion_ls.py -idir pairs_ion -odir dates_ion -ref_date_stack 171201 -nrlks1 2 -nalks1 4 -nrlks2 4 -nalks2 4 -nrlks_ion 16 -nalks_ion 16 -interp
 
 insarpair=($(ls -l pairs | grep ^d | awk '{print $9}'))
 for ((i=0;i<${#insarpair[@]};i++)); do
@@ -2119,10 +2115,7 @@ for ((i=0;i<${#insarpair[@]};i++)); do
   cd pairs
   cd ${insarpair[i]}
   #uncomment to run this command
-  /home/fdelgado/isce/isce2-2.5.3/contrib/stack/alosStack/ion_correct.py 
-  -ion_dir ../../dates_ion -ref_date ${ref_date} 
-  -sec_date ${sec_date} -nrlks1 2 -nalks1 4 -nrlks2 4 
-  -nalks2 4
+  /home/fdelgado/isce/isce2-2.5.3/contrib/stack/alosStack/ion_correct.py   -ion_dir ../../dates_ion -ref_date ${ref_date}   -sec_date ${sec_date} -nrlks1 2 -nalks1 4 -nrlks2 4   -nalks2 4
   cd ../../
 
 done
