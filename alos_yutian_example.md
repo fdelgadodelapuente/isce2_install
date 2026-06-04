@@ -8,7 +8,7 @@ wget https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP124520690-L1.0.zip
 wget https://datapool.asf.alaska.edu/L1.0/A3/ALPSRP124520700-L1.0.zip
 ```
 
-Create the input file **sm_alos.xml** in the **20100309_20100424**  folder
+Create the input file `sm_alos.xml` in the `20100309_20100424`  folder
 ```
 <stripmapApp>
 	<component name="insar">
@@ -57,7 +57,7 @@ Create the input file **sm_alos.xml** in the **20100309_20100424**  folder
 
 ```
 
-Download the SRTM DEM in the **20100309_20100424**  folder
+Download the SRTM DEM in the `20100309_20100424`  folder
 ```
 dem.py -a stitch -b 34 37 80 83 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1 -f
 ```
