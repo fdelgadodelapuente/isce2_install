@@ -1170,22 +1170,6 @@ rm -v ESD/*/IW?/freq_??.bin ESD/*/IW?/overlap_??.int
 rm -v coarse_interferograms/*/overlap/IW?/*int
 ```
 
-# Time Series Analysis
-
-## MintPy
-
-The Miami insar time series Python code is a software that will run time series. Unlike most of the time series software, it applies corrections (ramps, DEM errors, atmospheric phase delays) in the time series domain after the inversion . In constrast, other workflows like GIAnT apply these corrections in the interferogram domain before the displacement inversion.
-
-If you use ALOS, you need to apply the ionospheric correction before importing the data into MintPy.
-
-For data sets processed with `stackStripMap.py`, pick an SLC and extract the metadata into a ROI_PAC .rsc file.
-
-    prep_isce.py -d ./Igrams -m merged/SLC/20070131/referenceShelve/data.dat -b ./baselines -g ./geom_reference
-
-Create a new folder, dump the `smallbaselineApp.cfg` file here, edit it for the relevant directories, and run the inversion.
-
-    smallbaselineApp.py smallbaselineApp.cfg
-
 # Example interferograms of volcanoes and earthquakes from ENVISAT, ALOS, Sentinel-1, and ALOS-2
 
 ## Volcanoes
