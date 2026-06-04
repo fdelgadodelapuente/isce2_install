@@ -1,5 +1,8 @@
 ISCE2 example for processing a single swath of an ALOS-2 interferogram of Aniakchak crater, Aleutians. It does not include the ionospheric correction because in this case it fails for single swath processing.
 
+
+You can process ALOS-2 stripmap data with `stripmapApp.py`. For ALOS-2 SM3 the data are provided as a double polarization IMG-HH and IMG-HV files with the same pixel size for each file – there is no need to run an FBD2FBS conversion. The SM1 data are provided as single polarization files with a single IMG-HH file. HH interferograms have a higher SNR than HV interferograms.
+
 Download the data
 ```
 wget https://cumulus.asf.earthdatacloud.nasa.gov/L1.1/ALOS2/ALOS2447461150-220905-WBSR1.1__A.zip
