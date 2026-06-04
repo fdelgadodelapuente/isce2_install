@@ -728,13 +728,13 @@ stripmapApp.py stripmapapp_input.xml --steps --start=step1 --end=step2
 
 ### Input example file
 
-For raw data you can skip the Doppler centroid method and the software will calculate automatically with DOPIQ (useDOPIQ), except for COSMO-SkyMed. the latter and for SLC data you have to set it to useDEFAULT.
-
-**ERS data** requires either PRC (DPAF) or ODR (Delft) orbits. PRC orbits are better .
-
 **Doppler centroid**
-
+For raw data you can skip the Doppler centroid method and the software will calculate automatically with DOPIQ (useDOPIQ), except for COSMO-SkyMed. the latter and for SLC data you have to set it to useDEFAULT. 
 For ENVISAT raw and ALOS raw data `stripmapApp.py` uses ROI$\_$PAC’s clutterlock algorithm to automatically estimate the Doppler centroid (DOPIQ) . This algorithm estimates the Doppler centroid as a quadratic polynomial function of range multiplied by the PRF. For CSK raw data and zero Doppler data `stripmapApp.py` will read the Doppler centroid in the image metadata. DOPIQ can also calculate the Doppler centroid of CSK raw data, but the centroid provided by ASI is more accurate because the latter is a sixth order polynomial.
+
+
+**ERS data** requires either ODR (Delft) orbits or PRC (DPAF, better).
+
 
 ### Steps
 
