@@ -1,6 +1,6 @@
 ISCE2 example for processing a CSK interferogram of the 2018 Kilauea eruption.
 
-We process the data with the TanDEM-X 12 m DEM to take advantage of the high resolution of the X-band stripmap data (2 m/pixel in ground range). You can get the DEM from DLR and then you need to convert to the ISCE2 file format with GDAL.
+We process the data with the Copernicus 30 m DEM to take advantage of the high resolution of the X-band stripmap data (2 m/pixel in ground range). You can get the DEM from ESA and then you need to convert to the ISCE2 file format with GDAL.
 
 Create the input file `sm_csk.xml` in the `20180508_20180509` folder 
 ```
