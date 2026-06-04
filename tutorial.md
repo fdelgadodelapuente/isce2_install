@@ -131,7 +131,7 @@ Sampling frequencies of different SAR satellites. Here B$_{p}$ and PRF are the r
 
 
 <figure id="fig:rang_res_Lband">
-  <img src="figures/range_res_Lband.pdf" alt="range res Lband" width="900">
+  <img src="figures/range_res_Lband.png" alt="range res Lband" width="900">
   <figcaption><strong>Figure.</strong> B several L-band SAR data sets, in addition to Sentinel-1 TOPS ((Delgado2024)).</figcaption>
 </figure>
 
@@ -1225,7 +1225,7 @@ Example for southern Patagonia Icefield (Chile/Argentina)
 Then multiply the range and azimuth offsets by their pixel sizes of 2.3 and 14.1 m, respectively. The offset tracking uncertainty is 1/5 to 1/10 of the pixel size, so this results in theoretical uncertainties of 0.23-0.45 m for range offsets, and 1.41-2.82 m for azimuth offsets.
 
 <figure>
-  <img src="figures/ampcor_tops.pdf" alt="ampcor tops" width="900">
+  <img src="figures/ampcor_tops.png" alt="ampcor tops" width="900">
   <figcaption><strong>Figure.</strong> Range and azimuth offsets for 12 day Sentinel-1 pair.</figcaption>
 </figure>
 
@@ -1650,13 +1650,13 @@ Here `-W` is the workflow, `-s` is the folder with the raw images extracted by t
 `stackStripmap.py` will generate many configuration files that need to be manually executed. It also generates a perpendicular baseline plot `pairs.pdf` (`fig:bp`).
 
 <figure id="fig:bp">
-  <img src="figures/pairs.pdf" alt="pairs" width="900">
+  <img src="figures/pairs.png" alt="pairs" width="900">
   <figcaption><strong>Figure.</strong> Perpendicular baseline plot for ALOS data. The reference image is not the earliest image.</figcaption>
 </figure>
 
 
 <figure id="fig:bp_alos114">
-  <img src="figures/pairs_alos_p114.pdf" alt="pairs alos p114" width="900">
+  <img src="figures/pairs_alos_p114.png" alt="pairs alos p114" width="900">
   <figcaption><strong>Figure.</strong> Perpendicular baseline plot for ALOS path 114. The reference image is not the earliest image. Note the systematic drift in the satellite orbit from 2007 to mid 2008 and then from late 2008 until the end of the mission in April 2011.</figcaption>
 </figure>
 
@@ -1866,13 +1866,13 @@ sh run_files/run_8_igram
 ```
 
 <figure id="fig:bp_envi">
-  <img src="figures/pairs_envi_asc_320.pdf" alt="pairs envi asc 320" width="900">
+  <img src="figures/pairs_envi_asc_320.png" alt="pairs envi asc 320" width="900">
   <figcaption><strong>Figure.</strong> Perpendicular baseline plot for ENVISAT IM2 ascending track 320 at Yellowstone caldera ((Delgado2021a)). Note the satellite orbit spread from 2004 until early 2007. Afterwards the orbits were much better controlled. The figure does not include winter radar images.</figcaption>
 </figure>
 
 
 <figure id="fig:bp_envi_selected">
-  <img src="figures/is2_a320.pdf" alt="is2 a320" width="900">
+  <img src="figures/is2_a320.png" alt="is2 a320" width="900">
   <figcaption><strong>Figure.</strong> Perpendicular baseline plot for ENVISAT IM2 ascending track 320 at Yellowstone caldera ((Delgado2021a)) with selected interferograms and SLCs classified as either winter (blue circles) or non winter (red circles based on whether they result in low coherence interferograms or not.</figcaption>
 </figure>
 
@@ -1903,19 +1903,19 @@ stackStripMap.py -W interferogram -z --nofocus -s slcs -m 20180315 -d
 The specific number of range and azimuth looks depends upon the satellite. The rest of the workflow is the same as in the previous examples.
 
 <figure id="fig:bp_rs2">
-  <img src="figures/pairs_rs2_u16w2.pdf" alt="pairs rs2 u16w2" width="900">
+  <img src="figures/pairs_rs2_u16w2.png" alt="pairs rs2 u16w2" width="900">
   <figcaption><strong>Figure.</strong> Perpendicular baseline plot for RADARSAT-2 data from beam U16W2 ((Delgado2021)).</figcaption>
 </figure>
 
 
 <figure id="fig:bp_csk">
-  <img src="figures/pairs_csk_villarrica.pdf" alt="pairs csk villarrica" width="900">
+  <img src="figures/pairs_csk_villarrica.png" alt="pairs csk villarrica" width="900">
   <figcaption><strong>Figure.</strong> Perpendicular baseline plot for COSMO-SkyMed descending data for Villarrica volcano ((Delgado2017)). Note the large spread in baselines compared with either ENVISAT (fig:bp_envi) or RADARSAT-2 (fig:bp_rs2). A comparison with an ALOS track is not direct because the ALOS missions had a systematic orbit drift and reset (fig:bp_alos114) that was not enforced for other satellites.</figcaption>
 </figure>
 
 
 <figure id="fig:bp_csk">
-  <img src="figures/alos2_saocom_Bp.pdf" alt="alos2 saocom Bp" width="900">
+  <img src="figures/alos2_saocom_Bp.png" alt="alos2 saocom Bp" width="900">
   <figcaption><strong>Figure.</strong> Perpendicular baseline plot for ALOS-2 SM3 and SAOCOM-1 stripmap data ((Delgado2024)). SAOCOM-1 lacks a controlled orbital tube, so that results in large baselines compared with ALOS-2.</figcaption>
 </figure>
 
@@ -2026,7 +2026,7 @@ ls *zip | awk '{print "zip -d",$1,substr($1,1,67)".SAFE/measurement/*iw1*tiff",s
 ```
 
 <figure id="fig:bp_s1">
-  <img src="figures/s1p83dsc_bp.pdf" alt="s1p83dsc bp" width="900">
+  <img src="figures/s1p83dsc_bp.png" alt="s1p83dsc bp" width="900">
   <figcaption><strong>Figure.</strong> Perpendicular baseline plot for Sentinel-1 descending track 83 for Cordon Caulle volcano ((Delgado2021a)). I classified the images based upon the satellite that acquired them (either 1A or 1B), as winter images when acquired in the austral winter and resulting in decorrelated interferograms in the volcano, or images from non-winter seasons that were acquired under rainy conditions and also resulting in low quality interferograms. Note that this is not the output of the Sentinel-1 Stack Processor, but a MATLAB figure that uses the perpendicular baseline information from the stack processor and a manual inspection of thousands of interferograms (incredibly tedious but necessary in areas with seasonal low coherence).</figcaption>
 </figure>
 
