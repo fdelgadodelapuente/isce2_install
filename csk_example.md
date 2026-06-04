@@ -7,20 +7,19 @@ Create the input file `sm_csk.xml` in the `20180508_20180509` folder
 <stripmapApp>
 	<component name="insar">
 	<property name="Sensor Name">TERRASARX</property>
-	<property name="demFilename">/home/lgodoy/dem/tandemx12m_salar_atacama.dem</property>
-	<!--	<property name="demFilename">/home/fdelgado/dem/atacama/cop_dem_glo30m_wgs84_salar.dem</property>-->
+    	<property name="demFilename">/home/fdelgado/dem/iceland/cop_dem_glo30m_wgs84_hawaii.dem</property> 
 	<property name="reference doppler method">useDEFAULT</property>
 	<property name="secondary doppler method">useDEFAULT</property>
-	<property name="range looks">4</property> 
-	<property name="azimuth looks">4</property> 
+	<property name="range looks">8</property> 
+	<property name="azimuth looks">8</property> 
 
 	<component name="reference">
-		<property name="XML">../PAZ1_SAR__SSC______SM_S_SRA_20250311T100425_20250311T100432/PAZ1_SAR__SSC______SM_S_SRA_20250311T100425_20250311T100432.xml</property>
+		<property name="HDF5">../CSKS2_RAW_B_HI_10_HH_RD_SF_20180508035856_20180508035903.h5</property>
 		<property name="OUTPUT">reference</property>
 	</component>
 
 	<component name="secondary">
-		<property name="XML">../PAZ1_SAR__SSC______SM_S_SRA_20260320T100425_20260320T100432/PAZ1_SAR__SSC______SM_S_SRA_20260320T100425_20260320T100432.xml</property>
+		<property name="HDF5">../CSKS3_RAW_B_HI_10_HH_RD_SF_20180509035854_20180509035902.h5</property>
 		<property name="OUTPUT">secondary</property>
 	</component>
 
@@ -46,9 +45,8 @@ cd interferogram
 
 mdx.py filt_topophase.unw.geo -kml filt_topophase.unw.geo.kml
 
-mdx filt_topophase.unw.geo -s 3945-CW -unw -r4 -rhdr 15780 -cmap cmy -wrap 6.283185307179586 -P; convert out.ppm -transparent cyan filt_topophase.unw.geo.png
 ```
 You should get the following file
 
 
-<img style="float: center;" src="filt_topophase_paz.unw.geo.png" style="width:300px;">
+<img style="float: center;" src="filt_topophase_csk.unw.geo.png" style="width:300px;">
