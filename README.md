@@ -151,7 +151,7 @@ Patches for ISCE 2.6.4 that are required to run with the latest languages and fo
 [SAOCOM-1 stack processor and ALOS-4 single interferogram and stack processor patches](https://github.com/isce-framework/isce2/pull/982)
 
 ## Software Manual
-[ISCE2 for Earth Science](https://github.com/fdelgadodelapuente/isce2_install/blob/main/tutorial.md)
+[ISCE2 Software Manual for Earth Science](https://github.com/fdelgadodelapuente/isce2_install/blob/main/tutorial.md)
 
 ## Interferogram Processing
 
