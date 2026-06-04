@@ -663,9 +663,6 @@ cp -R ~/apps/isce2/contrib/stack $ISCE_HOME/components/contrib/.
 
 # Interferometric processing workflows
 
-
-# Ancillary information required for InSAR processing
-
 ## DEMs
 
 If your area of interest does not require high resolution processing and accurate DEM (better than 30 m/pixel and accuracies better than 10 m), then use SRTM. Do not use the ASTER GDEM because it is less accurate than SRTM ($\sim$20 vs $\sim$10 m respectively), unless you are outside of +/- 60º of latitude (e.g., Iceland). Ideally try to use DEMs with resolution similar to the images resolution. TanDEM-X DEM is better than SRTM but only free for 90 m/pixel. TanDEM-X 1 and 0.4 arcsec DEMs and the optical Pléiades data require a DEM proposal to be submitted to DLR and CNES respectively. The Pléiades DEMs have a native resolution of 0.5 m/pixel and are downsampled to 2 m/pixel to reduce the effect of noise. Rarely a SAR data set is processed to such high resolution for tectonic and volcanic applications. Therefore the Pléaides DEMs are usually downsampled down to 10 m/pixel (`tab:slcres_dem`).
