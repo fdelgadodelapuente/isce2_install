@@ -12,7 +12,7 @@ wget https://s1qc.asf.alaska.edu/aux_resorb/S1D_OPER_AUX_RESORB_OPOD_20260516T02
 ```
 Sentinel-1D data are available at the [Copernicus Browser](https://browser.dataspace.copernicus.eu) and do not have direct download links.
 
-Create the input file **topsapp.xml** in the **20260514_20260515_s2** folder
+Create the input file `topsapp.xml` in the `20260514_20260515_s2` folder
 ```
 <topsApp> 
 	<component name="topsinsar"> 
