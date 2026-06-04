@@ -125,7 +125,7 @@ Sampling frequencies of different SAR satellites. Here B$_{p}$ and PRF are the r
 </div>
 
 <figure id="fig:az_res">
-  <img src="figures/SARaz.pdf" alt="SARaz" width="900">
+  <img src="figures/SARaz.png" alt="SARaz" width="900">
   <figcaption><strong>Figure.</strong> B and PRF for several SAR data sets. There is an proportionality relation between the PRF and B except for the Wide Swath modes like S1 TOPS and RADARSAT-2 F0W2.</figcaption>
 </figure>
 
