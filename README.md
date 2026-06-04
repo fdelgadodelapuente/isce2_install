@@ -172,3 +172,5 @@ You can test the software by processing the following X-, C- and L-band interfer
 [SAOCOM-1 L-band stripmap, Santiago basin (Chile)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/saocom1_example.md)
 
 [PAZ X-band stripmap, Salar de Atacama basin (Chile)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/paz_example.md)
+
+[CSK X-band stripmap, Kilauea caldera (USA)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/csk_example.md)
