@@ -420,9 +420,9 @@ Python.framework/Versions/3.6/lib/python3.6/site-packages:$PYTHONPATH
 
 [Instructions from Piyush Agram, JPL](https://github.com/piyushrpt/oldLinuxSetup)
 
-### STEP 1: update Python3
+### STEP 1: Install Python3
 
-ISCE is written in Python3 and uses a lot of its libraries. To install them all you need to install anaconda3 and then type
+ISCE is written in Python3. Download and install anaconda3, then run
 
 ```
 /home/fdelgado/anaconda3/bin/conda config --add channels conda-forge
