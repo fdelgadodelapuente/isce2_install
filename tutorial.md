@@ -422,31 +422,14 @@ Python.framework/Versions/3.6/lib/python3.6/site-packages:$PYTHONPATH
 
 [Instructions from Piyush Agram, JPL](https://github.com/piyushrpt/oldLinuxSetup)
 
-### STEP 1: update Python2.7
-
-ISCE is compiled with scons, a Python2.7 application. You have scons installed if you type
-
-```
-which scons
-scons -h
-```
-
-and the outputs do not display errors If you do not have scons, download miniconda2, update the libraries and install scons
-
-```
-/home/fdelgado/miniconda2/bin/conda update --all
-/home/fdelgado/miniconda2/bin/conda install scons
-```
-
-Now type again the scons commands. If it doesn’t work, close the terminal, open another window and try again. ISCE also supports scons for python3.
-
-### STEP 2: update Python3
+### STEP 1: update Python3
 
 ISCE is written in Python3 and uses a lot of its libraries. To install them all you need to install anaconda3 and then type
 
 ```
 /home/fdelgado/anaconda3/bin/conda config --add channels conda-forge
 /home/fdelgado/anaconda3/bin/conda update --all 
+/home/fdelgado/anaconda3/bin/conda install scons
 /home/fdelgado/anaconda3/bin/conda install gdal 
 /home/fdelgado/anaconda3/bin/conda install libgdal 
 /home/fdelgado/anaconda3/bin/conda install -c omnia fftw3f=3.3.4
@@ -483,11 +466,38 @@ However, this will downgrade `gdal`, which you must then update with
 conda update gdal
 ```
 
-### STEP 3: create the SConfigISCE file
+### STEP 2: create the SConfigISCE file
 
 This is the tricky part, that ISCE can actually find all the installed libraries. You need to create a file called `SConfigISCE` in the folder above ISCE which specifies the libraries paths.
 
-### STEP 4: Install ISCE
+```
+#### rm -rf config.log .sconfig.dblite .sconf_temp .sconsign.dblite; SCONS_CONFIG_DIR=~/isce scons install  
+
+PRJ_SCONS_BUILD =   /home/fdelgado/isce/isce2-2.6.3/build/isce_202306
+PRJ_SCONS_INSTALL = /home/fdelgado/isce/isce2-2.6.3/install/isce_202306
+
+LIBPATH = /home/fdelgado/anaconda3/lib /usr/lib64 /usr/lib
+##last two folders are for compilinng autoRIFT in ISCE 2.4.0 and later, as detailed in contrib/geo_autoRIFT/autoRIFT/bindings/autoriftcoremodule.cpp
+CPPPATH = /usr/include/python3.6m /usr/include ###/home/fdelgado/anaconda3/lib/python3.8/site-packages/numpy/core/include  /home/fdelgado/anaconda3/include/opencv4
+FORTRANPATH = /home/fdelgado/isce/fftw-3.3.8/api /usr/bin /usr/lib  
+
+#libraries needed for mdx display utility
+MOTIFLIBPATH = /usr/lib/x86_64-linux-gnu       # path to libXm.dylib
+X11LIBPATH = /usr/lib/x86_64-linux-gnu         # path to libXt.dylib
+MOTIFINCPATH = /usr/lib/x86_64-linux-gnu   # path to location of the Xm
+                                    # directory with various include files (.h)
+X11INCPATH = /usr/lib/x86_64-linux-gnu     # path to location of the X11 directory
+                                    # with various include files
+
+FORTRAN = /usr/bin/gfortran
+CC = /usr/bin/gcc
+CXX = /usr/bin/g++
+
+ENABLE_CUDA = FALSE
+
+```
+
+### STEP 3: Install ISCE
 
 cd to the ISCE folder and then type in the terminal
 
@@ -503,9 +513,42 @@ rm -rf config.log .sconfig.dblite .sconf_temp
 
 and then restart
 
-### STEP 5: source ISCE
+### STEP 4: source ISCE
 
 Create a .sh file similar to that of macOS with the software path. Source it to load the software
+
+```
+#!/bin/sh
+ 
+ISCEPATH="/home/fdelgado/isce/isce2-2.6.3"
+username="fdelgado"
+
+echo "Loading ISCE 2.6.3 April 2023"
+
+export PYTHONPATH=$ISCEPATH/install:$PYTHONPATH
+export PATH=$ISCEPATH/install/isce/bin:$PATH
+export PATH=$ISCEPATH/install/isce/applications:$PATH
+export ISCE_HOME=$ISCEPATH/install/isce
+
+if [ "$1" = "stripmap" ]
+then
+export PATH=$ISCEPATH/contrib/stack/stripmapStack:$PATH
+fi
+if [ "$1" = "tops" ]
+then 
+export PATH=$ISCEPATH/contrib/stack/topsStack:$PATH
+fi
+if [ "$1" = "alos2" ]
+then
+export PATH=$ISCEPATH/contrib/stack/alosStack:$PATH
+export PATH_ALOSSTACK=$ISCEPATH/contrib/stack/alosStack
+fi
+
+##export GDAL_DATA=/home/$username/anaconda3/share/gdal
+
+export PATH=~/isce/scripts:$PATH
+
+```
 
 ```
 source /home/fdelgado/isce/isce.sh
@@ -518,7 +561,7 @@ topsApp.py --steps --help
 stripmapApp.py --steps --help
 ```
 
-### STEP 6: get SRTM access
+### STEP 5: get SRTM access
 
 ISCE uses the SRTM DEM (the best free DEM available for InSAR processing, much better than the ASTER GDEM). You need to get a NASA account at [urs.earthdata.nasa.gov](urs.earthdata.nasa.gov) (free).
 
