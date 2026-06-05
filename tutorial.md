@@ -19,9 +19,7 @@
   - [topsApp.py](#topsapppy)
   - [alos2App.py](#alos2apppy)
 - [Miscellaneous issues](#miscellaneous-issues)
-- [Example interferograms of volcanoes and earthquakes from ENVISAT, ALOS, Sentinel-1, and ALOS-2](#example-interferograms-of-volcanoes-and-earthquakes-from-envisat-alos-sentinel-1-and-alos-2)
-  - [Volcanoes](#volcanoes)
-  - [Earthquakes](#earthquakes)
+- [Example interferograms from ALOS-2](#example-interferograms-of-volcanoes-and-earthquakes-from-envisat-alos-sentinel-1-and-alos-2)
 
 
 <div class="center">
@@ -1167,7 +1165,7 @@ $$S_{1} = cos(h+90)sin(l); S_{2} = sin(h+90)sin(l); S_{3} = cos(l)$$ Here $l$ is
 
 $$U_{LOS} = \vec{S} \bullet \vec{U} = S_{1}U_{x} + S_{2}U_{y} + S_{3}U_{z}$$ with $U_{i}$ the displacement in the $_{i}$ direction. For pressure sources like those in volcanoes most the displacement projected into the LOS is vertical so it is standard practice to describe those signals as either "uplift" or "subsidence", even though it is incorrect from the line-of-sight point of view. For earthquakes both the east-west and vertical components can have equal magnitudes, so in the case it is more accurate to talk about line-of-sight displacement increase/decrease.
 
-# Example interferograms of volcanoes and earthquakes from ENVISAT, ALOS, Sentinel-1, and ALOS-2
+# Example interferograms of from ALOS-2
 <!--
 ## Volcanoes
 
