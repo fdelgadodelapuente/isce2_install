@@ -7,7 +7,7 @@ Create the input file `sm_csk.xml` in the `20180508_20180509` folder
 <stripmapApp>
 	<component name="insar">
 	<property name="Sensor Name">COSMO_SKYMED</property>
-    	<property name="demFilename">/home/fdelgado/dem/iceland/cop_dem_glo30m_wgs84_hawaii.dem</property> 
+	<property name="demFilename">/home/fdelgado/dem/cop_dem_glo30m_wgs84_hawaii.dem</property> 
 	<property name="reference doppler method">useDEFAULT</property>
 	<property name="secondary doppler method">useDEFAULT</property>
 	<property name="range looks">8</property> 
