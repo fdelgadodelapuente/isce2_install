@@ -535,7 +535,7 @@ Change `.netrc` permissions with
 ```
 chmod 600 ~/.netrc
 ```
-
+<!--
 ## CUDA support for Linux
 
 ```
@@ -626,7 +626,7 @@ cp -R ~/apps/isce2/contrib/stack $ISCE_HOME/components/contrib/.
 # you can add this or not
 #export PATH_ALOSSTACK=$ISCE_HOME/components/contrib/stack/alosStack
 ```
-
+-->
 ## Earthscope ISCE2 short courses
 
 [2014 short course](https://www.unavco.org/education/advancing-geodetic-skills/short-courses/2014/isce/isce.html)
