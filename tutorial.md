@@ -1050,9 +1050,9 @@ The interferogram is calculated in three steps. First, subtract the phase. Secon
 
 5.  `prep_slc`
 
-6.  `slc_offset`: coregister SLCs with ampcor. Unlike `stripmapApp.py`, `alos2App.py` doesn’t use geometry to align the SLC’s.
+6.  `slc_offset`: coregister SLCs with ampcor. Unlike `stripmapApp.py`, `alos2App.py` does not use geometry to align the SLC’s.
 
-7.  `form_int`: calculate interferogram
+7.  `form_int`: calculate interferogram by cross correlation and then take looks (1 range, 14 azimith ScanSAR, 2 azimuth, 1 range SM3)
 
 8.  `swath_offset`: for ScanSAR only
 
@@ -1062,15 +1062,15 @@ The interferogram is calculated in three steps. First, subtract the phase. Secon
 
 11. `frame_mosaic`: for ScanSAR only
 
-12. `rdr2geo`: calculate geometry and simulation in radar coordinates for multilooked interferogram. This is similar to the topo step in `stripmapApp.py` and `topsApp.py`
+12. `rdr2geo`: calculate geometry and simulation in radar coordinates for multilooked interferogram. This is similar to the `topo` step in `stripmapApp.py` and `topsApp.py`
 
 13. `geo2rdr`: calculate synthetic phase from geometry and simulation
 
-14. `rdrdem_offset`: cross correlate DEM with flattened interferogram
+14. `rdrdem_offset`: uses ampcor to cross correlate the DEM with flattened interferogram, then cull the offsets (module migrated from ROI_PAC)
 
 15. `rect_rgoffset`: rectify range offset file to reference SLC.
 
-16. `diff_int`: calculate differential interferogram
+16. `diff_int`: calculate differential interferogram. The reference phase is the range offset file
 
 17. `look`
 
