@@ -205,7 +205,7 @@ You can build the software with MacPorts, but I have not tested it.
 ```
 sudo port install py37-isce2 +gcc7
 ```
-
+<!--
 Instead, I compile it manually. For installing ISCE on macOS I suggest strongly suggest you to stick to a single package manager (either macports, brew or conda). Otherwise you might find conflicting issues due to the different versions of the installed libraries. For macports you can follow these instructions that work for 2014 to 2026 computers. These instructions are adapted from <https://github.com/piyushrpt/mojaveSetup?tab=readme-ov-file>
 
 ```
@@ -360,10 +360,8 @@ sudo port install gdal +curl +expat +geos +hdf4 +hdf5 +netcdf  +openjpeg
 
 ####################################
 ### Edit autoRIFT in case scons fails to compile ISCE
-/Applications/insar_software/isce/isce2-2.5.3_monterey/contrib/geo_autoRIFT
-/autoRIFT/bindings/SConscript
-###libList = ['gomp','combinedLib','gdal','opencv_core','opencv_highgui',
-'opencv_imgproc']
+/Applications/insar_software/isce/isce2-2.5.3_monterey/contrib/geo_autoRIFT/autoRIFT/bindings/SConscript
+###libList = ['gomp','combinedLib','gdal','opencv_core','opencv_highgui','opencv_imgproc']
 libList = ['opencv_core','opencv_highgui','opencv_imgproc']
 ####################################
 ```
@@ -419,7 +417,7 @@ Issues with unbinded Python libraries: If the Python libraries are correctly ins
 export PYTHONPATH=/opt/local/Library/Frameworks/
 Python.framework/Versions/3.6/lib/python3.6/site-packages:$PYTHONPATH
 ```
-
+-->
 ## Linux installation
 
 [Instructions from Piyush Agram, JPL](https://github.com/piyushrpt/oldLinuxSetup)
