@@ -515,7 +515,7 @@ and then restart
 
 ### STEP 4: source ISCE
 
-Create a .sh file similar to that of macOS with the software path. Source it to load the software
+Create a .sh file similar to that of macOS with the software path. 
 
 ```
 #!/bin/sh
@@ -549,7 +549,7 @@ fi
 export PATH=~/isce/scripts:$PATH
 
 ```
-
+Source it to load the software
 ```
 source /home/fdelgado/isce/isce.sh
 ```
