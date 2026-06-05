@@ -1168,7 +1168,7 @@ $$S_{1} = cos(h+90)sin(l); S_{2} = sin(h+90)sin(l); S_{3} = cos(l)$$ Here $l$ is
 $$U_{LOS} = \vec{S} \bullet \vec{U} = S_{1}U_{x} + S_{2}U_{y} + S_{3}U_{z}$$ with $U_{i}$ the displacement in the $_{i}$ direction. For pressure sources like those in volcanoes most the displacement projected into the LOS is vertical so it is standard practice to describe those signals as either "uplift" or "subsidence", even though it is incorrect from the line-of-sight point of view. For earthquakes both the east-west and vertical components can have equal magnitudes, so in the case it is more accurate to talk about line-of-sight displacement increase/decrease.
 
 # Example interferograms of volcanoes and earthquakes from ENVISAT, ALOS, Sentinel-1, and ALOS-2
-
+<!--
 ## Volcanoes
 
 ### Okmok, July 2008 eruption, ENVISAT
@@ -1264,6 +1264,7 @@ Sentinel-1 C-band descending (2 frames)
 
 <https://datapool.asf.alaska.edu/SLC/SA/S1A_IW_SLC__1SSV_20150624T004930_20150624T004957_006508_008A3D_BE38.zip>
 
+
 ### April 2015 M$_W$ 7.8 Gorkha, thrust faulting
 
 [ALOS-2 interferograms](https://topex.ucsd.edu/nepal/)
@@ -1275,6 +1276,7 @@ Sentinel-1 C-band descending (2 frames)
 ### July 2019 M$_W$ 7.1 Ridgecrest, strike-slip faulting
 
 [ALOS-2 and Sentinel-1 interferograms](https://topex.ucsd.edu/SV_7.1/)
+-->
 
 ### Feb 2023 doublet M$_W$ 7.8, 7.5 Turkey, strike-slip faulting, ALOS-2
 
