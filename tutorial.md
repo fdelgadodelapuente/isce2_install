@@ -9,7 +9,7 @@
 - [ISCE installation](#isce-installation)
   - [macOS installation](#macos-installation)
   - [Linux installation](#linux-installation)
-  - [CUDA support for Linux](#cuda-support-for-linux)
+<!--  - [CUDA support for Linux](#cuda-support-for-linux)-->
   - [Earthscope ISCE2 short courses](#earthscope-isce2-short-courses)
   - [Other software](#other-software)
 - [Interferometric processing workflows](#interferometric-processing-workflows)
