@@ -180,6 +180,8 @@ You can test the software by processing the following X-, C- and L-band interfer
 
 ## Stack processor
 
+Instructions for running the three different stack processors included in the software.
+
 [TOPS Salar de Atacama and time series with MintPy](https://github.com/fdelgadodelapuente/isce2_install/blob/main/mintpy_salaratacama.md). This is in spanish.
 
 [TOPS stack processor](https://github.com/fdelgadodelapuente/isce2_install/blob/main/stackproc_tops.md)
