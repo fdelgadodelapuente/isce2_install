@@ -1,6 +1,6 @@
 # ISCE2 Installation and Interferogram Processing Guide 
 
-
+## Installation Guide
 
 Instructions for compiling the software in macOS. These are modified from [Instructions for MacPorts (Piyush Agram, formerly at JPL)](https://github.com/piyushrpt/mojaveSetup) I have used these instrucctions with the following macOS versions and compilers 
 
@@ -153,7 +153,7 @@ Patches for ISCE 2.6.4 that are required to run with the latest languages and fo
 ## Software Manual
 [ISCE2 Software Manual for Earth Science](https://github.com/fdelgadodelapuente/isce2_install/blob/main/tutorial.md)
 
-## Interferogram Processing
+## Interferogram Processing Guide
 
 You can test the software by processing the following X-, C- and L-band interferograms.
 
