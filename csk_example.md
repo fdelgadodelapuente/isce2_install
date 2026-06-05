@@ -32,7 +32,7 @@ Create the input file `sm_csk.xml` in the `20180508_20180509` folder
 </stripmapApp>
 
 ```
-You can also process CSK SLC data. Just change `<property name="Sensor Name">COSMO_SKYMED</property>` with `<property name="Sensor Name">COSMO_SKYMED_SLC</property>`. I reccommend that you request CSK SLC data to ASI instead of raw data.
+You can also process CSK SLC data. Just change `Sensor Name` from `COSMO_SKYMED` to `COSMO_SKYMED_SLC`. I reccommend that you request CSK SLC data to ASI instead of raw data.
 
 
 Run it with
