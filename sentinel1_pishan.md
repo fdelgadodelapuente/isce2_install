@@ -4,6 +4,7 @@ Download the SLC data and the precise orbits. Sentinel-1 data requires precise o
 ```
 
 ```
+Here we only process the region of interest over a single swath.
 
 Create the input file `topsapp_asc.xml` in the `20150724_20150630` folder
 ```
