@@ -1,4 +1,4 @@
-ISCE2 example for processing a Sentinel-1C/D TOPS interferogram of the Southern Patagonian Icefield.
+ISCE2 example for processing a Sentinel-1A ascending ad descenfing interferograms of the 2015 Pishan earthquake .
 
 Download the SLC data and the precise orbits. Sentinel-1 data requires precise orbits. You can get these files from https://s1qc.asf.alaska.edu/aux_poeorb/
 ```
