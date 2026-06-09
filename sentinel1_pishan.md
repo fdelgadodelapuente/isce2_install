@@ -1,4 +1,4 @@
-ISCE2 example for processing a Sentinel-1A ascending ad descenfing interferograms of the Mw 6.3 2015 Pishan earthquake (http://geoscope.ipgp.fr/index.php/en/catalog/earthquake-description?seis=us10002n4w).
+ISCE2 example for processing a Sentinel-1A ascending ad descenfing interferograms of the Mw 6.3 2015 Pishan earthquake (http://geoscope.ipgp.fr/index.php/en/catalog/earthquake-description?seis=us10002n4w, https://earthquake.usgs.gov/earthquakes/eventpage/us10002n4w/executive).
 
 Download the SLC data and the precise orbits. Sentinel-1 data requires precise orbits. You can get these files from https://s1qc.asf.alaska.edu/aux_poeorb/
 ```
