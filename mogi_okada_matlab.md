@@ -1,11 +1,10 @@
 # Correr un  modelo de Mogi y Okada 
 
-
 Descargar ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos y [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m)
 
-Crear carpeta llamada insar y meterlas todas adentro.
+Crear carpeta llamada insar y meterlas todas adentro. La carpeta ```inversion/load_isce201708``` es una versión muy vieja y no hay que usarla, por lo que la puede borrar. 
 
-Mover ```load_isce.m``` en inversion/scripts, reescribiendo el que hay ahi.
+Mover ```load_isce.m``` en inversion/scripts, reescribiendo el que hay ahí.
 
 ## Mogi volcan Aniakchak 2023
 
@@ -20,7 +19,9 @@ addpath('inversion/')
 ```
 Correr ```mogi_example/220905_230807_1swath/synth_mogi``` 
 
-Para el downsampling, correr ```resamptool_isce_roipac``` . Para otros datos editar ```mogi_example/220905_230807_1swath/resamp_in.m``` y volver a correr. Las variables clave son ``` filename``` , ``` losfilename``` , ``` demf``` , ``` lambda``` , ``` savestructname``` , ``` zone``` . El bloque de texto que dice 
+Para el downsampling, correr ```resamptool_isce_roipac``` . Para downsamplear otros datos cambiar  ```mogi_example/220905_230807_1swath/resamp_in.m``` y volver a correr. Las variables clave son ``` filename``` , ``` losfilename``` , ``` demf``` , ``` lambda``` , ``` savestructname``` , ``` zone``` . 
+
+El bloque de texto que dice 
 
 ```
 coords.x1=-158.52083333333334;
