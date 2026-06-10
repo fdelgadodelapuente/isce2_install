@@ -30,7 +30,7 @@ coords.nx=1945;
 coords.ny=2401;
 coords.dx=0.0008333333333333334;
 ```
-lo puede reemplazar por coords=NaN, ya que es para una version muy antigua del codigo que leía la metadata de los xml mediante utilidades de Linux.
+lo puede reemplazar por ```coords=NaN```, ya que es para una version muy antigua del codigo que leía la metadata de los xml mediante utilidades de Linux.
 
 para invertir, correr ``` lsqnl_mogi2_chisq_Jac.m```. Si usa MATLAB R2026 y falla, comentar las linas 58-60 que convierten las coordenadas de la fuente de UTM a geográficas. Eso lo puede hacer con Google Earth. 
 
