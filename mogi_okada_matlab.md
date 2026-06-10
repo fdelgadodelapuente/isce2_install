@@ -13,6 +13,8 @@ addpath('inversion/resamp_sill/')
 addpath('inversion/')
 ```
 
-abrir ```okada_pishan/asc/resamp_in.m```
+Abrir ```okada_pishan/asc/resamp_in.m``` modificar linea 11 a ```lambda='sentinel'``` y comentar lineas 40-46
 
-Modificar linea 11 a ```lambda='sentinel'``` y comentar lineas 40-46
+Correr ```okada_pishan/asc/okada_forward_int.m```
+
+para el downsampling descomentar las lineas 40-46 de ```okada_pishan/asc/resamp_in.m```
