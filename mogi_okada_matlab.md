@@ -19,7 +19,7 @@ addpath('inversion/')
 ```
 Correr ```mogi_example/220905_230807_1swath/synth_mogi``` 
 
-Para el downsampling, correr ```resamptool_isce_roipac``` . Para downsamplear otros datos cambiar  ```mogi_example/220905_230807_1swath/resamp_in.m``` y volver a correr. Las variables clave son ``` filename``` , ``` losfilename``` , ``` demf``` , ``` lambda``` , ``` savestructname``` , ``` zone``` . 
+Para el downsampling, correr ```resamptool_isce_roipac``` . Para downsamplear otros datos cambiar  ```mogi_example/220905_230807_1swath/resamp_in.m``` y volver a correr. Las variables clave son ``` filename```, ``` losfilename```, ``` demf```, ``` lambda```, ``` savestructname```, ``` zone```. 
 
 El bloque de texto que dice 
 
