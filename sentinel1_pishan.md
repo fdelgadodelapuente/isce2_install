@@ -110,5 +110,9 @@ You should get the following file
 
 <img style="float: center;" src="figures/s1_dsc_20150718_20150624.png" style="width:100px;">
 
+KMZ descending
+https://github.com/fdelgadodelapuente/isce2_install/blob/main/figures/s1_dsc_20150718_20150624.kmz
 
+KMZ ascending
+https://github.com/fdelgadodelapuente/isce2_install/blob/main/figures/s1_asc_20150724_20150630.kmz
 
