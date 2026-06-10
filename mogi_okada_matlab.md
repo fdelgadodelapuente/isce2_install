@@ -1,7 +1,7 @@
 # Correr un  modelo de Mogi y Okada 
 
 
-Descargar ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de Ucursos y [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m)
+Descargar ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos y [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m)
 
 Crear carpeta llamada insar y meterlas todas adentro.
 
