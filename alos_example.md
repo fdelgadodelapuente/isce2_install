@@ -117,4 +117,4 @@ You should get the following file
 You can then load the interferogram to MATLAB, remove the remaining ramp after masking the coseismic signal with my utilities (https://github.com/fdelgadodelapuente/isce_utils) and export it to a GMT grid. Here I have incoporated the GCMT double couple moment tensor and a [compilation of active and potentially active Chilean faults](https://doi.pangaea.de/10.1594/PANGAEA.922241). 
 
 
-<img style="float: center;" src="alos_20100309_20100424.png" style="width:300px;">
+<img style="float: center;" src="figures/alos_20100309_20100424.png" style="width:300px;">
