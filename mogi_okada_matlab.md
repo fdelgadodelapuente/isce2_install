@@ -1,11 +1,9 @@
 descargar
-https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m
 
-'''
-Mogi_Aniakchak.zip
-inversion2026.zip
-okada_pishan.zip
-'''
+[load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m)
+
+```Mogi_Aniakchak.zip```, ```inversion2026.zip,```okada_pishan.zip```
+```
 crear carpeta llamada insar y meterlas todas adentro
 poner load_isce en inversion/scripts
 
