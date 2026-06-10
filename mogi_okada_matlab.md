@@ -6,13 +6,13 @@ Mover ```load_isce.m``` en inversion/scripts, reescribiendo el que hay ahi.
 
 añadir carpetas al path de Matlab
 
+```
 addpath('inversion/InSamp/')
 addpath('inversion/scripts/')
 addpath('inversion/resamp_sill/')
 addpath('inversion/')
+```
 
+abrir ```okada_pishan/asc/resamp_in.m```
 
-abrir okada_pishan/asc/resamp_in.m
-
-definir lambda='sentinel'; en linea 11
-comentar lineas 40-46
+Modificar linea 11 a ```lambda='sentinel'``` y comentar lineas 40-46
