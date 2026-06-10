@@ -72,4 +72,4 @@ mdx filt_topophase_msk.unw.geo -s 1489 -ch2 -r4 -rhdr 5956 -cmap CMY -wrap 6.28 
 You should get the following file
 
 
-<img style="float: center;" src="filt_topophase_msk.unw.geo.png" style="width:300px;">
+<img style="float: center;" src="figures/filt_topophase_msk.unw.geo.png" style="width:300px;">
