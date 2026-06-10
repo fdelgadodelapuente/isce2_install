@@ -1,6 +1,6 @@
 # Correr un  modelo de Mogi y Okada 
 
-Utilizará el algoritmo de Levenberg-Marquardt para hacer estos modelos. EL problema a resolver es 
+Utilizará el algoritmo de Levenberg-Marquardt para hacer estos modelos (secciones 9.2-9.3 de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems)(. EL problema a resolver es 
 $$\min_{\mathbf{m}} \; f(\mathbf{m}) = \sum_{i=1}^{N} \left( \frac{G_i(\mathbf{m}) - d_i} {\sigma_i} \right)^2 $$
 con $$m$$ los parametros del modelo, $$G$$ la funcion  (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos y $$\sigma_i$$ la desviacion standard de cada medición. Entonces el problema a minizar es la diferencia entre los datos y el modelo escalado por la incertidumbre.
 
