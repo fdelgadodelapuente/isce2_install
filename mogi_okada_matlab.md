@@ -20,6 +20,11 @@ addpath('inversion/')
 ```
 Correr ```mogi_example/220905_230807_1swath/synth_mogi``` 
 
+Para el downsampling ```resamptool_isce_roipac``` . Para otros datos editar ```mogi_example/220905_230807_1swath/resamp_in.m```.
+
+para invertir, correr ``` lsqnl_mogi2_chisq_Jac.m```. Si usa la version ams nueva de matlab, y falla, comentar las linas 58-60 que solo cambian las coordenadas de la fuente de  UTM a geograficas. Eso lo puede hacer con Google Earth. 
+
+
 ## Okada terremoto de Pishan 2016
 
 añadir carpetas al path de Matlab
@@ -39,7 +44,7 @@ Para el downsampling descomentar las lineas 40-46 de ```okada_pishan/asc/resamp_
 
 Para invertir, con los parametros por defecto correr ```okada_pishan/invert_eq.m```
 
-Para maodiifcar para otros datos debe cambiar los inputs de ```okada_pishan/asc/resamp_in.m```
+Para modificar para otros datos debe cambiar los inputs de ```okada_pishan/asc/resamp_in.m```
 
 ```
 ```
