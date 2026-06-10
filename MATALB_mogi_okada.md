@@ -19,7 +19,7 @@ addpath('inversion/')
 ```
 Correr ```mogi_example/220905_230807_1swath/synth_mogi``` 
 
-Para el downsampling, correr ```resamptool_isce_roipac``` . Para downsamplear otros datos cambiar  ```mogi_example/220905_230807_1swath/resamp_in.m``` y volver a correr. Las variables clave son ``` filename```, ``` losfilename```, ``` demf```, ``` lambda```, ``` savestructname```, ``` zone```. 
+Para el downsampling, correr ```resamptool_isce_roipac``` . Para downsamplear otros datos cambiar  ```mogi_example/220905_230807_1swath/resamp_in.m``` y volver a correr. Las variables clave son ``` filename```, ``` losfilename```, ``` demf```, ``` lambda```, ``` savestructname```, ``` zone```, al igual que las líneas 36-42 que cambian las dimensiones de la fuente que fuerza el downsampling a zonas con deformación en el algoritmo de [Lohman y Simons, 2005](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2004GC000841) y [Lohman et al., 2010](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010JB007710).
 
 El bloque de texto que dice 
 
@@ -53,7 +53,4 @@ Para el downsampling descomentar las lineas 40-46 de ```okada_pishan/asc/resamp_
 
 Para invertir, con los parametros por defecto correr ```okada_pishan/invert_eq.m```
 
-Para modificar para otros datos debe cambiar los inputs de ```okada_pishan/asc/resamp_in.m```
-
-```
-```
+Para modificar para otros datos debe cambiar los inputs de ```okada_pishan/asc/resamp_in.m``` de la misma forma que para Mogi. El downsampling es idéntico. 
