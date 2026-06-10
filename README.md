@@ -159,7 +159,7 @@ You can test the software by processing the following X-, C- and L-band interfer
 
 [ENVISAT C-band stripmap IM2, Yellowstone caldera (USA)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/envisat_example.md)
 
-[ENVISAT C-band stripmap IMx, Kilauea caldera 2007 Father's day dike intrusion (USA)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/envisat_kilauea_example.md)
+[ENVISAT C-band stripmap IMx, Kilauea caldera 2007 Father's day dike intrusion (USA)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/envisat_im6_caulle.md)
 
 [ENVISAT C-band stripmap IM6, Cordon Caulle 2011-2012 eruption (Chile)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/envisat_kilauea_example.md)
 
