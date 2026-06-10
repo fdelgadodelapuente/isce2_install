@@ -20,7 +20,16 @@ addpath('inversion/')
 ```
 Correr ```mogi_example/220905_230807_1swath/synth_mogi``` 
 
-Para el downsampling ```resamptool_isce_roipac``` . Para otros datos editar ```mogi_example/220905_230807_1swath/resamp_in.m```.
+Para el downsampling, correr ```resamptool_isce_roipac``` . Para otros datos editar ```mogi_example/220905_230807_1swath/resamp_in.m``` y volver a correr. Las variables clave son ``` filename``` , ``` losfilename``` , ``` demf``` , ``` lambda``` , ``` savestructname``` , ``` zone``` . El bloque de texto que dice 
+
+```
+coords.x1=-158.52083333333334;
+coords.y2=58.200833333333335;
+coords.nx=1945;
+coords.ny=2401;
+coords.dx=0.0008333333333333334;
+```
+lo puede reemplazar por coords=NaN, ya que es para una version muy antigua del codigo que leia la metadata de los xml mediante utilidades de Linux.
 
 para invertir, correr ``` lsqnl_mogi2_chisq_Jac.m```. Si usa la version ams nueva de matlab, y falla, comentar las linas 58-60 que solo cambian las coordenadas de la fuente de  UTM a geograficas. Eso lo puede hacer con Google Earth. 
 
