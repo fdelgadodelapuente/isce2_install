@@ -2,7 +2,7 @@
 
 Utilizará el algoritmo de Levenberg-Marquardt para hacer estos modelos. EL problema a resolver es 
 $$\[\min_{\mathbf{m}} \; f(\mathbf{m}) = \sum_{i=1}^{N} \left( \frac{G_i(\mathbf{m}) - d_i} {\sigma_i} \right)^2 \]$$
-con ```m``` los parametros del modelo, ```G``` la funcion  (Okada/Mogi proyectado en el LOS de InSAR), ```d``` los datos y $$\sigma_i$$ la desviacion standard de cada medici´on. Entonces el problema a minizar es la diferencia entre los datos y el modelo escalado por la incertidumbre.
+con $$m$$ los parametros del modelo, $$G$$ la funcion  (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos y $$\sigma_i$$ la desviacion standard de cada medici´on. Entonces el problema a minizar es la diferencia entre los datos y el modelo escalado por la incertidumbre.
 
 Descargar ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos y [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m)
 
