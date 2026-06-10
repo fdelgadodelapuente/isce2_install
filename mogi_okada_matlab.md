@@ -1,5 +1,7 @@
 # Correr un  modelo de Mogi y Okada 
 
+## Mogi volcan Aniakchak 2023
+
 ## Okada terremoto de Pishan 2016
 
 Descargar ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de Ucursos y [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m)
