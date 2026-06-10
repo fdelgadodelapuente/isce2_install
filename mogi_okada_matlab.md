@@ -1,14 +1,26 @@
 # Correr un  modelo de Mogi y Okada 
 
-## Mogi volcan Aniakchak 2023
-
-## Okada terremoto de Pishan 2016
 
 Descargar ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de Ucursos y [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m)
 
 Crear carpeta llamada insar y meterlas todas adentro.
 
 Mover ```load_isce.m``` en inversion/scripts, reescribiendo el que hay ahi.
+
+## Mogi volcan Aniakchak 2023
+
+Añadir carpetas al path de Matlab
+
+```
+addpath('inversion/InSamp/')
+addpath('inversion/scripts/')
+addpath('inversion/resamp_sill/')
+addpath('inversion/mogi_invert/')
+addpath('inversion/')
+```
+Correr ```mogi_example/220905_230807_1swath/synth_mogi``` 
+
+## Okada terremoto de Pishan 2016
 
 añadir carpetas al path de Matlab
 
@@ -26,6 +38,8 @@ Correr ```okada_pishan/asc/okada_forward_int.m``` y modificar los parametros de 
 Para el downsampling descomentar las lineas 40-46 de ```okada_pishan/asc/resamp_in.m``` y correr ```resamptool_isce_roipac```
 
 Para invertir, con los parametros por defecto correr ```okada_pishan/invert_eq.m```
+
+Para maodiifcar para otros datos debe cambiar los inputs de ```okada_pishan/asc/resamp_in.m```
 
 ```
 ```
