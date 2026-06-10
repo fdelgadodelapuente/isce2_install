@@ -1,4 +1,4 @@
-ISCE2 example for processing an ENVISAT IM6 interferogram of the 2011-2012 Cordon Caulle eruption. The key difference is that despite being a small baseline interferogram, is a noisy data set so the processing is low spatial resolution. It is also an IM6 beam  interferogram,  not from the standard IM2. I use 8 looks in range, 24 looks in azimuth for a pixel size of ~80 m and a strong power spectrum filtering strength of 0.8. I use the Copernicus DEM instead of SRTM.
+ISCE2 example for processing an ENVISAT IM6 interferogram of the 2011-2012 Cordon Caulle eruption. The key difference is that despite being a small baseline interferogram, is a noisy data set so the processing is low spatial resolution. It is also an IM6 beam  interferogram,  not from the standard IM2. I use 8 looks in range, 24 looks in azimuth for a pixel size of ~80 m (pixel ratio of 3 instead of 5 os IM2) and a strong power spectrum filtering strength of 0.8. I use the Copernicus DEM instead of SRTM.
 
 Create the input file `sm_envisat.xml` in the `20111204_20120202` folder 
 ```
