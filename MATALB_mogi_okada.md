@@ -1,5 +1,8 @@
 # Correr un  modelo de Mogi y Okada 
 
+Utilizará el algoritmo de Levenberg-Marquardt para hacer estos modelos. EL problema a resolver es 
+$$\[\min_{\mathbf{m}} \; f(\mathbf{m}) = \sum_{i=1}^{N} \left( \frac{G_i(\mathbf{m}) - d_i} {\sigma_i} \right)^2 \]$$
+
 Descargar ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos y [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m)
 
 Crear carpeta llamada ```insar``` y meterlas todas adentro. La carpeta ```inversion/load_isce201708``` es una versión muy vieja y no hay que usarla, por lo que la puede borrar. 
