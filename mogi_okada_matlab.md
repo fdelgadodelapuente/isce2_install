@@ -6,7 +6,7 @@ Crear carpeta llamada insar y meterlas todas adentro. La carpeta ```inversion/lo
 
 Mover ```load_isce.m``` en inversion/scripts, reescribiendo el que hay ahí.
 
-## Mogi volcan Aniakchak 2023
+## Mogi Volcán Aniakchak 2023
 
 Añadir carpetas al path de Matlab
 
@@ -34,7 +34,7 @@ lo puede reemplazar por ```coords=NaN```, ya que es para una version muy antigua
 
 para invertir, correr ``` lsqnl_mogi2_chisq_Jac.m```. Si usa MATLAB R2026 y falla, comentar las linas 58-60 que convierten las coordenadas de la fuente de UTM a geográficas. Eso lo puede hacer con Google Earth. 
 
-## Okada terremoto de Pishan 2016
+## Okada Terremoto de Pishan 2016
 
 añadir carpetas al path de Matlab
 
