@@ -69,7 +69,7 @@ U_D(x_d,y_d) \\
 \end{bmatrix}
 $$
 
-Si por el contrario el source strength (variación de volumen, slip) fuera la misma para los dos interferogramas, como en un terremoto para el modelo de Okada, entonces la expresión anterior es más simple:
+Si el source strength (variación de volumen, slip) es el mismo para los dos interferogramas, como en un terremoto para el modelo de Okada, entonces la expresión anterior es levemente más simple:
 
 $$
 \begin{bmatrix}
