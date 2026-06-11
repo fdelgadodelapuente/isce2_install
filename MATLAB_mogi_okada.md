@@ -1,4 +1,4 @@
-# Invertir modelos de Mogi y Okada 
+# Modelación inversa de interferogramas con modelos de Mogi y Okada 
 
 El procedimiento de ajuste de un modelo a datos es un problema general de optimización mediante minimización de mínimos cuadrados no lineales expresado mediante la función $$\chi^2(\mathbf{m})$$ ($$\qquad (1)-\qquad (2) $$):
 
