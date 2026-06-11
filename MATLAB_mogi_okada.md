@@ -2,6 +2,8 @@
 
 El procedimiento de ajuste de un modelo a datos es una herramientas extremadamente versátil y transversal a múltiples en ingeniería y ciencias. Y en ciencias de la tierra lo puede usar desde el cálculo de isocronas en geocronología hasta para problemas muy complejos de tomografía sísmica. Este ajuste de datos también se conoce como inversión, y en ciencias de la tierra ha estado dominada históricamente por el problema de la tomografía sísmica. En mi opinión personal, hay muchos problemas inversos mucho más didácticos y de mayor utilidad que la tomografía. Esta última es la que ha forzado el avance del campo por las enormes cantidades de parámetros que tiene (velocidad de onda sísmica en cada volumen del medio), pero es en mi opinión muy poco pedagógica debido a su complejidad y abstracción.
 
+En el caso de InSAR, ejemplos de problemas inversos son la estimación y remoción de una rampa (problema lineal), la descomposición en valores singulares del algoritmo SBAS (problema lineal), la estimación de una fuente tipo Mogi (problema no lineal) y la estimaicón de slip/apertura (problema lineal con regularización y restricción de positividad, lo que lo hace un problema de programación cuadrática convexa con restricciones de positividad lineal).
+
 Una inversión es un problema de optimización que busca resolver mínimos cuadrados no lineales expresado mediante la función $$\chi^2(\mathbf{m})$$ ($$\qquad (1)-\qquad (2)$$).
 
 $$\min_{\mathbf{m}}  \chi^2(\mathbf{m}) = \sum_{i=1}^{N} \left( \frac{G_i(\mathbf{m}) - d_i} {\sigma_i} \right)^2 \qquad (1)$$
