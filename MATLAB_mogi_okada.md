@@ -144,4 +144,4 @@ Para invertir, con los parametros por defecto correr ```okada_pishan/invert_eq.m
 
 Para modificar para otros datos debe cambiar los inputs de ```okada_pishan/asc/resamp_in.m``` de la misma forma que para Mogi. El procedimiento de downsampling es idéntico para ambos ejemplos. 
 
-Para invertir modelos de otras zonas debe modificar los inputs en ```run_na_params2.m ```, en particular ```xref```, ```yref```, ```strike```, ```dip```, ```rake```, ```L```, ```W```, ```zs```.
+Para invertir modelos de otras zonas debe modificar los rangos de búsqueda en ```run_na_params2.m ```, en particular ```xref```, ```yref```, ```strike```, ```dip```, ```rake```, ```L```, ```W```, ```zs```.
