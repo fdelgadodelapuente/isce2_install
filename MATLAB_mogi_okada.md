@@ -27,7 +27,7 @@ R^2=(x-x_0)^2+(y-y_0)^2+d^2.
 $$
 
 $$
-u_{\mathrm{LOS}}(x,y)=\mathbf{u}(x,y) \dot \mathbf{l}=
+u_{\mathrm{LOS}}(x,y)=\mathbf{u}(x,y) \dot l=
 \frac{(1-\nu)\Delta V}{\pi R^3}
 \left[l_X(x-x_0)+l_Y(y-y_0)+l_Zd\right].
 $$
