@@ -114,7 +114,7 @@ Para ajustar los datos, utilizará el algoritmo de Levenberg-Marquardt de MATLAB
 
 ## Archivos a Descargar
 
-Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m) y ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos a una carpeta que llamaremos  ```insar```. Mueva  ```load_isce.m``` a ```inversion/scripts```. 
+Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m) y ```mogi_aniakchak.zip```, ```inversion.zip```,```okada_pishan.zip``` de U-Cursos a una carpeta que llamaremos  ```insar```. Mueva  ```load_isce.m``` a ```inversion/scripts```. 
 
 ## Mogi Volcán Aniakchak 2023
 
