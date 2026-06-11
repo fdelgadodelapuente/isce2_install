@@ -186,10 +186,16 @@ You can test the software by processing the following X-, C- and L-band interfer
 
 Instructions for running the three different stack processors included in the software.
 
-[TOPS Salar de Atacama and time series with MintPy](https://github.com/fdelgadodelapuente/isce2_install/blob/main/mintpy_salaratacama.md). This is in spanish.
+[TOPS Salar de Atacama and time series with MintPy](https://github.com/fdelgadodelapuente/isce2_install/blob/main/mintpy_salaratacama.md). This is in spanish only.
 
 [TOPS stack processor](https://github.com/fdelgadodelapuente/isce2_install/blob/main/stackproc_tops.md)
 
 [ALOS-2 stack processor](https://github.com/fdelgadodelapuente/isce2_install/blob/main/stackproc_alos2.md)
 
 [Stripmap stack processor](https://github.com/fdelgadodelapuente/isce2_install/blob/main/stackproc_sm.md)
+
+## Interferogram modeling
+
+[Mogi and Okada inversions](https://github.com/fdelgadodelapuente/isce2_install/blob/main/MATLAB_mogi_okada.md). These are in spanish only
+
+
