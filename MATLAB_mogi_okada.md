@@ -33,7 +33,10 @@ $$
 
 $$\Delta V$$ es la variacion de volumen, $$x_0$$, $$y_0$$, $$z_0$$ las coordenadas de la esfera, $$R$$ la distancia desde el centro de la esfera al punto de observacion, $$\nu$$ el modulo de Poisson que equivale a 0.25 para rocas volcánicas promedio, $$l_{x}$$, $$l_{y}$$, $$l_{z}$$ los cosenos direccionales del vector LOS de InSAR.  
 
-Para el problema de inversion de minimos cuadrados de un modelo de Mogi $$\mathbf{G(m)} = u_{\mathrm{LOS}}(x,y,\mathbf{m})$$, $$\mathbf{m}=[x_0, y_0, z_0, \Delta V]^T$$, $$\mathbf{d} = U_{LOS}(x,y)$$. Notar que los puntos de observación en x,y son las coordenadas de cada pixel y no son los parámetros del modelo a optimizar. De los cuatro parámetros del modelo $$[x_0, y_0, z_0]^T$$ son no lineales y $$\Delta V$$ es lineal. En general al modelo forward se le añade una rampa lineal para estimar errores orbitales residuaales, y señales troposfericas-inosfericas de baja frecuencia espacial.
+Para el problema de inversion de minimos cuadrados de un modelo de Mogi $$\mathbf{G(m)} = u_{\mathrm{LOS}}(x,y,\mathbf{m})$$, $$\mathbf{m}=[x_0, y_0, z_0, \Delta V]^T$$, $$\mathbf{d} = U_{LOS}(x,y)$$. Notar que los puntos de observación en x,y son las coordenadas de cada pixel y no son los parámetros del modelo a optimizar. De los cuatro parámetros del modelo $$[x_0, y_0, z_0]^T$$ son no lineales y $$\Delta V$$ es lineal. En general al modelo forward se le añade una rampa lineal para estimar errores orbitales residuaales, y señales troposfericas-inosfericas de baja frecuencia espacial. De esta forma, el  modelo forward queda
+
+$$
+$$\mathbf{G(m)} = \Delta V u_{\mathrm{LOS}}(x,y,\mathbf{m}) + Ax + Cy + D$$
 
 
 
