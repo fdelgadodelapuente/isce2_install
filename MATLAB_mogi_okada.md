@@ -65,7 +65,7 @@ U_D(x,y) \\
 $$
 
 $$\mathbf{G(m_{nonlin})m_{lin}}=\mathbf{d}$$
-$$ \chi^{2}(\mathbf{m}) = \left[\mathbf{G(m_{nonlin})m_{lin}}-\mathbf{d}]^{T} \mathbf{C}_{d}^{-1} \left[\mathbf{G(m_{nonlin})m_{lin}}-\mathbf{d}]$$
+$$\chi^{2}(\mathbf{m}) = \left[\mathbf{G}(\mathbf{m})-\mathbf{d}\right]^{T} \mathbf{C}_{d}^{-1} \left[\mathbf{G}(\mathbf{m})-\mathbf{d}\right] \qquad (2)$$
 
 Para minimizar la función $$\chi^2(\mathbf{m})$$, debe lograr que la predicción del modelo explique los datos con la menor diferencia posible, tal como muestran las siguientes figuras. 
 
