@@ -39,15 +39,15 @@ $$u_{\mathrm{LOS}}(x,y)= \frac{3\Delta V}{4\pi R^3} \left[l_X(x-x_0)+l_Y(y-y_0)+
 
 $$u_{\mathrm{LOS}}(x,y) = \Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) + Ax + By + C $$
 
-Como ejemplo, para dos interferogramas el problema inverso queda
+Como ejemplo, para dos interferogramas ascendentes y descendentes el problema inverso queda
 
-$$\mathbf{G(m)} =[\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) 0 A B C]$$
+$$\mathbf{G_i(m)} =[\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) 0 A B C]$$
 
 $$
 \mathbf{y}=
 \begin{bmatrix}
-\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) & 0 &A &B &C \\
-0&\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) &A &B &C 
+\Delta V u_{\mathrm{LOS_A}}(x,y,\mathbf{x_0,y_0,d}) & 0 &A &B &C & 0 & 0 &0 \\
+0&\Delta V u_{\mathrm{LOS_D}}(x,y,\mathbf{x_0,y_0,d}) &0 &0 &0 & D &E & F 
 \end{bmatrix}
 \begin{bmatrix}
 x_1 \\
