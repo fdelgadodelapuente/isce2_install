@@ -59,10 +59,14 @@ E \\
 F \\
 \end{bmatrix} 
 \begin{bmatrix}
+=
 U_A(x,y) \\
 U_D(x,y) \\
 \end{bmatrix}
 $$
+
+$$\mathbf{G(m_{nonlin})m_{lin}}=\mathbf{d}}
+
 
 Para minimizar la función $$\chi^2(\mathbf{m})$$, debe lograr que la predicción del modelo explique los datos con la menor diferencia posible, tal como muestran las siguientes figuras. 
 
