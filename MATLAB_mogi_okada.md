@@ -28,6 +28,10 @@ $$
 \mathbf{u}(x,y)=\begin{pmatrix}u_E\\u_N\\u_U\end{pmatrix}=\frac{(1-\nu)\Delta V}{\pi}\frac{1}{\left[(x-x_0)^2+(y-y_0)^2+d^2\right]^{3/2}}\begin{pmatrix}x-x_0\\y-y_0\\d\end{pmatrix}.
 $$
 
+$$
+u_{\mathrm{LOS}}(x,y)=\frac{(1-\nu)\Delta V}{\pi}\frac{l_E(x-x_0)+l_N(y-y_0)+l_U d}{\left[(x-x_0)^2+(y-y_0)^2+d^2\right]^{3/2}}.
+$$
+
 Añadir carpetas al path de Matlab
 
 ```
