@@ -20,6 +20,7 @@ Interferograma JERS de banda L del complejo volcanico Ugashik-Mount Peulik (Aleu
 Interferograma ERS de banda C del volcan Okmok (Aleutians, Alaska) e interferograma sintetico predicho por el mejor modelo de Mogi que ajusta los datos en base a la formula $$\qquad (1)$$. Un ciclo completo de colores es una fringe interferometrica y corresponde a 2.83 cm o $$ 2\pi$$ radianes de deformacion superficial en el LOS de InSAR (https://radar.community.uaf.edu/lab-6-volcano-source-modeling-using-insar-data/).
 
 
+
 Para ajustar los datos, utilizará el algoritmo de Levenberg-Marquardt para hacer estos modelos (secciones 9.2-9.3 del libro de inversion de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems)). 
 
 Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m) y ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos a una carpeta que llamaremos  ```insar```. Mueva  ```load_isce.m``` a ```inversion/scripts```, reescribiendo el que hay ahí. La carpeta ```inversion/load_isce201708``` es una versión muy vieja de este codigo y la puede borrar. 
