@@ -45,7 +45,7 @@ $$\mathbf{G_i(m)} =[\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) 0 A B C]$$
 
 $$
 \begin{bmatrix}
-u_{\mathrm{LOS_A}}(x,y,\mathbf{x_0,y_0,d}) & 0 &x_a &y_a &1 & 0 & 0 &0 \\
+  u_{\mathrm{LOS_A}}(x,y,\mathbf{x_0,y_0,d}) &0 &x_a &y_a &1 & 0 & 0 &0 \\
 0&u_{\mathrm{LOS_D}}(x,y,\mathbf{x_0,y_0,d}) &0 &0 &0 & x_d &y_d & 1 
 \end{bmatrix}
 \begin{bmatrix}
@@ -68,8 +68,8 @@ Si por el contrario el source strength (variacion de volumen, slip) fuera la mis
 
 $$
 \begin{bmatrix}
-u_{\mathrm{LOS_A}}(x,y,\mathbf{x_0,y_0,d}) & 0 &x_a &y_a &1 & 0 & 0 &0 \\
-u_{\mathrm{LOS_D}}(x,y,\mathbf{x_0,y_0,d}) &0 &0 &0 & x_d &y_d & 1 
+u_{\mathrm{LOS_A}}(x,y,\mathbf{x_0,y_0,d}) &x_a &y_a &1 & 0 & 0 &0 \\
+u_{\mathrm{LOS_D}}(x,y,\mathbf{x_0,y_0,d}) &0 &0 & x_d &y_d & 1 
 \end{bmatrix}
 \begin{bmatrix}
 \Delta V \\
