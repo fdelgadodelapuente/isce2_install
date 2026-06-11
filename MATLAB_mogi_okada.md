@@ -44,21 +44,17 @@ El problema inverso queda
 $$\mathbf{G(m)} =[\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d})]$$
 
 $$
-\begin{pmatrix}
-a_{11} & a_{12} & a_{13} & a_{14}\\
+\mathbf{y}=
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} & a_{14} \\
 a_{21} & a_{22} & a_{23} & a_{24}
-\end{pmatrix}
-\begin{pmatrix}
-x_1\\
-x_2\\
-x_3\\
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
 x_4
-\end{pmatrix}
-=
-\begin{pmatrix}
-y_1\\
-y_2
-\end{pmatrix}
+\end{bmatrix}
 $$
 
 Para minimizar la función $$\chi^2(\mathbf{m})$$, debe lograr que la predicción del modelo explique los datos con la menor diferencia posible, tal como muestran las siguientes figuras. 
