@@ -46,14 +46,18 @@ $$\mathbf{G_i(m)} =[\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) 0 A B C]$$
 $$
 \mathbf{y}=
 \begin{bmatrix}
-\Delta V u_{\mathrm{LOS_A}}(x,y,\mathbf{x_0,y_0,d}) & 0 &A &B &C & 0 & 0 &0 \\
-0&\Delta V u_{\mathrm{LOS_D}}(x,y,\mathbf{x_0,y_0,d}) &0 &0 &0 & D &E & F 
+u_{\mathrm{LOS_A}}(x,y,\mathbf{x_0,y_0,d}) & 0 &x_a &y_a &1 & 0 & 0 &0 \\
+0&\Delta V u_{\mathrm{LOS_D}}(x,y,\mathbf{x_0,y_0,d}) &0 &0 &0 & x_d &y_d & 1 
 \end{bmatrix}
 \begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 \\
-x_4
+\Delta V_A \\
+\Delta V_D  \\
+A \\
+B \\
+C \\
+D \\
+E \\
+F \\
 \end{bmatrix}
 $$
 
