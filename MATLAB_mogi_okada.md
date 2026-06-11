@@ -26,7 +26,7 @@ Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/mai
 
 ## Mogi Volcán Aniakchak 2023
 
-El modelo de Mogi predice el desplazamiento en superficie $$\mathbf{u}(x,y)$$ en direcciones EW, NS, Z y en el LOS de InSAR $$u_{\mathrm{LOS}}(x,y)$$ producto de un cambio de volumen $$\Delta V$$ de una esfera pequeña presurizada en un semiespacio infinito en la cual $$ \frac{a}{d} <0.4$$ con $$a$$ el radio de la esfera y $$d$$ la profundidad del centro.
+El modelo de Mogi predice el desplazamiento en superficie $$\mathbf{u}(x,y)$$ en direcciones EW, NS, Z y en el LOS de InSAR $$u_{\mathrm{LOS}}(x,y)$$ producto de un cambio de volumen $$\Delta V$$ de una esfera pequeña presurizada en un semiespacio infinito en la cual $$\frac{a}{d} <0.4$$ con $$a$$ el radio de la esfera y $$d$$ la profundidad del centro.
 
 $$
 \mathbf{u}(x,y) = \left(u_E,u_N,u_U\right)^{\mathsf T} =
