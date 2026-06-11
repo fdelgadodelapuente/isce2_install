@@ -62,7 +62,6 @@ F \\
 U_A(x,y) \\
 U_D(x,y) \\
 \end{bmatrix}
-
 $$
 
 Para minimizar la función $$\chi^2(\mathbf{m})$$, debe lograr que la predicción del modelo explique los datos con la menor diferencia posible, tal como muestran las siguientes figuras. 
