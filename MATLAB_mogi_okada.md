@@ -20,11 +20,6 @@ Interferograma JERS de banda L del complejo volcánico Ugashik-Mount Peulik (Ale
 
 Interferograma ERS de banda C del volcan Okmok (Aleutians, Alaska) e interferograma sintético predicho por el mejor modelo de Mogi que ajusta los datos en base a la formula $$\qquad (1)$$. Un ciclo completo de colores es una fringe interferométrica y corresponde a 2.83 cm o $$2\pi$$ radianes de deformación superficial en el LOS de InSAR (https://radar.community.uaf.edu/lab-6-volcano-source-modeling-using-insar-data/).
 
-Para ajustar los datos, utilizará el algoritmo de Levenberg-Marquardt de MATLAB para hacer estos modelos (secciones 9.2-9.3 del libro de inversión de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems)). 
-
-Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m) y ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos a una carpeta que llamaremos  ```insar```. Mueva  ```load_isce.m``` a ```inversion/scripts```, reescribiendo el que hay ahí. La carpeta ```inversion/load_isce201708``` es una versión muy vieja de este codigo y la puede borrar. 
-
-## Mogi Volcán Aniakchak 2023
 
 El modelo de Mogi predice el desplazamiento en superficie $$\mathbf{u}(x,y)$$ en direcciones EW, NS, Z y en el LOS de InSAR $$u_{\mathrm{LOS}}(x,y)$$ producto de un cambio de volumen $$\Delta V$$ de una esfera pequeña presurizada en un semiespacio infinito en la cual $$\frac{a}{d}<0.4$$ con $$a$$ el radio de la esfera y $$d$$ la profundidad del centro.
 
@@ -47,6 +42,12 @@ $$\Delta V$$ es la variacion de volumen, $$x_0$$, $$y_0$$, $$z_0$$ las coordenad
 Para el problema de inversion de minimos cuadrados de un modelo de Mogi $$\mathbf{G(m)} = u_{\mathrm{LOS}}(x,y,\mathbf{m})$$, $$\mathbf{m}=[x_0, y_0, z_0, \Delta V]^T$$, $$\mathbf{d} = U_{LOS}(x,y)$$. Notar que los puntos de observacion en x,y no son las coordenadas de cada pixel, son conocidas y no son los parametros del modelo a optimizar. 
 
 
+
+Para ajustar los datos, utilizará el algoritmo de Levenberg-Marquardt de MATLAB para hacer estos modelos (secciones 9.2-9.3 del libro de inversión de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems)). 
+
+Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m) y ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos a una carpeta que llamaremos  ```insar```. Mueva  ```load_isce.m``` a ```inversion/scripts```, reescribiendo el que hay ahí. La carpeta ```inversion/load_isce201708``` es una versión muy vieja de este codigo y la puede borrar. 
+
+## Mogi Volcán Aniakchak 2023
 
 Añadir carpetas al path de Matlab
 
@@ -76,7 +77,7 @@ Para invertir, correr ``` lsqnl_mogi2_chisq_Jac.m```. Puede cambiar los datos co
 
 ## Okada Terremoto de Pishan 2016
 
-añadir carpetas al path de Matlab
+Añadir carpetas al path de Matlab
 
 ```
 addpath('inversion/InSamp/')
