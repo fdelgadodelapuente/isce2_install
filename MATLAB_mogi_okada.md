@@ -25,7 +25,7 @@ Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/mai
 El modelo de Mogi es
 
 $$ 
-\[
+
 \mathbf{u}(x,y)=
 \begin{pmatrix}
 u_E\\
@@ -40,7 +40,7 @@ x-x_0\\
 y-y_0\\
 d
 \end{pmatrix}.
-\]
+
 $$
 
 Añadir carpetas al path de Matlab
