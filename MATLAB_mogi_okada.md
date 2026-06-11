@@ -46,8 +46,8 @@ $$\mathbf{G(m)} =[\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) 0 A B C]$$
 $$
 \mathbf{y}=
 \begin{bmatrix}
-a_{11} & a_{12} & a_{13} & a_{14} \\
-a_{21} & a_{22} & a_{23} & a_{24}
+\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) & 0 &A &B &C \\
+0&\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) &A &B &C 
 \end{bmatrix}
 \begin{bmatrix}
 x_1 \\
