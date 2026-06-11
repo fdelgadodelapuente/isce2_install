@@ -126,7 +126,7 @@ addpath('inversion/mogi_invert/')
 ## Mogi Volcán Aniakchak 2023
 
 
-Correr ```mogi_example/220905_230807_1swath/synth_mogi``` 
+Correr ```mogi_example/220905_230807_1swath/synth_mogi``` y modificar los parametros de entrada del modelo.
 
 Para el downsampling, correr ```resamptool_isce_roipac``` . Para downsamplear otros datos cambiar  ```mogi_example/220905_230807_1swath/resamp_in.m``` y volver a correr. Las variables clave son ``` filename```, ``` losfilename```, ``` demf```, ``` lambda```, ``` savestructname```, ``` zone```, al igual que las líneas 36,37,39,40 que cambian las dimensiones de la dislocación que fuerza el downsampling a zonas con deformación en el algoritmo de [Lohman y Simons, 2005](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2004GC000841) y Appendix A de [Lohman et al., 2010](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010JB007710).
 
@@ -134,7 +134,7 @@ Para invertir, correr ``` lsqnl_mogi2_chisq_Jac.m```. Puede cambiar los datos co
 
 ## Okada Terremoto de Pishan 2016
 
-Abrir ```okada_pishan/asc/resamp_in.m``` y comentar lineas 40-46
+Abrir ```okada_pishan/asc/resamp_in.m```. Las variables que usa para el downsampling tienen el mismo nombre que las que usa para correr el modelo forward, asi que comente las líneas 40-46.
 
 Correr ```okada_pishan/asc/okada_forward_int.m``` y modificar los parametros de entrada del modelo. La linea 20 cambia las coordenadas UTM del area de interes (linea 24 de ```okada_pishan/asc/resamp_in.m```)
 
@@ -143,3 +143,5 @@ Para el downsampling descomentar las lineas 40-46 de ```okada_pishan/asc/resamp_
 Para invertir, con los parametros por defecto correr ```okada_pishan/invert_eq.m```
 
 Para modificar para otros datos debe cambiar los inputs de ```okada_pishan/asc/resamp_in.m``` de la misma forma que para Mogi. El procedimiento de downsampling es idéntico para ambos ejemplos. 
+
+Para invertir modelos de otras zonas debe modificar los inputs en ```run_na_params2.m ```, en particular ```xref```, ```yref```, ```strike```, ```dip```, ```rake```, ```L```, ```W```, ```zs```.
