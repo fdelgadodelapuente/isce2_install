@@ -17,9 +17,8 @@ con $$\mathbf{m}$$ los parametros del modelo, $$\mathbf{G}$$ la funcion  (Okada/
 Interferograma JERS de banda L del complejo volcanico Ugashik-Mount Peulik (Aleutians, Alaska) e interferograma sintetico predicho por el mejor modelo de Mogi que ajusta los datos en base a la formula $$\qquad (1)$$. Un ciclo completo de colores es una fringe interferometrica y corresponde a 11.8 cm de deformacion superficial en el LOS de InSAR ([figura 6.193](https://link-springer-com.uchile.idm.oclc.org/chapter/10.1007/978-3-642-00348-6_6#Sec216) de [Lu y Dzurisin, 2014](https://link-springer-com.uchile.idm.oclc.org/book/10.1007/978-3-642-00348-6)).
 
 <img style="float: center;" src="figures/Lab6-Mogi-website-1024x531.jpg" style="width:300px;">
+
 Interferograma ERS de banda C del volcan Okmok (Aleutians, Alaska) e interferograma sintetico predicho por el mejor modelo de Mogi que ajusta los datos en base a la formula $$\qquad (1)$$. Un ciclo completo de colores es una fringe interferometrica y corresponde a 2.83 cm o $$ 2\pi$$ radianes de deformacion superficial en el LOS de InSAR (https://radar.community.uaf.edu/lab-6-volcano-source-modeling-using-insar-data/).
-
-
 
 Para ajustar los datos, utilizará el algoritmo de Levenberg-Marquardt para hacer estos modelos (secciones 9.2-9.3 del libro de inversion de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems)). 
 
