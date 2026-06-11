@@ -37,7 +37,7 @@ Para el problema de inversion de minimos cuadrados de un modelo de Mogi $$\mathb
 
 $$u_{\mathrm{LOS}}(x,y)= \frac{3\Delta V}{4\pi R^3} \left[l_X(x-x_0)+l_Y(y-y_0)+l_Zd\right] + Ax + Cy + D $$
 
-$$\mathbf{G(m)} = \Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d} + Ax + Cy + D $$
+$$\mathbf{G(m)} = \Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) + Ax + Cy + D $$
 
 Para minimizar la función $$\chi^2(\mathbf{m})$$, debe lograr que la predicción del modelo explique los datos con la menor diferencia posible, tal como muestran las siguientes figuras. 
 
