@@ -37,7 +37,7 @@ Para el problema de inversion de minimos cuadrados de un modelo de Mogi $$\mathb
 
 <img style="float: center;" src="figures/peulik_jers.png" style="width:300px;">
 
-Interferograma JERS (1992/09/24_1997/10/06) de banda L del complejo volcánico Ugashik-Mount Peulik (Aleutians, Alaska) e interferograma sintético predicho por el mejor modelo de Mogi que ajusta los datos en base a la formula $$\qquad (1)$$. Un ciclo completo de colores es una fringe interferométrica y corresponde a 11.8 cm de deformación superficial en el LOS de InSAR ([figura 6.193](https://link-springer-com.uchile.idm.oclc.org/chapter/10.1007/978-3-642-00348-6_6#Sec216) de [Lu y Dzurisin, 2014](https://link-springer-com.uchile.idm.oclc.org/book/10.1007/978-3-642-00348-6)).
+Interferograma JERS de banda L del complejo volcánico Ugashik-Mount Peulik (Aleutians, Alaska) que cubre el período 1992/09/24-1997/10/06 e interferograma sintético predicho por el mejor modelo de Mogi que ajusta los datos en base a la formula $$\qquad (1)$$. Un ciclo completo de colores es una fringe interferométrica y corresponde a 11.8 cm de deformación superficial en el LOS de InSAR ([figura 6.193](https://link-springer-com.uchile.idm.oclc.org/chapter/10.1007/978-3-642-00348-6_6#Sec216) de [Lu y Dzurisin, 2014](https://link-springer-com.uchile.idm.oclc.org/book/10.1007/978-3-642-00348-6)).
 
 <img style="float: center;" src="figures/Lab6-Mogi-website-1024x531.jpg" style="width:300px;">
 
