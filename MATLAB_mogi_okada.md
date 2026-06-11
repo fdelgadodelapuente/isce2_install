@@ -44,7 +44,6 @@ Como ejemplo, para dos interferogramas ascendentes y descendentes el problema in
 $$\mathbf{G_i(m)} =[\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) 0 A B C]$$
 
 $$
-\mathbf{y}=
 \begin{bmatrix}
 u_{\mathrm{LOS_A}}(x,y,\mathbf{x_0,y_0,d}) & 0 &x_a &y_a &1 & 0 & 0 &0 \\
 0&\Delta V u_{\mathrm{LOS_D}}(x,y,\mathbf{x_0,y_0,d}) &0 &0 &0 & x_d &y_d & 1 
@@ -58,7 +57,11 @@ C \\
 D \\
 E \\
 F \\
+\end{bmatrix} = \begin{bmatrix}
+U_A(x,y) \\
+U_D(x,y) \\
 \end{bmatrix}
+
 $$
 
 Para minimizar la función $$\chi^2(\mathbf{m})$$, debe lograr que la predicción del modelo explique los datos con la menor diferencia posible, tal como muestran las siguientes figuras. 
