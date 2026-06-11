@@ -25,11 +25,19 @@ Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/mai
 El modelo de Mogi es
 
 $$
-\mathbf{u}(x,y)=\begin{pmatrix}u_E\\u_N\\u_U\end{pmatrix}=\frac{(1-\nu)\Delta V}{\pi R^3}\begin{pmatrix}x-x_0\\y-y_0\\d\end{pmatrix},\qquad R^2=(x-x_0)^2+(y-y_0)^2+d^2.
+\mathbf{u}(x,y)=
+\left[ u_E,\,u_N,\,u_U \right]^T
+=
+\frac{(1-\nu)\Delta V}{\pi R^3}
+\left[ x-x_0,\,y-y_0,\,d \right]^T,
+\qquad
+R^2=(x-x_0)^2+(y-y_0)^2+d^2.
 $$
 
 $$
-u_{\mathrm{LOS}}(x,y)=\frac{(1-\nu)\Delta V}{\pi R^3}\left[l_E(x-x_0)+l_N(y-y_0)+l_Ud\right].
+u_{\mathrm{LOS}}(x,y)=
+\frac{(1-\nu)\Delta V}{\pi R^3}
+\left[l_E(x-x_0)+l_N(y-y_0)+l_Ud\right].
 $$
 
 Añadir carpetas al path de Matlab
