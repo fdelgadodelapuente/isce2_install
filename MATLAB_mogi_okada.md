@@ -39,7 +39,7 @@ $$u_{\mathrm{LOS}}(x,y)= \frac{3\Delta V}{4\pi R^3} \left[l_X(x-x_0)+l_Y(y-y_0)+
 
 $$u_{\mathrm{LOS}}(x,y) = \Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) + Ax + By + C $$
 
-Como ejemplo, para dos interferogramas ascendentes y descendentes que cubren tiempos diferentes, el problema inverso se escribe
+Como ejemplo, para dos interferogramas ascendentes y descendentes que cubren tiempos diferentes, el problema inverso se escribe de forma tal que puede dejar explícitos los parámetros lineales del modelo, como la variación de volumen (slip para un modelo de Okada) y los coeficientes de la rampa. 
 
 $$\mathbf{G_i(m)} =
 \begin{bmatrix}
