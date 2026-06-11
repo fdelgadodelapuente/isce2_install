@@ -58,8 +58,7 @@ D \\
 E \\
 F \\
 \end{bmatrix} 
-\begin{bmatrix}
-=
+\begin{bmatrix}=
 U_A(x,y) \\
 U_D(x,y) \\
 \end{bmatrix}
