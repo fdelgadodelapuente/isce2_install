@@ -1,6 +1,6 @@
 # Invertir modelos de Mogi y Okada 
 
-El procedimiento de ajuste de un modelo a datos es un problema general de optimizacion mediante minimizacion de minimos cuadrados no lineales:
+El procedimiento de ajuste de un modelo a datos es un problema general de optimizacion mediante minimizacion de minimos cuadrados no lineales de la funci'on $$\chi^2(\mathbf{m})$$ :
 
 $$\min_{\mathbf{m}}  \chi^2(\mathbf{m}) = \sum_{i=1}^{N} \left( \frac{G_i(\mathbf{m}) - d_i} {\sigma_i} \right)^2 $$
 
