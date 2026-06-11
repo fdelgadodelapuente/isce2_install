@@ -95,7 +95,7 @@ $$\chi^{2}(\mathbf{m}) = \left[\mathbf{G(m_{nonlin})m_{lin}}-\mathbf{d}\right]^{
 
 La ventaja de utilizar este enfoque entre parámetros lineales y no lineales es que si usa algoritmos de búisqueda aleatoria como el de vecindad (Sambridge, 1999), estos exploran el espacio de parámetros no lineal y para cada conjunto de parámetros invierte con mínimos cuadrados lineales los parámetros lineales.
 
-$$\mathbf{m}= (\mathbf{G}^{T}\mathbf{C}_d^{-1}\mathbf{G})^{-1} \mathbf{G}^{T}\mathbf{C}_d^{-1}\mathbf{d}$$
+$$\mathbf{m_{lin}}= (\mathbf{G}^{T}\mathbf{C}_d^{-1}\mathbf{G})^{-1} \mathbf{G}^{T}\mathbf{C}_d^{-1}\mathbf{d}$$
 
 Para minimizar la función $$\chi^2(\mathbf{m})$$, debe lograr que la predicción del modelo explique los datos con la menor diferencia posible, tal como muestran los siguientes ejemplos de Alaska.
 
