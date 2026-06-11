@@ -85,9 +85,10 @@ You should get the following file
 
 ### Dense offsets
 
-One particular advantage of the TOPS mode with respect to other stripmap modes is the small pixel size in the slant range direction. Therefore if your interferogram is decorrelated due to large strain, you can still retrieve deformation from range offsets instead of interferometry. Due to the small pixel size in range, you can also extract more accurate range than azimuth offsets, which are particularly useful for glaciology. Dense offsets are calculated with the ampcor module of ISCE2. 
+One particular advantage of the TOPS mode with respect to other stripmap modes is the small pixel size in the slant range direction. Therefore if your interferogram is decorrelated due to large strain, you can still retrieve deformation from range offsets instead of interferometry. Due to the small pixel size in range, you can also extract more accurate range than azimuth offsets, which are particularly useful for glaciology. Note that offsets are much lower resolution and their accuracy is lower compared with measurements made with phase. 
 
-[Box sizes for ampcor](https://raw.githubusercontent.com/parosen/Geo-SInC/7f89ccfa906e36c12726a663ee3d34c621797214/UNAVCO2021/4.4_Offset_stack_for_velocity_dynamics/support_files/offset_parameters.png).
+
+Dense offsets are calculated with the ```ampcor``` module of ISCE2. [Box sizes for ampcor](https://raw.githubusercontent.com/parosen/Geo-SInC/7f89ccfa906e36c12726a663ee3d34c621797214/UNAVCO2021/4.4_Offset_stack_for_velocity_dynamics/support_files/offset_parameters.png).
 
 ```
 <!-- Ssearch Window Size Height should be < 2 * Window Size Height-->
@@ -135,7 +136,6 @@ Then multiply the range and azimuth offsets by their pixel sizes of 2.3 and 14.1
   <figcaption><strong>Figure.</strong> Range and azimuth offsets for 12 day Sentinel-1 pair.</figcaption>
 </figure>
 
-Note that offsets are much lower resolution and their accuracy is lower compared with phase measurements. 
 
 
 
