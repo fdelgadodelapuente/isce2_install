@@ -6,9 +6,9 @@ $$\min_{\mathbf{m}}  \chi^2(\mathbf{m}) = \sum_{i=1}^{N} \left( \frac{G_i(\mathb
 
 $$ \chi^{2}(\mathbf{m}) = \left[\mathbf{G}(\mathbf{m})-\mathbf{d}\right]^{T} \mathbf{C}_{d}^{-1} \left[\mathbf{G}(\mathbf{m})-\mathbf{d}\right] $$
 
-$$\mathbf{C}_d = \operatorname{diag} \left( \sigma_1^2, \sigma_2^2, \ldots, \sigma_N^2 \right)$$
+$$\mathbf{C}_d = \mathrm{diag} \left( \sigma_1^2, \sigma_2^2, \ldots, \sigma_N^2 \right)$$
 
-$$\mathbf{C}_d^{-1} = \operatorname{diag} \left( \frac{1}{\sigma_1^2}, \frac{1}{\sigma_2^2}, \ldots, \frac{1}{\sigma_N^2} \right)$$
+$$\mathbf{C}_d^{-1} = \mathrm{diag} \left( \frac{1}{\sigma_1^2}, \frac{1}{\sigma_2^2}, \ldots, \frac{1}{\sigma_N^2} \right)$$
 
 con $$m$$ los parametros del modelo, $$G$$ la funcion  (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos y $$\sigma_i$$ la desviacion standard de cada medición. Entonces el problema a minizar es la diferencia entre los datos y el modelo escalado por la incertidumbre. O sea, que la predicción del modelo explique los datos. Para ello, utilizará el algoritmo de Levenberg-Marquardt para hacer estos modelos (secciones 9.2-9.3 de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems)). 
 
