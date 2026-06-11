@@ -41,8 +41,6 @@ $$u_{\mathrm{LOS}}(x,y) = \Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) + Ax
 
 Como ejemplo, para dos interferogramas ascendentes y descendentes que cubren tiempos diferentes, el problema inverso se escribe
 
-$$$$
-
 $$\mathbf{G_i(m)} =
 \begin{bmatrix}
 u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) & x & y & 1
