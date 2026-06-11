@@ -1,6 +1,6 @@
 # Modelación inversa de interferogramas con modelos de Mogi y Okada 
 
-El procedimiento de ajuste de un modelo a datos es una herramientas extremadamente versátil y transversal a múltiples en ingeniería y ciencias.
+El procedimiento de ajuste de un modelo a datos es una herramientas extremadamente versátil y transversal a múltiples en ingeniería y ciencias. Y en ciencias de la tierra lo puede usar desde el cálculo de isocronas en geocronología hasta para problemas muy complejos de tomografía sísmica. 
 
 Este ajuste de datos también se conoce como inversión y es un problema de optimización mediante minimización de mínimos cuadrados no lineales expresado mediante la función $$\chi^2(\mathbf{m})$$ ($$\qquad (1)-\qquad (2)$$).
 
