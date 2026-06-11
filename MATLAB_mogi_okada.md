@@ -28,7 +28,7 @@ $$
 $$
 u_{\mathrm{LOS}}(x,y)=
 \frac{(1-\nu)\Delta V}{\pi R^3}
-\left[l_E(x-x_0)+l_N(y-y_0)+l_Ud\right].
+\left[l_X(x-x_0)+l_Y(y-y_0)+l_Zd\right].
 $$
 
 $$\Delta V$$ es la variacion de volumen, $$x_0$$, $$y_0$$, $$z_0$$ las coordenadas de la esfera, $$R$$ la distancia desde el centro de la esfera al punto de observacion, $$\nu$$ el modulo de Poisson que equivale a 0.25 para rocas volcánicas promedio, $$l_{x}$$, $$l_{y}$$, $$l_{z}$$ los cosenos direccionales del vector LOS de InSAR.  
