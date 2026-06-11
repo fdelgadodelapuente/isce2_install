@@ -39,14 +39,14 @@ $$u_{\mathrm{LOS}}(x,y)= \frac{3\Delta V}{4\pi R^3} \left[l_X(x-x_0)+l_Y(y-y_0)+
 
 $$u_{\mathrm{LOS}}(x,y) = \Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) + Ax + By + C $$
 
-Como ejemplo, para dos interferogramas ascendentes y descendentes el problema inverso queda
+Como ejemplo, para dos interferogramas ascendentes y descendentes que cubren tiempos diferentes, el problema inverso queda
 
 $$\mathbf{G_i(m)} =[\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) 0 A B C]$$
 
 $$
 \begin{bmatrix}
 u_{\mathrm{LOS_A}}(x,y,\mathbf{x_0,y_0,d}) & 0 &x_a &y_a &1 & 0 & 0 &0 \\
-0&\Delta V u_{\mathrm{LOS_D}}(x,y,\mathbf{x_0,y_0,d}) &0 &0 &0 & x_d &y_d & 1 
+0&u_{\mathrm{LOS_D}}(x,y,\mathbf{x_0,y_0,d}) &0 &0 &0 & x_d &y_d & 1 
 \end{bmatrix}
 \begin{bmatrix}
 \Delta V_A \\
@@ -64,8 +64,32 @@ U_D(x,y) \\
 \end{bmatrix}
 $$
 
+Si por el contrario el source strength (variacion de volumen, slip) fuera la misma para los dos interferogramas, como en un terremoto, entonces la expresion anterior se escribe como:
+
+$$
+\begin{bmatrix}
+u_{\mathrm{LOS_A}}(x,y,\mathbf{x_0,y_0,d}) & 0 &x_a &y_a &1 & 0 & 0 &0 \\
+u_{\mathrm{LOS_D}}(x,y,\mathbf{x_0,y_0,d}) &0 &0 &0 & x_d &y_d & 1 
+\end{bmatrix}
+\begin{bmatrix}
+\Delta V \\
+A \\
+B \\
+C \\
+D \\
+E \\
+F \\
+\end{bmatrix} =
+\begin{bmatrix}
+U_A(x,y) \\
+U_D(x,y) \\
+\end{bmatrix}
+$$
+
+
 $$\mathbf{G(m_{nonlin})m_{lin}}=\mathbf{d}$$
 $$\chi^{2}(\mathbf{m}) = \left[\mathbf{G(m_{nonlin})m_{lin}}-\mathbf{d}\right]^{T} \mathbf{C}_{d}^{-1} \left[\mathbf{G(m_{nonlin})m_{lin}}-\mathbf{d}\right] \qquad (2)$$
+
 
 Para minimizar la función $$\chi^2(\mathbf{m})$$, debe lograr que la predicción del modelo explique los datos con la menor diferencia posible, tal como muestran los siguientes ejemplos de Alaska.
 
