@@ -43,6 +43,9 @@ Interferograma ERS de banda C del volcan Okmok (Aleutians, Alaska) e interferogr
 
 Para ajustar los datos, utilizará el algoritmo de Levenberg-Marquardt de MATLAB para resolver $$\qquad (1)$$ aplicado a los modelos de Mogi y Okada. El detalle del algoritmo lo puede ver en las secciones 9.2-9.3 del libro de inversión de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems). 
 
+
+## Archivos a Descargar
+
 Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m) y ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos a una carpeta que llamaremos  ```insar```. Mueva  ```load_isce.m``` a ```inversion/scripts```, reescribiendo el que hay ahí. La carpeta ```inversion/load_isce201708``` es una versión muy vieja de este codigo y la puede borrar. 
 
 ## Mogi Volcán Aniakchak 2023
