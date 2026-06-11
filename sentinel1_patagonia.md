@@ -6,8 +6,8 @@ Download the SLC data and the precise orbits. Sentinel-1 data requires precise o
 wget https://datapool.asf.alaska.edu/SLC/SC/S1C_IW_SLC__1SDV_20260514T235559_20260514T235627_007656_00F8E9_4CEB.zip
 wget https://datapool.asf.alaska.edu/SLC/SC/S1C_IW_SLC__1SDV_20260514T235625_20260514T235652_007656_00F8E9_450F.zip
 
-wget https://s1qc.asf.alaska.edu/aux_resorb/S1C_OPER_AUX_POEORB_OPOD_20260603T070923_V20260513T225942_20260515T005942.EOF
-wget https://s1qc.asf.alaska.edu/aux_resorb/S1D_OPER_AUX_POEORB_OPOD_20260604T071417_V20260514T225942_20260516T005942.EOF
+wget https://s1qc.asf.alaska.edu/aux_poeorb/S1C_OPER_AUX_POEORB_OPOD_20260603T070923_V20260513T225942_20260515T005942.EOF
+wget https://s1qc.asf.alaska.edu/aux_poeorb/S1D_OPER_AUX_POEORB_OPOD_20260604T071417_V20260514T225942_20260516T005942.EOF
 
 ```
 Sentinel-1D data are available at the [Copernicus Browser](https://browser.dataspace.copernicus.eu) and do not have direct download links.
