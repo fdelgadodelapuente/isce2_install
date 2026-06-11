@@ -14,7 +14,6 @@ $$\mathbf{C}_d^{-1} = \mathrm{diag} \left( \frac{1}{\sigma_1^2}, \frac{1}{\sigma
 
 con $$\mathbf{m}$$ los parámetros del modelo, $$\mathbf{G}$$ la función (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos, $$\sigma_i$$ la desviación standard de cada medición, $$\mathbf{C}_d^{-1} $$ la inversa de la matriz de covarianza, que en este caso la asumimos diagonal. Entonces el problema a minimizar es la diferencia entre los datos y el modelo escalado por la incertidumbre. Esto nunca es cero porque los datos tienen ruido y los modelos son simplificaciones de la realidad. Esto es un criterio exclusivamente estadístico y no considera la incertidumbre epistémica que tienen todos los modelos.
 
-
 El modelo de Mogi predice el desplazamiento en superficie $$\mathbf{u}(x,y)$$ en direcciones EW, NS, Z y en el LOS de InSAR $$u_{\mathrm{LOS}}(x,y)$$ producto de un cambio de volumen $$\Delta V$$ de una esfera pequeña presurizada en un semiespacio infinito en la cual $$\frac{a}{d}<0.4$$ con $$a$$ el radio de la esfera y $$d$$ la profundidad del centro.
 
 $$
