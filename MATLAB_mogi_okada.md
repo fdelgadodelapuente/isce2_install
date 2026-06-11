@@ -10,7 +10,7 @@ $$\mathbf{C}_d = \mathrm{diag} \left( \sigma_1^2, \sigma_2^2, \ldots, \sigma_N^2
 
 $$\mathbf{C}_d^{-1} = \mathrm{diag} \left( \frac{1}{\sigma_1^2}, \frac{1}{\sigma_2^2}, \ldots, \frac{1}{\sigma_N^2} \right) \qquad (4)$$
 
-con $$\mathbf{m}$$ los parametros del modelo, $$\mathbf{G}$$ la funcion  (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos, $$\sigma_i$$ la desviacion standard de cada medición, $$\mathbf{C}_d^{-1} $$ la inverza de la matriz de covarianza, que en este caso la asumimos diagonal. Entonces el problema a minizar es la diferencia entre los datos y el modelo escalado por la incertidumbre. O sea, que la predicción del modelo explique los datos mas precisos, como muestra la siguiente figura. 
+con $$\mathbf{m}$$ los parametros del modelo, $$\mathbf{G}$$ la funcion  (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos, $$\sigma_i$$ la desviacion standard de cada medición, $$\mathbf{C}_d^{-1} $$ la inverza de la matriz de covarianza, que en este caso la asumimos diagonal. Entonces el problema a minizar es la diferencia entre los datos y el modelo escalado por la incertidumbre. Esto nunca es cero porque los datos tienen ruido y los modelos son simplificaciones de la realidad. Pese a esto, debe lograr, que la predicción del modelo explique los datos que tienen menos ruido, como muestra la siguiente figura. 
 
 <img style="float: center;" src="figures/peulik_jers.png" style="width:300px;">
 
