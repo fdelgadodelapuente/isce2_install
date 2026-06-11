@@ -33,13 +33,13 @@ $$
 
 $$\Delta V$$ es la variacion de volumen, $$x_0$$, $$y_0$$, $$z_0$$ las coordenadas de la esfera, $$R$$ la distancia desde el centro de la esfera al punto de observacion, $$\nu$$ el modulo de Poisson que equivale a 0.25 para rocas volcánicas promedio, $$l_{x}$$, $$l_{y}$$, $$l_{z}$$ los cosenos direccionales del vector LOS de InSAR.  
 
-Para el problema de inversion de minimos cuadrados de un modelo de Mogi $$\mathbf{G(m)} = u_{\mathrm{LOS}}(x,y,\mathbf{m})$$, $$\mathbf{m}=[x_0, y_0, z_0, \Delta V]^T$$, $$\mathbf{d} = U_{LOS}(x,y)$$. Notar que los puntos de observación en x,y son las coordenadas de cada pixel y no son los parámetros del modelo a optimizar. De los cuatro parámetros del modelo $$[x_0, y_0, z_0]^T$$ son no lineales y $$\Delta V$$ es lineal. En general al modelo forward se le añade una rampa lineal para estimar errores orbitales residuaales, y señales troposfericas-inosfericas de baja frecuencia espacial. De esta forma, el modelo forward queda
+Para el problema de inversión de minimos cuadrados de un modelo de Mogi $$\mathbf{G(m)} = u_{\mathrm{LOS}}(x,y,\mathbf{m})$$, $$\mathbf{m}=[x_0, y_0, z_0, \Delta V]^T$$, $$\mathbf{d} = U_{LOS}(x,y)$$. Notar que los puntos de observación en $$x$$,$$y$$ son las coordenadas de cada pixel y no son los parámetros del modelo a optimizar. De los cuatro parámetros del modelo $$[x_0, y_0, z_0]^T$$ son no lineales y $$\Delta V$$ es lineal. En general al modelo forward se le añade una rampa lineal para estimar errores orbitales residuales, y señales troposféricas-inosféricas de longitud de onda larga. De esta forma, el modelo forward queda
 
 $$u_{\mathrm{LOS}}(x,y)= \frac{3\Delta V}{4\pi R^3} \left[l_X(x-x_0)+l_Y(y-y_0)+l_Zd\right] + Ax + By + C $$
 
 $$u_{\mathrm{LOS}}(x,y) = \Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) + Ax + By + C $$
 
-Como ejemplo, para dos interferogramas ascendentes y descendentes que cubren tiempos diferentes, el problema inverso queda
+Como ejemplo, para dos interferogramas ascendentes y descendentes que cubren tiempos diferentes, el problema inverso se escribe
 
 $$\mathbf{G_i(m)} =[\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) 0 A B C]$$
 
@@ -64,7 +64,7 @@ U_D(x,y) \\
 \end{bmatrix}
 $$
 
-Si por el contrario el source strength (variacion de volumen, slip) fuera la misma para los dos interferogramas, como en un terremoto, entonces la expresion anterior se escribe como:
+Si por el contrario el source strength (variación de volumen, slip) fuera la misma para los dos interferogramas, como en un terremoto, entonces la expresión anterior se escribe como:
 
 $$
 \begin{bmatrix}
