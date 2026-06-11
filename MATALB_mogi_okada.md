@@ -1,6 +1,6 @@
 # Correr un  modelo de Mogi y Okada 
 
-EL problema a resolver es  $$\min_{\mathbf{m}} \; f(\mathbf{m}) =\chi^2 = \sum_{i=1}^{N} \left( \frac{G_i(\mathbf{m}) - d_i} {\sigma_i} \right)^2 $$
+EL problema dr ajuste de un modelo a datos es un problema de minimizscion de minimos cuadrados no linesles. esto es encontrar $$\min_{\mathbf{m}} \; \chi^2(\mathbf{m}) = \sum_{i=1}^{N} \left( \frac{G_i(\mathbf{m}) - d_i} {\sigma_i} \right)^2 $$
 con $$m$$ los parametros del modelo, $$G$$ la funcion  (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos y $$\sigma_i$$ la desviacion standard de cada medición. Entonces el problema a minizar es la diferencia entre los datos y el modelo escalado por la incertidumbre. O sea, que la preddicción del modelo explique los datos.  Para ello, utilizará el algoritmo de Levenberg-Marquardt para hacer estos modelos (secciones 9.2-9.3 de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems)). 
 
 Descargar ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos y [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m)
