@@ -33,11 +33,33 @@ $$
 
 $$\Delta V$$ es la variacion de volumen, $$x_0$$, $$y_0$$, $$z_0$$ las coordenadas de la esfera, $$R$$ la distancia desde el centro de la esfera al punto de observacion, $$\nu$$ el modulo de Poisson que equivale a 0.25 para rocas volcánicas promedio, $$l_{x}$$, $$l_{y}$$, $$l_{z}$$ los cosenos direccionales del vector LOS de InSAR.  
 
-Para el problema de inversion de minimos cuadrados de un modelo de Mogi $$\mathbf{G(m)} = u_{\mathrm{LOS}}(x,y,\mathbf{m})$$, $$\mathbf{m}=[x_0, y_0, z_0, \Delta V]^T$$, $$\mathbf{d} = U_{LOS}(x,y)$$. Notar que los puntos de observación en x,y son las coordenadas de cada pixel y no son los parámetros del modelo a optimizar. De los cuatro parámetros del modelo $$[x_0, y_0, z_0]^T$$ son no lineales y $$\Delta V$$ es lineal. En general al modelo forward se le añade una rampa lineal para estimar errores orbitales residuaales, y señales troposfericas-inosfericas de baja frecuencia espacial. De esta forma, el  modelo forward queda
+Para el problema de inversion de minimos cuadrados de un modelo de Mogi $$\mathbf{G(m)} = u_{\mathrm{LOS}}(x,y,\mathbf{m})$$, $$\mathbf{m}=[x_0, y_0, z_0, \Delta V]^T$$, $$\mathbf{d} = U_{LOS}(x,y)$$. Notar que los puntos de observación en x,y son las coordenadas de cada pixel y no son los parámetros del modelo a optimizar. De los cuatro parámetros del modelo $$[x_0, y_0, z_0]^T$$ son no lineales y $$\Delta V$$ es lineal. En general al modelo forward se le añade una rampa lineal para estimar errores orbitales residuaales, y señales troposfericas-inosfericas de baja frecuencia espacial. De esta forma, el modelo forward queda
 
 $$u_{\mathrm{LOS}}(x,y)= \frac{3\Delta V}{4\pi R^3} \left[l_X(x-x_0)+l_Y(y-y_0)+l_Zd\right] + Ax + Cy + D $$
 
-$$\mathbf{G(m)} = \Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) + Ax + Cy + D $$
+$$u_{\mathrm{LOS}}(x,y) = \Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d}) + Ax + Cy + D $$
+
+El problema inverso queda
+
+$$\mathbf{G(m)} =[\Delta V u_{\mathrm{LOS}}(x,y,\mathbf{x_0,y_0,d})]$$
+
+$$
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13} & a_{14}\\
+a_{21} & a_{22} & a_{23} & a_{24}
+\end{pmatrix}
+\begin{pmatrix}
+x_1\\
+x_2\\
+x_3\\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+y_1\\
+y_2
+\end{pmatrix}
+$$
 
 Para minimizar la función $$\chi^2(\mathbf{m})$$, debe lograr que la predicción del modelo explique los datos con la menor diferencia posible, tal como muestran las siguientes figuras. 
 
