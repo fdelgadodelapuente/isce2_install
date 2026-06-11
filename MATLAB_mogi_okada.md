@@ -29,7 +29,7 @@ u_{\mathrm{LOS}}(x,y)=
 \left[l_E(x-x_0)+l_N(y-y_0)+l_Ud\right].
 $$
 
-$$\Delta V$$ es la variacion de volumen, $$x_0$$, $$y_0$$, $$z_0$$ las coordenadas de la esfera, $$R$$ la distancia desde el centro de la esfera al punto de observacion, $$\nu$$ el modulo de Poisson que equivale a 0.25 para rocas volcanicas promedio,$$l_{x}$$, $$l_{y}$$, $$l_{z}$$ los cosenos direccionales del vector LOS de InSAR.  
+$$\Delta V$$ es la variacion de volumen, $$x_0$$, $$y_0$$, $$z_0$$ las coordenadas de la esfera, $$R$$ la distancia desde el centro de la esfera al punto de observacion, $$\nu$$ el modulo de Poisson que equivale a 0.25 para rocas volcanicas promedio, $$l_{x}$$, $$l_{y}$$, $$l_{z}$$ los cosenos direccionales del vector LOS de InSAR.  
 
 Para el problema de inversion de minimos cuadrados de un modelo de Mogi $$\mathbf{G(m)} = u_{\mathrm{LOS}}(x,y,\mathbf{m})$$, $$\mathbf{m}=[x_0, y_0, z_0, \Delta V]^T$$, $$\mathbf{d} = U_{LOS}(x,y)$$. Notar que los puntos de observacion en x,y no son las coordenadas de cada pixel, son conocidas y no son los parametros del modelo a optimizar. Por ello, debe lograr, que la predicción del modelo explique los datos, como muestra la siguiente figura. 
 
