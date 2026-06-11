@@ -1,6 +1,6 @@
 # Modelación inversa de interferogramas con modelos de Mogi y Okada 
 
-El procedimiento de ajuste de un modelo a datos es una herramientas extremadamente versatil en ingeniería y ciencias que se usa para una enorme cantidad de aplicaciones. Este ajuste es un problema general de optimización mediante minimización de mínimos cuadrados no lineales expresado mediante la función $$\chi^2(\mathbf{m})$$ ($$\qquad (1)-\qquad (2) $$).
+El procedimiento de ajuste de un modelo a datos es una herramientas extremadamente versatil en ingeniería y ciencias que se usa para una enorme cantidad de aplicaciones. Este ajuste es un problema general de optimización mediante minimización de mínimos cuadrados no lineales expresado mediante la función $$\chi^2(\mathbf{m})$$ ($$\qquad (1)-\qquad (2)$$).
 
 $$\min_{\mathbf{m}}  \chi^2(\mathbf{m}) = \sum_{i=1}^{N} \left( \frac{G_i(\mathbf{m}) - d_i} {\sigma_i} \right)^2 \qquad (1)$$
 
@@ -29,9 +29,9 @@ u_{\mathrm{LOS}}(x,y)=
 \left[l_E(x-x_0)+l_N(y-y_0)+l_Ud\right].
 $$
 
-$$\Delta V$$ es la variacion de volumen, $$x_0$$, $$y_0$$, $$z_0$$ las coordenadas de la esfera, $$R$$ la distancia desde el centro de la esfera al punto de observacion, $$\nu$$ el modulo de Poisson que equivale a 0.25 para rocas volcanicas promedio, $$l_{x}$$, $$l_{y}$$, $$l_{z}$$ los cosenos direccionales del vector LOS de InSAR.  
+$$\Delta V$$ es la variacion de volumen, $$x_0$$, $$y_0$$, $$z_0$$ las coordenadas de la esfera, $$R$$ la distancia desde el centro de la esfera al punto de observacion, $$\nu$$ el modulo de Poisson que equivale a 0.25 para rocas volcánicas promedio, $$l_{x}$$, $$l_{y}$$, $$l_{z}$$ los cosenos direccionales del vector LOS de InSAR.  
 
-Para el problema de inversion de minimos cuadrados de un modelo de Mogi $$\mathbf{G(m)} = u_{\mathrm{LOS}}(x,y,\mathbf{m})$$, $$\mathbf{m}=[x_0, y_0, z_0, \Delta V]^T$$, $$\mathbf{d} = U_{LOS}(x,y)$$. Notar que los puntos de observacion en x,y no son las coordenadas de cada pixel, son conocidas y no son los parametros del modelo a optimizar. Por ello, debe lograr, que la predicción del modelo explique los datos, como muestra la siguiente figura. 
+Para el problema de inversion de minimos cuadrados de un modelo de Mogi $$\mathbf{G(m)} = u_{\mathrm{LOS}}(x,y,\mathbf{m})$$, $$\mathbf{m}=[x_0, y_0, z_0, \Delta V]^T$$, $$\mathbf{d} = U_{LOS}(x,y)$$. Notar que los puntos de observación en x,y son las coordenadas de cada pixel y no son los parámetros del modelo a optimizar. Por ello, debe lograr, que la predicción del modelo explique los datos, como muestran las siguientes figura. 
 
 <img style="float: center;" src="figures/peulik_jers.png" style="width:300px;">
 
@@ -41,10 +41,7 @@ Interferograma JERS de banda L del complejo volcánico Ugashik-Mount Peulik (Ale
 
 Interferograma ERS de banda C del volcan Okmok (Aleutians, Alaska) e interferograma sintético predicho por el mejor modelo de Mogi que ajusta los datos en base a la formula $$\qquad (1)$$. Un ciclo completo de colores es una fringe interferométrica y corresponde a 2.83 cm o $$2\pi$$ radianes de deformación superficial en el LOS de InSAR (https://radar.community.uaf.edu/lab-6-volcano-source-modeling-using-insar-data/).
 
-
-
-
-Para ajustar los datos, utilizará el algoritmo de Levenberg-Marquardt de MATLAB para hacer estos modelos (secciones 9.2-9.3 del libro de inversión de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems)). 
+Para ajustar los datos, utilizará el algoritmo de Levenberg-Marquardt de MATLAB para resolver $$\qquad (1)$$ aplicado a los modelos de Mogi y Okada. El detalle del algoritmo lo puede ver en las secciones 9.2-9.3 del libro de inversión de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems). 
 
 Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m) y ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos a una carpeta que llamaremos  ```insar```. Mueva  ```load_isce.m``` a ```inversion/scripts```, reescribiendo el que hay ahí. La carpeta ```inversion/load_isce201708``` es una versión muy vieja de este codigo y la puede borrar. 
 
