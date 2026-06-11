@@ -114,7 +114,7 @@ Para ajustar los datos, utilizará el algoritmo de Levenberg-Marquardt de MATLAB
 
 ## Archivos a Descargar
 
-Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m) y ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos a una carpeta que llamaremos  ```insar```. Mueva  ```load_isce.m``` a ```inversion/scripts```, reescribiendo el que hay ahí. La carpeta ```inversion/load_isce201708``` es una versión muy vieja de este codigo y la puede borrar. 
+Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m) y ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos a una carpeta que llamaremos  ```insar```. Mueva  ```load_isce.m``` a ```inversion/scripts```. 
 
 ## Mogi Volcán Aniakchak 2023
 
@@ -125,22 +125,10 @@ addpath('inversion/InSamp/')
 addpath('inversion/scripts/')
 addpath('inversion/resamp_sill/')
 addpath('inversion/mogi_invert/')
-addpath('inversion/')
 ```
 Correr ```mogi_example/220905_230807_1swath/synth_mogi``` 
 
 Para el downsampling, correr ```resamptool_isce_roipac``` . Para downsamplear otros datos cambiar  ```mogi_example/220905_230807_1swath/resamp_in.m``` y volver a correr. Las variables clave son ``` filename```, ``` losfilename```, ``` demf```, ``` lambda```, ``` savestructname```, ``` zone```, al igual que las líneas 36,37,39,40 que cambian las dimensiones de la dislocación que fuerza el downsampling a zonas con deformación en el algoritmo de [Lohman y Simons, 2005](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2004GC000841) y Appendix A de [Lohman et al., 2010](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010JB007710).
-
-El bloque de texto que dice 
-
-```
-coords.x1=-158.52083333333334;
-coords.y2=58.200833333333335;
-coords.nx=1945;
-coords.ny=2401;
-coords.dx=0.0008333333333333334;
-```
-lo puede reemplazar por ```coords=NaN```, ya que es para una versión muy antigua del código que leía la metadata de los .vrt de ISCE2 mediante grep de Linux.
 
 Para invertir, correr ``` lsqnl_mogi2_chisq_Jac.m```. Puede cambiar los datos con las líneas 11-12.  Si usa MATLAB R2026 y falla, comentar las linas 58-60 que convierten las coordenadas de la fuente de UTM a geográficas. Eso lo puede hacer con Google Earth. 
 
@@ -152,7 +140,6 @@ Añadir carpetas al path de Matlab
 addpath('inversion/InSamp/')
 addpath('inversion/scripts/')
 addpath('inversion/resamp_sill/')
-addpath('inversion/')
 ```
 
 Abrir ```okada_pishan/asc/resamp_in.m``` modificar linea 11 a ```lambda='sentinel'``` y comentar lineas 40-46
