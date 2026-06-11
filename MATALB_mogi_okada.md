@@ -1,6 +1,6 @@
 # Invertir modelos de Mogi y Okada 
 
-El procedimiento de ajuste de un modelo a datos es un problema general de optimizacion mediante minimizacion de minimos cuadrados no lineales de la funci'on $$\chi^2(\mathbf{m})$$ ($$\qquad (1)-\qquad (2) $$):
+El procedimiento de ajuste de un modelo a datos es un problema general de optimización mediante minimización de minimos cuadrados no lineales de la función $$\chi^2(\mathbf{m})$$ ($$\qquad (1)-\qquad (2) $$):
 
 $$\min_{\mathbf{m}}  \chi^2(\mathbf{m}) = \sum_{i=1}^{N} \left( \frac{G_i(\mathbf{m}) - d_i} {\sigma_i} \right)^2 \qquad (1)$$
 
@@ -10,7 +10,7 @@ $$\mathbf{C}_d = \mathrm{diag} \left( \sigma_1^2, \sigma_2^2, \ldots, \sigma_N^2
 
 $$\mathbf{C}_d^{-1} = \mathrm{diag} \left( \frac{1}{\sigma_1^2}, \frac{1}{\sigma_2^2}, \ldots, \frac{1}{\sigma_N^2} \right) \qquad (4)$$
 
-con $$\mathbf{m}$$ los parametros del modelo, $$\mathbf{G}$$ la funcion  (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos y $$\sigma_i$$ la desviacion standard de cada medición, $$\mathbf{C}_d^{-1} $$ la inverza de la matriz de covarianza, que en este caso la asumimos diagonal. Entonces el problema a minizar es la diferencia entre los datos y el modelo escalado por la incertidumbre. O sea, que la predicción del modelo explique los datos. Para ello, utilizará el algoritmo de Levenberg-Marquardt para hacer estos modelos (secciones 9.2-9.3 del libro de inversion de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems)). 
+con $$\mathbf{m}$$ los parametros del modelo, $$\mathbf{G}$$ la funcion  (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos, $$\sigma_i$$ la desviacion standard de cada medición, $$\mathbf{C}_d^{-1} $$ la inverza de la matriz de covarianza, que en este caso la asumimos diagonal. Entonces el problema a minizar es la diferencia entre los datos y el modelo escalado por la incertidumbre. O sea, que la predicción del modelo explique los datos confiables. Para ello, utilizará el algoritmo de Levenberg-Marquardt para hacer estos modelos (secciones 9.2-9.3 del libro de inversion de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems)). 
 
 Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m) y ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos a una carpeta que llamaremos  ```insar```. Mueva  ```load_isce.m``` a ```inversion/scripts```, reescribiendo el que hay ahí. La carpeta ```inversion/load_isce201708``` es una versión muy vieja de este codigo y la puede borrar. 
 
