@@ -10,15 +10,7 @@ $$\mathbf{C}_d = \mathrm{diag} \left( \sigma_1^2, \sigma_2^2, \ldots, \sigma_N^2
 
 $$\mathbf{C}_d^{-1} = \mathrm{diag} \left( \frac{1}{\sigma_1^2}, \frac{1}{\sigma_2^2}, \ldots, \frac{1}{\sigma_N^2} \right) \qquad (4)$$
 
-con $$\mathbf{m}$$ los parámetros del modelo, $$\mathbf{G}$$ la función (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos, $$\sigma_i$$ la desviación standard de cada medición, $$\mathbf{C}_d^{-1} $$ la inversa de la matriz de covarianza, que en este caso la asumimos diagonal. Entonces el problema a minimizar es la diferencia entre los datos y el modelo escalado por la incertidumbre. Esto nunca es cero porque los datos tienen ruido y los modelos son simplificaciones de la realidad. Por ello, debe lograr, que la predicción del modelo explique los datos, como muestra la siguiente figura. 
-
-<img style="float: center;" src="figures/peulik_jers.png" style="width:300px;">
-
-Interferograma JERS de banda L del complejo volcánico Ugashik-Mount Peulik (Aleutians, Alaska) e interferograma sintético predicho por el mejor modelo de Mogi que ajusta los datos en base a la formula $$\qquad (1)$$. Un ciclo completo de colores es una fringe interferométrica y corresponde a 11.8 cm de deformación superficial en el LOS de InSAR ([figura 6.193](https://link-springer-com.uchile.idm.oclc.org/chapter/10.1007/978-3-642-00348-6_6#Sec216) de [Lu y Dzurisin, 2014](https://link-springer-com.uchile.idm.oclc.org/book/10.1007/978-3-642-00348-6)).
-
-<img style="float: center;" src="figures/Lab6-Mogi-website-1024x531.jpg" style="width:300px;">
-
-Interferograma ERS de banda C del volcan Okmok (Aleutians, Alaska) e interferograma sintético predicho por el mejor modelo de Mogi que ajusta los datos en base a la formula $$\qquad (1)$$. Un ciclo completo de colores es una fringe interferométrica y corresponde a 2.83 cm o $$2\pi$$ radianes de deformación superficial en el LOS de InSAR (https://radar.community.uaf.edu/lab-6-volcano-source-modeling-using-insar-data/).
+con $$\mathbf{m}$$ los parámetros del modelo, $$\mathbf{G}$$ la función (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos, $$\sigma_i$$ la desviación standard de cada medición, $$\mathbf{C}_d^{-1} $$ la inversa de la matriz de covarianza, que en este caso la asumimos diagonal. Entonces el problema a minimizar es la diferencia entre los datos y el modelo escalado por la incertidumbre. Esto nunca es cero porque los datos tienen ruido y los modelos son simplificaciones de la realidad. 
 
 
 El modelo de Mogi predice el desplazamiento en superficie $$\mathbf{u}(x,y)$$ en direcciones EW, NS, Z y en el LOS de InSAR $$u_{\mathrm{LOS}}(x,y)$$ producto de un cambio de volumen $$\Delta V$$ de una esfera pequeña presurizada en un semiespacio infinito en la cual $$\frac{a}{d}<0.4$$ con $$a$$ el radio de la esfera y $$d$$ la profundidad del centro.
@@ -39,7 +31,16 @@ $$
 
 $$\Delta V$$ es la variacion de volumen, $$x_0$$, $$y_0$$, $$z_0$$ las coordenadas de la esfera, $$R$$ la distancia desde el centro de la esfera al punto de observacion, $$\nu$$ el modulo de Poisson que equivale a 0.25 para rocas volcanicas promedio,$$l_e$$, $$l_n$$, $$l_z$$ los cosenos direccionales del vector LOS de InSAR.  
 
-Para el problema de inversion de minimos cuadrados de un modelo de Mogi $$\mathbf{G(m)} = u_{\mathrm{LOS}}(x,y,\mathbf{m})$$, $$\mathbf{m}=[x_0, y_0, z_0, \Delta V]^T$$, $$\mathbf{d} = U_{LOS}(x,y)$$. Notar que los puntos de observacion en x,y no son las coordenadas de cada pixel, son conocidas y no son los parametros del modelo a optimizar. 
+Para el problema de inversion de minimos cuadrados de un modelo de Mogi $$\mathbf{G(m)} = u_{\mathrm{LOS}}(x,y,\mathbf{m})$$, $$\mathbf{m}=[x_0, y_0, z_0, \Delta V]^T$$, $$\mathbf{d} = U_{LOS}(x,y)$$. Notar que los puntos de observacion en x,y no son las coordenadas de cada pixel, son conocidas y no son los parametros del modelo a optimizar. Por ello, debe lograr, que la predicción del modelo explique los datos, como muestra la siguiente figura. 
+
+<img style="float: center;" src="figures/peulik_jers.png" style="width:300px;">
+
+Interferograma JERS de banda L del complejo volcánico Ugashik-Mount Peulik (Aleutians, Alaska) e interferograma sintético predicho por el mejor modelo de Mogi que ajusta los datos en base a la formula $$\qquad (1)$$. Un ciclo completo de colores es una fringe interferométrica y corresponde a 11.8 cm de deformación superficial en el LOS de InSAR ([figura 6.193](https://link-springer-com.uchile.idm.oclc.org/chapter/10.1007/978-3-642-00348-6_6#Sec216) de [Lu y Dzurisin, 2014](https://link-springer-com.uchile.idm.oclc.org/book/10.1007/978-3-642-00348-6)).
+
+<img style="float: center;" src="figures/Lab6-Mogi-website-1024x531.jpg" style="width:300px;">
+
+Interferograma ERS de banda C del volcan Okmok (Aleutians, Alaska) e interferograma sintético predicho por el mejor modelo de Mogi que ajusta los datos en base a la formula $$\qquad (1)$$. Un ciclo completo de colores es una fringe interferométrica y corresponde a 2.83 cm o $$2\pi$$ radianes de deformación superficial en el LOS de InSAR (https://radar.community.uaf.edu/lab-6-volcano-source-modeling-using-insar-data/).
+
 
 
 
