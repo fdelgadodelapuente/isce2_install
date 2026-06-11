@@ -38,6 +38,8 @@ u_{\mathrm{LOS}}(x,y)=
 \left[l_E(x-x_0)+l_N(y-y_0)+l_Ud\right].
 $$
 
+$$ Delta V$$ es la variacion de volumen, $$x_0$$,$$y_0$$,$$z_0$$ las coordenadas de la esfera, $$R$$ la distancia desde el centro de la esfera al punto de observacion.  
+
 Añadir carpetas al path de Matlab
 
 ```
