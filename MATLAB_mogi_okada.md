@@ -10,15 +10,13 @@ $$\mathbf{C}_d = \mathrm{diag} \left( \sigma_1^2, \sigma_2^2, \ldots, \sigma_N^2
 
 $$\mathbf{C}_d^{-1} = \mathrm{diag} \left( \frac{1}{\sigma_1^2}, \frac{1}{\sigma_2^2}, \ldots, \frac{1}{\sigma_N^2} \right) \qquad (4)$$
 
-con $$\mathbf{m}$$ los parametros del modelo, $$\mathbf{G}$$ la funcion  (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos, $$\sigma_i$$ la desviacion standard de cada medición, $$\mathbf{C}_d^{-1} $$ la inverza de la matriz de covarianza, que en este caso la asumimos diagonal. Entonces el problema a minizar es la diferencia entre los datos y el modelo escalado por la incertidumbre. O sea, que la predicción del modelo explique los datos mas precisos. 
-
+con $$\mathbf{m}$$ los parametros del modelo, $$\mathbf{G}$$ la funcion  (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos, $$\sigma_i$$ la desviacion standard de cada medición, $$\mathbf{C}_d^{-1} $$ la inverza de la matriz de covarianza, que en este caso la asumimos diagonal. Entonces el problema a minizar es la diferencia entre los datos y el modelo escalado por la incertidumbre. O sea, que la predicción del modelo explique los datos mas precisos, como muestra la siguiente figura. 
 
 <img style="float: center;" src="figures/peulik_jers.png" style="width:300px;">
 
-Interferograma JERS del complejo volcanico Ugashik-Mount Peulik (Aleutians, Alaska) e interfeorgrama sintetico predicho por el mejor modelo de Mogi que ajusta los datos en base a la formula $$\qquad (1)$$. Un ciclo completo de colores (una fringe interferometrica son 11.8 cm de deformaicion superficial en el LOS de InSAR (figura 6.193 de [Lu y Dzurisin, 2014](https://link.springer.com/book/10.1007/978-3-642-00348-6)).
+Interferograma JERS de banda L del complejo volcanico Ugashik-Mount Peulik (Aleutians, Alaska) e interfeorgrama sintetico predicho por el mejor modelo de Mogi que ajusta los datos en base a la formula $$\qquad (1)$$. Un ciclo completo de colores es una fringe interferometrica y corresponde a 11.8 cm de deformacion superficial en el LOS de InSAR (figura 6.193 de [Lu y Dzurisin, 2014](https://link.springer.com/book/10.1007/978-3-642-00348-6)).
 
-
-Para ello, utilizará el algoritmo de Levenberg-Marquardt para hacer estos modelos (secciones 9.2-9.3 del libro de inversion de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems)). 
+Para ajustar los datos, utilizará el algoritmo de Levenberg-Marquardt para hacer estos modelos (secciones 9.2-9.3 del libro de inversion de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems)). 
 
 Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/main/load_isce.m) y ```Mogi_Aniakchak.zip```, ```inversion2026.zip```,```okada_pishan.zip``` de U-Cursos a una carpeta que llamaremos  ```insar```. Mueva  ```load_isce.m``` a ```inversion/scripts```, reescribiendo el que hay ahí. La carpeta ```inversion/load_isce201708``` es una versión muy vieja de este codigo y la puede borrar. 
 
