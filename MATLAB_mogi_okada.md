@@ -25,10 +25,7 @@ Descargue  [load_isce](https://github.com/fdelgadodelapuente/isce_utils/blob/mai
 El modelo de Mogi es
 
 $$
-\mathbf{u}(x,y)
-=
-\left(u_E,u_N,u_U\right)^{\mathsf T}
-=
+\mathbf{u}(x,y) = \left(u_E,u_N,u_U\right)^{\mathsf T} =
 \frac{(1-\nu)\Delta V}{\pi R^3}
 \left(x-x_0,\,y-y_0,\,d\right)^{\mathsf T},
 \qquad
