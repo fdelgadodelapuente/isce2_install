@@ -95,4 +95,4 @@ Para el downsampling descomentar las lineas 40-46 de ```okada_pishan/asc/resamp_
 
 Para invertir, con los parametros por defecto correr ```okada_pishan/invert_eq.m```
 
-Para modificar para otros datos debe cambiar los inputs de ```okada_pishan/asc/resamp_in.m``` de la misma forma que para Mogi. El downsampling es idéntico. 
+Para modificar para otros datos debe cambiar los inputs de ```okada_pishan/asc/resamp_in.m``` de la misma forma que para Mogi. El procedimiento de downsampling es idéntico para ambos ejemplos. 
