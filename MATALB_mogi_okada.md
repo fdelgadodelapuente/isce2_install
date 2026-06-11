@@ -1,14 +1,14 @@
 # Invertir modelos de Mogi y Okada 
 
-El procedimiento de ajuste de un modelo a datos es un problema general de optimizacion mediante minimizacion de minimos cuadrados no lineales de la funci'on $$\chi^2(\mathbf{m})$$ :
+El procedimiento de ajuste de un modelo a datos es un problema general de optimizacion mediante minimizacion de minimos cuadrados no lineales de la funci'on $$\chi^2(\mathbf{m})$$ ($$\qquad (1)-\qquad (2) $$):
 
-$$\min_{\mathbf{m}}  \chi^2(\mathbf{m}) = \sum_{i=1}^{N} \left( \frac{G_i(\mathbf{m}) - d_i} {\sigma_i} \right)^2 $$
+$$\min_{\mathbf{m}}  \chi^2(\mathbf{m}) = \sum_{i=1}^{N} \left( \frac{G_i(\mathbf{m}) - d_i} {\sigma_i} \right)^2 \qquad (1)$$
 
-$$ \chi^{2}(\mathbf{m}) = \left[\mathbf{G}(\mathbf{m})-\mathbf{d}\right]^{T} \mathbf{C}_{d}^{-1} \left[\mathbf{G}(\mathbf{m})-\mathbf{d}\right] $$
+$$ \chi^{2}(\mathbf{m}) = \left[\mathbf{G}(\mathbf{m})-\mathbf{d}\right]^{T} \mathbf{C}_{d}^{-1} \left[\mathbf{G}(\mathbf{m})-\mathbf{d}\right] \qquad (2)$$
 
-$$\mathbf{C}_d = \mathrm{diag} \left( \sigma_1^2, \sigma_2^2, \ldots, \sigma_N^2 \right)$$
+$$\mathbf{C}_d = \mathrm{diag} \left( \sigma_1^2, \sigma_2^2, \ldots, \sigma_N^2 \right) \qquad (3)$$
 
-$$\mathbf{C}_d^{-1} = \mathrm{diag} \left( \frac{1}{\sigma_1^2}, \frac{1}{\sigma_2^2}, \ldots, \frac{1}{\sigma_N^2} \right)$$
+$$\mathbf{C}_d^{-1} = \mathrm{diag} \left( \frac{1}{\sigma_1^2}, \frac{1}{\sigma_2^2}, \ldots, \frac{1}{\sigma_N^2} \right) \qquad (4)$$
 
 con $$\mathbf{m}$$ los parametros del modelo, $$\mathbf{G}$$ la funcion  (Okada/Mogi proyectado en el LOS de InSAR), $$d$$ los datos y $$\sigma_i$$ la desviacion standard de cada medición, $$\mathbf{C}_d^{-1} $$ la inverza de la matriz de covarianza, que en este caso la asumimos diagonal. Entonces el problema a minizar es la diferencia entre los datos y el modelo escalado por la incertidumbre. O sea, que la predicción del modelo explique los datos. Para ello, utilizará el algoritmo de Levenberg-Marquardt para hacer estos modelos (secciones 9.2-9.3 del libro de inversion de [Aster et al., 2013](https://www.sciencedirect.com/book/monograph/9780123850485/parameter-estimation-and-inverse-problems)). 
 
