@@ -3,13 +3,13 @@ ISCE2 example for processing a Sentinel-1C/D TOPS interferogram of the Southern 
 Download the SLC data and the precise orbits. Sentinel-1 data requires precise orbits. These are restituted orbits [RESORB](https://s1qc.asf.alaska.edu/aux_resorb/) available the same day of the SLC acquistion and precise orbits [POEORB](https://s1qc.asf.alaska.edu/aux_poeorb/), available three weeks later. 
 ```
 
-wget https://datapool.asf.alaska.edu/SLC/SD/S1D_IW_SLC__1SDV_20260607T094343_20260607T094410_003128_0056E1_033B.zip
-wget https://datapool.asf.alaska.edu/SLC/SD/S1D_IW_SLC__1SDV_20260607T094318_20260607T094345_003128_0056E1_C903.zip
 wget https://datapool.asf.alaska.edu/SLC/SC/S1C_IW_SLC__1SDV_20260606T094330_20260606T094357_007983_0103C5_EE16.zip
 wget https://datapool.asf.alaska.edu/SLC/SC/S1C_IW_SLC__1SDV_20260606T094302_20260606T094333_007983_0103C5_214F.zip
+wget https://datapool.asf.alaska.edu/SLC/SD/S1D_IW_SLC__1SDV_20260607T094343_20260607T094410_003128_0056E1_033B.zip
+wget https://datapool.asf.alaska.edu/SLC/SD/S1D_IW_SLC__1SDV_20260607T094318_20260607T094345_003128_0056E1_C903.zip
 
-wget https://s1qc.asf.alaska.edu/aux_poeorb/S1C_OPER_AUX_POEORB_OPOD_20260603T070923_V20260513T225942_20260515T005942.EOF
-wget https://s1qc.asf.alaska.edu/aux_poeorb/S1D_OPER_AUX_POEORB_OPOD_20260604T071417_V20260514T225942_20260516T005942.EOF
+wget https://s1qc.asf.alaska.edu/aux_resorb/S1C_OPER_AUX_RESORB_OPOD_20260606T105716_V20260606T070115_20260606T101845.EOF
+wget https://s1qc.asf.alaska.edu/aux_resorb/S1D_OPER_AUX_RESORB_OPOD_20260607T105813_V20260607T070125_20260607T101855.EOF
 
 ```
 <!--Sentinel-1D data are available at the [Copernicus Browser](https://browser.dataspace.copernicus.eu) and do not have direct download links.-->
