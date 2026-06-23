@@ -23,39 +23,49 @@ Create the input file `topsapp.xml` in the `20260514_20260515_s2` folder
         <property name="geocode demFilename">/Users/francisco/insarproc/dem/copernicus/cop_dem_glo30m_wgs84_icefields.dem</property>
  
 	<component name="reference"> 
-		<property name="safe">../S1C_IW_SLC__1SDV_20260514T235559_20260514T235627_007656_00F8E9_4CEB.zip, ../S1C_IW_SLC__1SDV_20260514T235625_20260514T235652_007656_00F8E9_450F.zip</property> 
+		<property name="safe">../S1C_IW_SLC__1SDV_20260606T094302_20260606T094333_007983_0103C5_214F.zip, ../S1C_IW_SLC__1SDV_20260606T094330_20260606T094357_007983_0103C5_EE16.zip</property> 
 		<property name="output directory">"reference"</property>              
  		<property name="orbit directory">/Users/francisco/insarproc/esa/s1orb</property> 
 		<property name="auxiliary data directory">/Users/francisco/insarproc/esa/s1orb</property> 
 	</component>
  
 	<component name="secondary"> 
-		<property name="safe">../S1D_IW_SLC__1SDV_20260515T235609_20260515T235637_002801_004BFD_CDB5.SAFE.zip, ../S1D_IW_SLC__1SDV_20260515T235634_20260515T235701_002801_004BFD_CD1C.SAFE.zip</property> 
+		<property name="safe">../S1D_IW_SLC__1SDV_20260607T094318_20260607T094345_003128_0056E1_C903.zip, ../S1D_IW_SLC__1SDV_20260607T094343_20260607T094410_003128_0056E1_033B.zip</property> 
 		<property name="output directory">"secondary"</property>     
- 		<property name="orbit directory">/Users/francisco/insarproc/esa/s1orb</property> 
+<!--> 		<property name="orbit directory">/Users/francisco/insarproc/esa/s1orb</property> -->
 		<property name="auxiliary data directory">/Users/francisco/insarproc/esa/s1orb</property> 
 	</component>
  
-	<property name="swaths">[2]</property>
+	<property name="swaths">[3]</property>
 	<property name="ESD coherence threshold">0.85</property>
 	<property name="do ESD">True</property>
 	<!-- <property name="extra ESD cycles">0</property> -->
 	<property name="apply ionosphere correction">False</property> 
 	<property name="do ionosphere correction">False</property> 
-	<property name="consider burst properties in ionosphere computation">False</property> 
+	<property name="consider burst properties in ionosphere computation">True</property> 
 	<property name="azimuth looks">2</property>
 	<property name="range looks">8</property>
 	<property name="filter strength">0.5</property>
 	<property name="do unwrap">True</property>
 	<property name="unwrapper name">snaphu_mcf</property>
-	<property name="geocode list">["merged/filt_topophase.unw","merged/filt_topophase.unw.conncomp","merged/phsig.cor"]</property>
-<!-->	<property name="geocode list">merged/filt_topophase.flat</property>-->
-	<property name="regionOfInterest">-47.54, -46.45, -73.96, -73.22</property>
-
-
+<!--	<property name="geocode list">["merged/filt_topophase.unw","merged/filt_topophase.unw.conncomp","merged/phsig.cor"]</property>
+	<property name="geocode list">["merged/topophase.flat"]</property>
+	<property name="geocode list">["merged/filt_topophase.flat"]</property>-->
+ 	<property name="regionOfInterest">-50.45, -48.37, -74.19, -72.91</property>
  
+ <!--
+    <property name="do denseoffsets">True</property>
+    <property name="Filter window size">3</property>
+    <property name="Ampcor window width">128</property>
+    <property name="Ampcor window height">32</property>
+    <property name="Ampcor search window width">40</property>
+    <property name="Ampcor search window height">10</property>
+    <property name="Ampcor skip width">16</property>
+    <property name="Ampcor skip height">4</property>
+ -->
  </component>
  </topsApp>
+
 
 
 ```
