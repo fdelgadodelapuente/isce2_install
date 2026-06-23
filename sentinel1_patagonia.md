@@ -12,7 +12,7 @@ wget https://s1qc.asf.alaska.edu/aux_resorb/S1C_OPER_AUX_RESORB_OPOD_20260606T10
 wget https://s1qc.asf.alaska.edu/aux_resorb/S1D_OPER_AUX_RESORB_OPOD_20260607T105813_V20260607T070125_20260607T101855.EOF
 
 ```
-<!--Sentinel-1D data are available at the [Copernicus Browser](https://browser.dataspace.copernicus.eu) and do not have direct download links.-->
+Most of the Sentinel-1D data are available at the [Copernicus Browser](https://browser.dataspace.copernicus.eu) and do not have direct download links. A few of them are at ASF Vertex as of June 2026.
 
 Create the input file `topsapp.xml` in the `20260606_20260607` folder
 ```
