@@ -1,6 +1,6 @@
 ISCE2 example for processing a Sentinel-1C/D TOPS interferogram of the Southern Patagonian Icefield.
 
-Download the SLC data and the precise orbits. Sentinel-1 data requires precise orbits. These are restituted orbits [RESORB](https://s1qc.asf.alaska.edu/aux_resorb/) available the same day of the SLC acquistion and precise orbits [POEORB](https://s1qc.asf.alaska.edu/aux_poeorb/), available three weeks later. 
+Download the SLC data and the precise orbits. Sentinel-1 data requires precise orbits. These are restituted orbits [RESORB](https://s1qc.asf.alaska.edu/aux_resorb/) available hours after the SLC acquistion (accuracy better than 10 cm)  and precise orbits [POEORB](https://s1qc.asf.alaska.edu/aux_poeorb/), available three weeks later (accuracy better than 5 cm). 
 ```
 
 wget https://datapool.asf.alaska.edu/SLC/SC/S1C_IW_SLC__1SDV_20260606T094330_20260606T094357_007983_0103C5_EE16.zip
