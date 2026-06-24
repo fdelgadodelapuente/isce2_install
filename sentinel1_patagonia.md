@@ -91,9 +91,19 @@ You should get the following file
 
 
 
+Apply the connected components mask to the unwrapped phase
 
-
-
+```
+imageMath.py -e='a_0;a_1*(b>0)' --a=filt_topophase.unw --b=filt_topophase.unw.conncomp -o filt_topophase_masked.unw -s BIL
+fixImageXml.py -f -i filt_topophase_masked.unw
+```
+Edit topsapp.xml to geocode this file and then geocode
+```
+	<property name="geocode list">merged/filt_topophase_masked.unw</property>
+```
+```
+topsApp.py topsapp.xml --dostep=geocode 
+```
 
 ### Dense offsets
 
