@@ -91,7 +91,7 @@ You should get the following file
 
 
 
-Apply the connected components mask to the unwrapped phase
+Unwrapping with SNAPHU_MCF results in errors in the noisy regions. Therefore you have to apply the connected components mask to the unwrapped phase
 
 ```
 imageMath.py -e='a_0;a_1*(b>0)' --a=filt_topophase.unw --b=filt_topophase.unw.conncomp -o filt_topophase_masked.unw -s BIL
