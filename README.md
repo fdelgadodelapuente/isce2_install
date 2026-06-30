@@ -132,7 +132,12 @@ COMPILER_OPTIONS ={'COMPILER_OPTIMIZATION':'-O2','COMPILER_WARNING':'-w'}
 GFORTRANFLAGS = ['-ffixed-line-length-none' ,'-fno-second-underscore',    '-fPIC','-fno-range-check','-fallow-argument-mismatch']
 ```
 
-comment last line for not installing autoRIFT in  ```contrib/SConscript```, line 30 in ```components/isceobj/Sensor/src/SConscript```, lines 15,17,19 in ```components/isceobj/Sensor/include/SConscript```, lines 20,21 in ```components/isceobj/Sensor/bindings/SConscript```
+comment last line for not installing autoRIFT in  ```contrib/SConscript```
+
+comments several lines if the COSAR parser for TSX data fails:
+line 30 in ```components/isceobj/Sensor/src/SConscript```
+lines 15,17,19 in ```components/isceobj/Sensor/include/SConscript```
+lines 20,21 in ```components/isceobj/Sensor/bindings/SConscript```
 
 Source it with shell script called insar.sh. Inp is the software version (2.2.0, 2.5.1, 2.6.4, etc)
 ```
