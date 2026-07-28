@@ -158,7 +158,7 @@ Si desea incluir correcciones con ERA5, debe descargar los productos manualmente
 import pyaps3
 pyaps3.ECMWFdload(["20231122"],hr="10",filedir=".",model="ERA5",snwe=(-30, -20, -80, -60),)
 ```
-Luego debe editar el path de ERA5 en smallbaselineApp.cfg 
+10 corresponde a la hora UTC mas cercana a la adquisición de los SLC en órbita descendente para estos datos. Luego debe editar el path de ERA5 en smallbaselineApp.cfg 
 
 # Visualización de resultados
 
