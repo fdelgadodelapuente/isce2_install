@@ -153,6 +153,15 @@ Dependiendo de la calidad de los interferogramas, pueden ajustarse los siguiente
 
 ---
 
+Si desea incluir correcciones con ERA5, debe descargar los productos manualmente en Python, y dejarlos en la carpeta respectiva 
+
+```
+import pyaps3
+pyaps3.ECMWFdload(["20231122"],hr="10",filedir=".",model="ERA5",snwe=(-30, -20, -80, -60),)
+```
+
+Luego debe editar el path de ERA5 en smallbaselineApp.cfg 
+
 # Visualización de resultados
 
 Serie de tiempo:
