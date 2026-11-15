@@ -192,6 +192,8 @@ You can test the software by processing the following X-, C- and L-band interfer
 
 [ALOS-2 L-band ScanSAR, Aniakchak Crater 2022-2023 (USA)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/alos2_example.md)
 
+[ALOS-4 L-band stripmap, Ciudad de Mexico 2025-2026 (Mexico)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/alos4_example.md)
+
 [SAOCOM-1 L-band stripmap, Santiago basin (Chile)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/saocom1_example.md)
 
 [PAZ X-band stripmap, Salar de Atacama basin (Chile)](https://github.com/fdelgadodelapuente/isce2_install/blob/main/paz_example.md)
