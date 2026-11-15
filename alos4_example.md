@@ -18,8 +18,8 @@ Create the input file `alos2App.xml` in the folder `20220905_20230807`. You only
 	<property name="demFilename">/Users/francisco/insarproc/cdm/demLat_N18_N20_Lon_W100_W098.dem.wgs84</property>
        <property name="reference doppler method">useDEFAULT</property>
        <property name="secondary doppler method">useDEFAULT</property>
-       <property name="range looks">8</property>
-       <property name="azimuth looks">16</property>
+       <property name="range looks">4</property>
+       <property name="azimuth looks">12</property>
 
 	<component name="reference">
        <property name="IMAGEFILE">IMG-HH-ALOS40570380250724FWDPRA0106-1.1__-</property>
