@@ -56,9 +56,9 @@ Create the input file `sm_alos4.xml` in the folder `20250724_20260219`. You only
 ```
 
 
-Download the SRTM DEM in the `20220905_20230807/dem_1_arcsec` folder
+Download the SRTM DEM
 ```
-demdem.py -a stitch -b 18 20 -100 -98 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1 -f
+demdem.py -a stitch -b 18 21 -100 -98 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1 -f
 ```
 
 Run it with
