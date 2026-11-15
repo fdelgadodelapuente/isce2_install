@@ -15,7 +15,7 @@ Create the input file `alos2App.xml` in the folder `20220905_20230807`. You only
 
        <property name="Sensor Name">ALOS4</property>
         <!-- dem.py -a stitch -b 18 20 -100 -98 -r -s 1 -c -u http://step.esa.int/auxdata/dem/SRTMGL1 -f -->
-	<property name="demFilename">/Users/francisco/insarproc/cdm/demLat_N18_N20_Lon_W100_W098.dem.wgs84</property>
+	<property name="demFilename">/Users/francisco/insarproc/cdm/demLat_N18_N21_Lon_W100_W098.dem.wgs84</property>
        <property name="reference doppler method">useDEFAULT</property>
        <property name="secondary doppler method">useDEFAULT</property>
        <property name="range looks">4</property>
