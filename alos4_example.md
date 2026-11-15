@@ -8,7 +8,7 @@ Download the data from ```https://www.eorc.jaxa.jp/ALOS/en/alos-4/a4_data_e.htm`
 https://s3.ap-northeast-1.wasabisys.com/anonymous-alos4-sample-ap1/ALOS40570380250724FWDPRA0106_1.1__-_ceos.zip?AWSAccessKeyId=U74IB2TN0HDQSBS9WOBA&Signature=Ahztavgs5IJRefJUNLGEapyW03o%3D&Expires=1796515309
 https://s3.ap-northeast-1.wasabisys.com/anonymous-alos4-sample-ap1/ALOS40570380260219FWDPRA0106_1.1__-_ceos.zip?AWSAccessKeyId=U74IB2TN0HDQSBS9WOBA&Signature=hqN6TeHMuFLqgz6RHvjII%2Bj19vs%3D&Expires=1796515316
 ```
-Create the input file `alos2App.xml` in the folder `20220905_20230807`. You only need to specify a single swath
+Create the input file `sm_alos4.xml` in the folder `20250724_20260219`. You only need to specify a single swath
 ```
 <stripmapApp>
 	<component name="insar">
