@@ -1,4 +1,4 @@
-ISCE2 example for processing a single swath of an ALOS-4 interferogram of Ciudad de Mexico. It does not include the ionospheric correction.
+ISCE2 example for processing an ALOS-4 stripmap interferogram of Ciudad de Mexico. It does not include the ionospheric correction.
 
 
 You can process ALOS-4 stripmap data with `stripmapApp.py`. Here I process the HH interferogram that have a higher SNR than HV interferograms.
