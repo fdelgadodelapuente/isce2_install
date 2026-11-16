@@ -65,6 +65,10 @@ Run it with
 ```
 stripmapApp.py sm_alos4.xml --steps
 ```
+Export it to KML
+```
+mdx.py filt_topophase.unw.geo -kml filt_topophase.unw.geo.kml
+```
 
 You should get the following file
 
